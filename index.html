@@ -329,6 +329,30 @@
             {
                 "@type": "ScholarlyArticle",
                 "position": 3,
+                "name": "The Limits of Factor Model Spanning",
+                "author": [
+                    {"@type": "Person", "name": "Fahiz Baba-Yara"},
+                    {"@type": "Person", "name": "Brian H. Boyer"},
+                    {"@type": "Person", "name": "Carter Davis"}
+                ],
+                "datePublished": "2021",
+                "about": "Investigation of disagreement across machine learning factor models in pricing cross-sectional returns"
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "position": 4,
+                "name": "The Multifactor Risk-Return Tradeoff",
+                "author": [
+                    {"@type": "Person", "name": "Fahiz Baba-Yara"},
+                    {"@type": "Person", "name": "Martijn Boons"},
+                    {"@type": "Person", "name": "Rik Frehen"}
+                ],
+                "datePublished": "2025",
+                "about": "Analysis of multifactor risk-return tradeoff showing positive relationship when accounting for factor covariances"
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "position": 5,
                 "name": "Risk from the Inside Out: Employee News Consumption",
                 "author": [
                     {"@type": "Person", "name": "Fahiz Baba-Yara"},
@@ -337,6 +361,27 @@
                 ],
                 "datePublished": "2025",
                 "about": "Novel firm risk measure based on employee news consumption patterns"
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "position": 6,
+                "name": "Commodity Returns: Lost in Financialization",
+                "author": [
+                    {"@type": "Person", "name": "Fahiz Baba-Yara"},
+                    {"@type": "Person", "name": "Massimiliano Bondatti"}
+                ],
+                "datePublished": "2022",
+                "about": "Study of how financialization eliminated returns to 80% of commodity futures strategies"
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "position": 7,
+                "name": "Machine Learning and Return Predictability Across Firms, Time and Portfolios",
+                "author": [
+                    {"@type": "Person", "name": "Fahiz Baba-Yara"}
+                ],
+                "datePublished": "2020",
+                "about": "Economic restrictions in neural network architecture enable generalized return predictions"
             }
         ]
     }
@@ -552,6 +597,12 @@
                                         </a>
                                         <button
                                             class="text-left font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors flex items-center gap-3"
+                                            data-citation="@article{babayara2024persistent,
+  title={Persistent and Transitory Components of Firm Characteristics},
+  author={Baba-Yara, Fahiz and Boons, Martijn and Tamoni, Andrea},
+  journal={Journal of Financial Economics},
+  year={2024}
+}"
                                             onclick="copyCitation(event)">
                                             <i class="fas fa-quote-right text-lg"></i> Copy Citation
                                         </button>
@@ -629,6 +680,15 @@
                                         </a>
                                         <button
                                             class="text-left font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors flex items-center gap-3"
+                                            data-citation="@article{babayara2021value,
+  title={Value Return Predictability Across Asset Classes and Commonalities in Risk Premia},
+  author={Baba-Yara, Fahiz and Boons, Martijn and Tamoni, Andrea},
+  journal={Review of Finance},
+  volume={25},
+  number={2},
+  pages={449--484},
+  year={2021}
+}"
                                             onclick="copyCitation(event)">
                                             <i class="fas fa-quote-right text-lg"></i> Copy Citation
                                         </button>
@@ -639,8 +699,166 @@
                     </div>
                 </article>
 
-                <!-- Paper 3 -->
-                <article class="paper-row group border-b border-stone/10 dark:border-dark-border hover:bg-subtle dark:hover:bg-dark-surface cursor-pointer scroll-reveal stagger-3"
+                <!-- Paper 3: The Limits of Factor Model Spanning -->
+                <article class="paper-row group border-b border-stone/10 dark:border-dark-border hover:bg-subtle dark:hover:bg-dark-surface cursor-pointer scroll-reveal"
+                    onclick="toggleDetails(this)" role="listitem">
+                    <div class="py-12 grid md:grid-cols-12 gap-6 relative">
+                        <div
+                            class="absolute -left-4 top-14 text-crimson dark:text-crimson-light opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300">
+                            <i class="fas fa-arrow-right text-xs"></i>
+                        </div>
+
+                        <div class="hidden md:block md:col-span-2 pt-2">
+                            <div
+                                class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted group-hover:text-ink dark:group-hover:text-dark-text transition-colors">
+                                2021
+                            </div>
+                        </div>
+
+                        <div class="md:col-span-7">
+                            <h3
+                                class="font-serif text-3xl md:text-4xl text-ink dark:text-dark-text leading-tight group-hover:text-crimson dark:group-hover:text-crimson-light transition-colors duration-300">
+                                The Limits of Factor Model Spanning
+                            </h3>
+                            <div class="mt-3 text-sm text-stone dark:text-dark-muted font-sans font-light">
+                                with <span class="text-charcoal dark:text-dark-text font-medium">Brian H. Boyer</span> & <span
+                                    class="text-charcoal dark:text-dark-text font-medium">Carter Davis</span>
+                            </div>
+                        </div>
+
+                        <div class="md:col-span-3 md:text-right pt-2 flex justify-between md:block items-center">
+                            <span class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted italic">
+                                R&R at Review of Financial Studies
+                            </span>
+                            <span
+                                class="toggle-icon text-stone dark:text-dark-muted text-xl font-light md:ml-4 group-hover:text-crimson dark:group-hover:text-crimson-light transition-transform duration-300 inline-block">
+                                +
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="details-wrapper">
+                        <div class="details-inner pb-12">
+                            <div class="grid md:grid-cols-12 gap-6">
+                                <div class="hidden md:block md:col-span-2"></div>
+                                <div class="md:col-span-6 pr-8">
+                                    <h4 class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted mb-4">Abstract</h4>
+                                    <p class="font-serif text-lg text-charcoal dark:text-dark-text leading-relaxed">
+                                        We investigate the extent to which modern academic machine learning models agree on which factors are priced in the cross-section of returns. We find considerable disagreement across models that achieve high Sharpe ratios in remarkably different ways. The majority of average returns attributed to factor exposure by any given model is generally deemed pure alpha by other models. We develop a theoretical model with complexity that suggests machine learning models using available data are unlikely to ever span others, although they achieve high Sharpe ratios and produce additional novel insights.
+                                    </p>
+                                </div>
+                                <div
+                                    class="md:col-span-4 pl-8 border-l border-stone/10 dark:border-dark-border bg-stone/5 dark:bg-dark-surface -my-4 py-8 rounded-r-sm">
+                                    <h4 class="font-sans text-micro font-bold uppercase text-crimson dark:text-crimson-light mb-4">Key Insight
+                                    </h4>
+                                    <p class="font-sans text-xs md:text-sm text-charcoal dark:text-dark-text leading-relaxed mb-8">
+                                        No single factor model successfully describes all aspects of the cross-section—different models capture different dimensions of risk.
+                                    </p>
+                                    <div class="flex flex-col gap-3">
+                                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3967588" target="_blank"
+                                            class="text-left font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors flex items-center gap-3"
+                                            onclick="event.stopPropagation()">
+                                            <i class="fas fa-external-link-alt text-lg"></i> View on SSRN
+                                        </a>
+                                        <button
+                                            class="text-left font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors flex items-center gap-3"
+                                            data-citation="@unpublished{babayara2021limits,
+  title={The Limits of Factor Model Spanning},
+  author={Baba-Yara, Fahiz and Boyer, Brian H. and Davis, Carter},
+  note={R&R at Review of Financial Studies},
+  year={2021}
+}"
+                                            onclick="copyCitation(event)">
+                                            <i class="fas fa-quote-right text-lg"></i> Copy Citation
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Paper 4: The Multifactor Risk-Return Tradeoff -->
+                <article class="paper-row group border-b border-stone/10 dark:border-dark-border hover:bg-subtle dark:hover:bg-dark-surface cursor-pointer scroll-reveal"
+                    onclick="toggleDetails(this)" role="listitem">
+                    <div class="py-12 grid md:grid-cols-12 gap-6 relative">
+                        <div
+                            class="absolute -left-4 top-14 text-crimson dark:text-crimson-light opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300">
+                            <i class="fas fa-arrow-right text-xs"></i>
+                        </div>
+
+                        <div class="hidden md:block md:col-span-2 pt-2">
+                            <div
+                                class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted group-hover:text-ink dark:group-hover:text-dark-text transition-colors">
+                                2025
+                            </div>
+                        </div>
+
+                        <div class="md:col-span-7">
+                            <h3
+                                class="font-serif text-3xl md:text-4xl text-ink dark:text-dark-text leading-tight group-hover:text-crimson dark:group-hover:text-crimson-light transition-colors duration-300">
+                                The Multifactor Risk-Return Tradeoff
+                            </h3>
+                            <div class="mt-3 text-sm text-stone dark:text-dark-muted font-sans font-light">
+                                with <span class="text-charcoal dark:text-dark-text font-medium">Martijn Boons</span> & <span
+                                    class="text-charcoal dark:text-dark-text font-medium">Rik Frehen</span>
+                            </div>
+                        </div>
+
+                        <div class="md:col-span-3 md:text-right pt-2 flex justify-between md:block items-center">
+                            <span class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted italic">
+                                Working Paper
+                            </span>
+                            <span
+                                class="toggle-icon text-stone dark:text-dark-muted text-xl font-light md:ml-4 group-hover:text-crimson dark:group-hover:text-crimson-light transition-transform duration-300 inline-block">
+                                +
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="details-wrapper">
+                        <div class="details-inner pb-12">
+                            <div class="grid md:grid-cols-12 gap-6">
+                                <div class="hidden md:block md:col-span-2"></div>
+                                <div class="md:col-span-6 pr-8">
+                                    <h4 class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted mb-4">Abstract</h4>
+                                    <p class="font-serif text-lg text-charcoal dark:text-dark-text leading-relaxed">
+                                        The multifactor risk-return tradeoff is severely understudied relative to the market. In contrast to mixed evidence for the market, we find that the multifactor risk-return tradeoff is strongly positive when appropriately accounting for factor covariances. Our multifactor risk model shows that covariances contribute more to variation in factor returns than variances and performs at least as well in predicting multiple factors as benchmark models specifically designed to predict a single factor, both in- and out-of-sample. Consistent with a positive multifactor risk-return tradeoff, conditional multifactor alphas for a large set of anomalies are indistinguishable from unconditional alphas.
+                                    </p>
+                                </div>
+                                <div
+                                    class="md:col-span-4 pl-8 border-l border-stone/10 dark:border-dark-border bg-stone/5 dark:bg-dark-surface -my-4 py-8 rounded-r-sm">
+                                    <h4 class="font-sans text-micro font-bold uppercase text-crimson dark:text-crimson-light mb-4">Key Insight
+                                    </h4>
+                                    <p class="font-sans text-xs md:text-sm text-charcoal dark:text-dark-text leading-relaxed mb-8">
+                                        Factor covariances matter more than variances—the multifactor risk-return tradeoff is strongly positive when properly measured.
+                                    </p>
+                                    <div class="flex flex-col gap-3">
+                                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5176099" target="_blank"
+                                            class="text-left font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors flex items-center gap-3"
+                                            onclick="event.stopPropagation()">
+                                            <i class="fas fa-external-link-alt text-lg"></i> View on SSRN
+                                        </a>
+                                        <button
+                                            class="text-left font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors flex items-center gap-3"
+                                            data-citation="@unpublished{babayara2025multifactor,
+  title={The Multifactor Risk-Return Tradeoff},
+  author={Baba-Yara, Fahiz and Boons, Martijn and Frehen, Rik},
+  note={Working Paper},
+  year={2025}
+}"
+                                            onclick="copyCitation(event)">
+                                            <i class="fas fa-quote-right text-lg"></i> Copy Citation
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Paper 5: Risk from the Inside Out -->
+                <article class="paper-row group border-b border-stone/10 dark:border-dark-border hover:bg-subtle dark:hover:bg-dark-surface cursor-pointer scroll-reveal"
                     onclick="toggleDetails(this)" role="listitem">
                     <div class="py-12 grid md:grid-cols-12 gap-6 relative">
                         <div
@@ -706,6 +924,168 @@
                                         </a>
                                         <button
                                             class="text-left font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors flex items-center gap-3"
+                                            data-citation="@unpublished{babayara2025risk,
+  title={Risk from the Inside Out: Employee News Consumption},
+  author={Baba-Yara, Fahiz and Grigoris, Fotis and Kantak, Preetesh},
+  note={Working Paper},
+  year={2025}
+}"
+                                            onclick="copyCitation(event)">
+                                            <i class="fas fa-quote-right text-lg"></i> Copy Citation
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Paper 6: Commodity Returns: Lost in Financialization -->
+                <article class="paper-row group border-b border-stone/10 dark:border-dark-border hover:bg-subtle dark:hover:bg-dark-surface cursor-pointer scroll-reveal"
+                    onclick="toggleDetails(this)" role="listitem">
+                    <div class="py-12 grid md:grid-cols-12 gap-6 relative">
+                        <div
+                            class="absolute -left-4 top-14 text-crimson dark:text-crimson-light opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300">
+                            <i class="fas fa-arrow-right text-xs"></i>
+                        </div>
+
+                        <div class="hidden md:block md:col-span-2 pt-2">
+                            <div
+                                class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted group-hover:text-ink dark:group-hover:text-dark-text transition-colors">
+                                2022
+                            </div>
+                        </div>
+
+                        <div class="md:col-span-7">
+                            <h3
+                                class="font-serif text-3xl md:text-4xl text-ink dark:text-dark-text leading-tight group-hover:text-crimson dark:group-hover:text-crimson-light transition-colors duration-300">
+                                Commodity Returns: Lost in Financialization
+                            </h3>
+                            <div class="mt-3 text-sm text-stone dark:text-dark-muted font-sans font-light">
+                                with <span class="text-charcoal dark:text-dark-text font-medium">Massimiliano Bondatti</span>
+                            </div>
+                        </div>
+
+                        <div class="md:col-span-3 md:text-right pt-2 flex justify-between md:block items-center">
+                            <span class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted italic">
+                                Working Paper
+                            </span>
+                            <span
+                                class="toggle-icon text-stone dark:text-dark-muted text-xl font-light md:ml-4 group-hover:text-crimson dark:group-hover:text-crimson-light transition-transform duration-300 inline-block">
+                                +
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="details-wrapper">
+                        <div class="details-inner pb-12">
+                            <div class="grid md:grid-cols-12 gap-6">
+                                <div class="hidden md:block md:col-span-2"></div>
+                                <div class="md:col-span-6 pr-8">
+                                    <h4 class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted mb-4">Abstract</h4>
+                                    <p class="font-serif text-lg text-charcoal dark:text-dark-text leading-relaxed">
+                                        We study the effect of the growth in investment capital on the average returns of popular commodity futures trading strategies over time. We find that approximately 80% of commodity futures strategies that generated statistically significant average returns before financialization (2004) are no longer profitable. The decline in strategy returns is primarily driven by an adverse change in the average returns of a few systematically priced factors in the cross-section of commodity futures. Commodity strategies with relatively higher exposure to the Dow Jones Commodity Index experience a significant reduction in average returns.
+                                    </p>
+                                </div>
+                                <div
+                                    class="md:col-span-4 pl-8 border-l border-stone/10 dark:border-dark-border bg-stone/5 dark:bg-dark-surface -my-4 py-8 rounded-r-sm">
+                                    <h4 class="font-sans text-micro font-bold uppercase text-crimson dark:text-crimson-light mb-4">Key Insight
+                                    </h4>
+                                    <p class="font-sans text-xs md:text-sm text-charcoal dark:text-dark-text leading-relaxed mb-8">
+                                        Financialization has largely eliminated commodity risk premia—80% of previously profitable strategies no longer work.
+                                    </p>
+                                    <div class="flex flex-col gap-3">
+                                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4345427" target="_blank"
+                                            class="text-left font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors flex items-center gap-3"
+                                            onclick="event.stopPropagation()">
+                                            <i class="fas fa-external-link-alt text-lg"></i> View on SSRN
+                                        </a>
+                                        <button
+                                            class="text-left font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors flex items-center gap-3"
+                                            data-citation="@unpublished{babayara2022commodity,
+  title={Commodity Returns: Lost in Financialization},
+  author={Baba-Yara, Fahiz and Bondatti, Massimiliano},
+  note={Working Paper},
+  year={2022}
+}"
+                                            onclick="copyCitation(event)">
+                                            <i class="fas fa-quote-right text-lg"></i> Copy Citation
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Paper 7: Machine Learning and Return Predictability -->
+                <article class="paper-row group border-b border-stone/10 dark:border-dark-border hover:bg-subtle dark:hover:bg-dark-surface cursor-pointer scroll-reveal"
+                    onclick="toggleDetails(this)" role="listitem">
+                    <div class="py-12 grid md:grid-cols-12 gap-6 relative">
+                        <div
+                            class="absolute -left-4 top-14 text-crimson dark:text-crimson-light opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300">
+                            <i class="fas fa-arrow-right text-xs"></i>
+                        </div>
+
+                        <div class="hidden md:block md:col-span-2 pt-2">
+                            <div
+                                class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted group-hover:text-ink dark:group-hover:text-dark-text transition-colors">
+                                2020
+                            </div>
+                        </div>
+
+                        <div class="md:col-span-7">
+                            <h3
+                                class="font-serif text-3xl md:text-4xl text-ink dark:text-dark-text leading-tight group-hover:text-crimson dark:group-hover:text-crimson-light transition-colors duration-300">
+                                Machine Learning and Return Predictability Across Firms, Time and Portfolios
+                            </h3>
+                            <div class="mt-3 text-sm text-stone dark:text-dark-muted font-sans font-light">
+                                Solo-authored
+                            </div>
+                        </div>
+
+                        <div class="md:col-span-3 md:text-right pt-2 flex justify-between md:block items-center">
+                            <span class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted italic">
+                                Working Paper
+                            </span>
+                            <span
+                                class="toggle-icon text-stone dark:text-dark-muted text-xl font-light md:ml-4 group-hover:text-crimson dark:group-hover:text-crimson-light transition-transform duration-300 inline-block">
+                                +
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="details-wrapper">
+                        <div class="details-inner pb-12">
+                            <div class="grid md:grid-cols-12 gap-6">
+                                <div class="hidden md:block md:col-span-2"></div>
+                                <div class="md:col-span-6 pr-8">
+                                    <h4 class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted mb-4">Abstract</h4>
+                                    <p class="font-serif text-lg text-charcoal dark:text-dark-text leading-relaxed">
+                                        Previous research finds that machine learning methods predict short-term return variation in the cross-section of stocks, even when these methods do not impose strict economic restrictions. However, without such restrictions, the models' predictions fail to generalize in important ways, such as predicting time-series variation in returns to the market portfolio and long-short characteristic sorted portfolios. I show that this shortfall can be remedied by imposing restrictions that reflect findings in the financial economics literature in the architectural design of a neural network model and provide recommendations for using machine learning methods in asset pricing. Additionally, I study return predictability over multiple future horizons, shedding light on the dynamics of intermediate and long-run conditional expected returns.
+                                    </p>
+                                </div>
+                                <div
+                                    class="md:col-span-4 pl-8 border-l border-stone/10 dark:border-dark-border bg-stone/5 dark:bg-dark-surface -my-4 py-8 rounded-r-sm">
+                                    <h4 class="font-sans text-micro font-bold uppercase text-crimson dark:text-crimson-light mb-4">Key Insight
+                                    </h4>
+                                    <p class="font-sans text-xs md:text-sm text-charcoal dark:text-dark-text leading-relaxed mb-8">
+                                        Economic structure matters for ML—imposing economic restrictions in neural networks enables predictions that generalize across firms, time, and portfolios.
+                                    </p>
+                                    <div class="flex flex-col gap-3">
+                                        <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3696533" target="_blank"
+                                            class="text-left font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors flex items-center gap-3"
+                                            onclick="event.stopPropagation()">
+                                            <i class="fas fa-external-link-alt text-lg"></i> View on SSRN
+                                        </a>
+                                        <button
+                                            class="text-left font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors flex items-center gap-3"
+                                            data-citation="@unpublished{babayara2020machine,
+  title={Machine Learning and Return Predictability Across Firms, Time and Portfolios},
+  author={Baba-Yara, Fahiz},
+  note={Working Paper},
+  year={2020}
+}"
                                             onclick="copyCitation(event)">
                                             <i class="fas fa-quote-right text-lg"></i> Copy Citation
                                         </button>
@@ -737,12 +1117,6 @@
                             F303 Intermediate Investments
                         </div>
                         <div class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted mt-2">Undergraduate</div>
-                    </div>
-                    <div class="group">
-                        <div class="font-serif text-xl text-ink dark:text-dark-text group-hover:text-crimson dark:group-hover:text-crimson-light transition-colors">
-                            F600 Asset Pricing Theory
-                        </div>
-                        <div class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted mt-2">PhD Level</div>
                     </div>
                 </div>
 
@@ -800,7 +1174,8 @@
         // Copy Citation
         function copyCitation(event) {
             event.stopPropagation();
-            const bibtex = `@article{baba2024persistent, title={Persistent and Transitory Components...}, author={...}, year={2024}}`;
+            const button = event.currentTarget;
+            const bibtex = button.getAttribute('data-citation');
 
             navigator.clipboard.writeText(bibtex).then(() => {
                 const toast = document.getElementById('toast');
