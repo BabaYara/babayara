@@ -106,14 +106,23 @@
 
         /* Hover States for List Items */
         .paper-row {
-            transition: background-color 0.4s ease;
+            transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Accordion Animation */
+        .paper-row:hover {
+            transform: translateX(4px);
+        }
+
+        .paper-row.expanded {
+            transform: none;
+        }
+
+        /* Accordion Animation - Refined */
         .details-wrapper {
             display: grid;
             grid-template-rows: 0fr;
-            transition: grid-template-rows 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .details-wrapper.open {
@@ -122,14 +131,84 @@
 
         .details-inner {
             overflow: hidden;
-            opacity: 0;
-            transform: translateY(10px);
-            transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s;
         }
 
-        .details-wrapper.open .details-inner {
+        /* Staggered content reveal inside accordion */
+        .details-inner .abstract-block,
+        .details-inner .insight-block {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                        transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .details-inner .abstract-block {
+            transition-delay: 0.1s;
+        }
+
+        .details-inner .insight-block {
+            transition-delay: 0.2s;
+        }
+
+        .details-wrapper.open .details-inner .abstract-block,
+        .details-wrapper.open .details-inner .insight-block {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* Toggle Icon - Rotating Chevron */
+        .toggle-icon {
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .toggle-icon.rotated {
+            transform: rotate(180deg);
+        }
+
+        /* Action buttons hover effects */
+        .insight-block a,
+        .insight-block button {
+            position: relative;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .insight-block a:hover,
+        .insight-block button:hover {
+            transform: translateX(4px);
+        }
+
+        .insight-block a i,
+        .insight-block button i {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .insight-block a:hover i,
+        .insight-block button:hover i {
+            transform: scale(1.15);
+        }
+
+        /* Paper title hover underline effect */
+        .paper-row h3 {
+            position: relative;
+            display: inline;
+            background-image: linear-gradient(currentColor, currentColor);
+            background-position: 0% 100%;
+            background-repeat: no-repeat;
+            background-size: 0% 1px;
+            transition: background-size 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .paper-row:hover h3 {
+            background-size: 100% 1px;
+        }
+
+        /* Year column subtle animation */
+        .paper-row .font-sans.text-micro {
+            transition: letter-spacing 0.3s ease, color 0.3s ease;
+        }
+
+        .paper-row:hover .font-sans.text-micro:first-child {
+            letter-spacing: 0.2em;
         }
 
         /* Selection Color */
@@ -169,12 +248,12 @@
             display: none !important;
         }
 
-        /* Scroll Animations */
+        /* Scroll Animations - Enhanced */
         .scroll-reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(40px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .scroll-reveal.revealed {
@@ -184,9 +263,9 @@
 
         .scroll-reveal-left {
             opacity: 0;
-            transform: translateX(-30px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateX(-40px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .scroll-reveal-left.revealed {
@@ -194,7 +273,26 @@
             transform: translateX(0);
         }
 
-        /* Stagger delays for children */
+        /* Paper-specific reveal with scale */
+        .paper-row.scroll-reveal {
+            transform: translateY(30px) scale(0.98);
+            transform-origin: top center;
+        }
+
+        .paper-row.scroll-reveal.revealed {
+            transform: translateY(0) scale(1);
+        }
+
+        /* Dynamic stagger delays for papers */
+        .paper-row:nth-child(1) { transition-delay: 0.05s; }
+        .paper-row:nth-child(2) { transition-delay: 0.1s; }
+        .paper-row:nth-child(3) { transition-delay: 0.15s; }
+        .paper-row:nth-child(4) { transition-delay: 0.2s; }
+        .paper-row:nth-child(5) { transition-delay: 0.25s; }
+        .paper-row:nth-child(6) { transition-delay: 0.3s; }
+        .paper-row:nth-child(7) { transition-delay: 0.35s; }
+
+        /* Legacy stagger classes */
         .stagger-1 { transition-delay: 0.1s; }
         .stagger-2 { transition-delay: 0.2s; }
         .stagger-3 { transition-delay: 0.3s; }
@@ -555,8 +653,8 @@
                                 Journal of Financial Economics
                             </span>
                             <span
-                                class="toggle-icon text-stone dark:text-dark-muted text-xl font-light md:ml-4 group-hover:text-crimson dark:group-hover:text-crimson-light transition-transform duration-300 inline-block">
-                                +
+                                class="toggle-icon text-stone dark:text-dark-muted md:ml-4 group-hover:text-crimson dark:group-hover:text-crimson-light inline-block">
+                                <i class="fas fa-chevron-down text-sm"></i>
                             </span>
                         </div>
                     </div>
@@ -568,7 +666,7 @@
                                 <div class="hidden md:block md:col-span-2"></div>
 
                                 <!-- Abstract -->
-                                <div class="md:col-span-6 pr-8">
+                                <div class="md:col-span-6 pr-8 abstract-block">
                                     <h4 class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted mb-4">Abstract</h4>
                                     <p class="font-serif text-lg text-charcoal dark:text-dark-text leading-relaxed">
                                         We decompose firm characteristics into persistent and transitory components. We
@@ -581,7 +679,7 @@
 
                                 <!-- Key Insights (Highlighted) -->
                                 <div
-                                    class="md:col-span-4 pl-8 border-l border-stone/10 dark:border-dark-border bg-stone/5 dark:bg-dark-surface -my-4 py-8 rounded-r-sm">
+                                    class="md:col-span-4 pl-8 border-l border-stone/10 dark:border-dark-border bg-stone/5 dark:bg-dark-surface -my-4 py-8 rounded-r-sm insight-block">
                                     <h4 class="font-sans text-micro font-bold uppercase text-crimson dark:text-crimson-light mb-4">Key Insight
                                     </h4>
                                     <p class="font-sans text-xs md:text-sm text-charcoal dark:text-dark-text leading-relaxed mb-8">
@@ -645,8 +743,8 @@
                                 Review of Finance
                             </span>
                             <span
-                                class="toggle-icon text-stone dark:text-dark-muted text-xl font-light md:ml-4 group-hover:text-crimson dark:group-hover:text-crimson-light transition-transform duration-300 inline-block">
-                                +
+                                class="toggle-icon text-stone dark:text-dark-muted md:ml-4 group-hover:text-crimson dark:group-hover:text-crimson-light inline-block">
+                                <i class="fas fa-chevron-down text-sm"></i>
                             </span>
                         </div>
                     </div>
@@ -655,7 +753,7 @@
                         <div class="details-inner pb-12">
                             <div class="grid md:grid-cols-12 gap-6">
                                 <div class="hidden md:block md:col-span-2"></div>
-                                <div class="md:col-span-6 pr-8">
+                                <div class="md:col-span-6 pr-8 abstract-block">
                                     <h4 class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted mb-4">Abstract</h4>
                                     <p class="font-serif text-lg text-charcoal dark:text-dark-text leading-relaxed">
                                         We show that returns to value strategies in individual equities, industries,
@@ -665,7 +763,7 @@
                                     </p>
                                 </div>
                                 <div
-                                    class="md:col-span-4 pl-8 border-l border-stone/10 dark:border-dark-border bg-stone/5 dark:bg-dark-surface -my-4 py-8 rounded-r-sm">
+                                    class="md:col-span-4 pl-8 border-l border-stone/10 dark:border-dark-border bg-stone/5 dark:bg-dark-surface -my-4 py-8 rounded-r-sm insight-block">
                                     <h4 class="font-sans text-micro font-bold uppercase text-crimson dark:text-crimson-light mb-4">Key Insight
                                     </h4>
                                     <p class="font-sans text-xs md:text-sm text-charcoal dark:text-dark-text leading-relaxed mb-8">
@@ -731,8 +829,8 @@
                                 R&R at Review of Financial Studies
                             </span>
                             <span
-                                class="toggle-icon text-stone dark:text-dark-muted text-xl font-light md:ml-4 group-hover:text-crimson dark:group-hover:text-crimson-light transition-transform duration-300 inline-block">
-                                +
+                                class="toggle-icon text-stone dark:text-dark-muted md:ml-4 group-hover:text-crimson dark:group-hover:text-crimson-light inline-block">
+                                <i class="fas fa-chevron-down text-sm"></i>
                             </span>
                         </div>
                     </div>
@@ -741,14 +839,14 @@
                         <div class="details-inner pb-12">
                             <div class="grid md:grid-cols-12 gap-6">
                                 <div class="hidden md:block md:col-span-2"></div>
-                                <div class="md:col-span-6 pr-8">
+                                <div class="md:col-span-6 pr-8 abstract-block">
                                     <h4 class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted mb-4">Abstract</h4>
                                     <p class="font-serif text-lg text-charcoal dark:text-dark-text leading-relaxed">
                                         We investigate the extent to which modern academic machine learning models agree on which factors are priced in the cross-section of returns. We find considerable disagreement across models that achieve high Sharpe ratios in remarkably different ways. The majority of average returns attributed to factor exposure by any given model is generally deemed pure alpha by other models. We develop a theoretical model with complexity that suggests machine learning models using available data are unlikely to ever span others, although they achieve high Sharpe ratios and produce additional novel insights.
                                     </p>
                                 </div>
                                 <div
-                                    class="md:col-span-4 pl-8 border-l border-stone/10 dark:border-dark-border bg-stone/5 dark:bg-dark-surface -my-4 py-8 rounded-r-sm">
+                                    class="md:col-span-4 pl-8 border-l border-stone/10 dark:border-dark-border bg-stone/5 dark:bg-dark-surface -my-4 py-8 rounded-r-sm insight-block">
                                     <h4 class="font-sans text-micro font-bold uppercase text-crimson dark:text-crimson-light mb-4">Key Insight
                                     </h4>
                                     <p class="font-sans text-xs md:text-sm text-charcoal dark:text-dark-text leading-relaxed mb-8">
@@ -810,8 +908,8 @@
                                 Working Paper
                             </span>
                             <span
-                                class="toggle-icon text-stone dark:text-dark-muted text-xl font-light md:ml-4 group-hover:text-crimson dark:group-hover:text-crimson-light transition-transform duration-300 inline-block">
-                                +
+                                class="toggle-icon text-stone dark:text-dark-muted md:ml-4 group-hover:text-crimson dark:group-hover:text-crimson-light inline-block">
+                                <i class="fas fa-chevron-down text-sm"></i>
                             </span>
                         </div>
                     </div>
@@ -820,14 +918,14 @@
                         <div class="details-inner pb-12">
                             <div class="grid md:grid-cols-12 gap-6">
                                 <div class="hidden md:block md:col-span-2"></div>
-                                <div class="md:col-span-6 pr-8">
+                                <div class="md:col-span-6 pr-8 abstract-block">
                                     <h4 class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted mb-4">Abstract</h4>
                                     <p class="font-serif text-lg text-charcoal dark:text-dark-text leading-relaxed">
                                         The multifactor risk-return tradeoff is severely understudied relative to the market. In contrast to mixed evidence for the market, we find that the multifactor risk-return tradeoff is strongly positive when appropriately accounting for factor covariances. Our multifactor risk model shows that covariances contribute more to variation in factor returns than variances and performs at least as well in predicting multiple factors as benchmark models specifically designed to predict a single factor, both in- and out-of-sample. Consistent with a positive multifactor risk-return tradeoff, conditional multifactor alphas for a large set of anomalies are indistinguishable from unconditional alphas.
                                     </p>
                                 </div>
                                 <div
-                                    class="md:col-span-4 pl-8 border-l border-stone/10 dark:border-dark-border bg-stone/5 dark:bg-dark-surface -my-4 py-8 rounded-r-sm">
+                                    class="md:col-span-4 pl-8 border-l border-stone/10 dark:border-dark-border bg-stone/5 dark:bg-dark-surface -my-4 py-8 rounded-r-sm insight-block">
                                     <h4 class="font-sans text-micro font-bold uppercase text-crimson dark:text-crimson-light mb-4">Key Insight
                                     </h4>
                                     <p class="font-sans text-xs md:text-sm text-charcoal dark:text-dark-text leading-relaxed mb-8">
@@ -889,8 +987,8 @@
                                 Working Paper
                             </span>
                             <span
-                                class="toggle-icon text-stone dark:text-dark-muted text-xl font-light md:ml-4 group-hover:text-crimson dark:group-hover:text-crimson-light transition-transform duration-300 inline-block">
-                                +
+                                class="toggle-icon text-stone dark:text-dark-muted md:ml-4 group-hover:text-crimson dark:group-hover:text-crimson-light inline-block">
+                                <i class="fas fa-chevron-down text-sm"></i>
                             </span>
                         </div>
                     </div>
@@ -899,7 +997,7 @@
                         <div class="details-inner pb-12">
                             <div class="grid md:grid-cols-12 gap-6">
                                 <div class="hidden md:block md:col-span-2"></div>
-                                <div class="md:col-span-6 pr-8">
+                                <div class="md:col-span-6 pr-8 abstract-block">
                                     <h4 class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted mb-4">Abstract</h4>
                                     <p class="font-serif text-lg text-charcoal dark:text-dark-text leading-relaxed">
                                         We propose a novel measure of firm risk based on the news consumption patterns
@@ -909,7 +1007,7 @@
                                     </p>
                                 </div>
                                 <div
-                                    class="md:col-span-4 pl-8 border-l border-stone/10 dark:border-dark-border bg-stone/5 dark:bg-dark-surface -my-4 py-8 rounded-r-sm">
+                                    class="md:col-span-4 pl-8 border-l border-stone/10 dark:border-dark-border bg-stone/5 dark:bg-dark-surface -my-4 py-8 rounded-r-sm insight-block">
                                     <h4 class="font-sans text-micro font-bold uppercase text-crimson dark:text-crimson-light mb-4">Key Insight
                                     </h4>
                                     <p class="font-sans text-xs md:text-sm text-charcoal dark:text-dark-text leading-relaxed mb-8">
@@ -971,8 +1069,8 @@
                                 Working Paper
                             </span>
                             <span
-                                class="toggle-icon text-stone dark:text-dark-muted text-xl font-light md:ml-4 group-hover:text-crimson dark:group-hover:text-crimson-light transition-transform duration-300 inline-block">
-                                +
+                                class="toggle-icon text-stone dark:text-dark-muted md:ml-4 group-hover:text-crimson dark:group-hover:text-crimson-light inline-block">
+                                <i class="fas fa-chevron-down text-sm"></i>
                             </span>
                         </div>
                     </div>
@@ -981,14 +1079,14 @@
                         <div class="details-inner pb-12">
                             <div class="grid md:grid-cols-12 gap-6">
                                 <div class="hidden md:block md:col-span-2"></div>
-                                <div class="md:col-span-6 pr-8">
+                                <div class="md:col-span-6 pr-8 abstract-block">
                                     <h4 class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted mb-4">Abstract</h4>
                                     <p class="font-serif text-lg text-charcoal dark:text-dark-text leading-relaxed">
                                         We study the effect of the growth in investment capital on the average returns of popular commodity futures trading strategies over time. We find that approximately 80% of commodity futures strategies that generated statistically significant average returns before financialization (2004) are no longer profitable. The decline in strategy returns is primarily driven by an adverse change in the average returns of a few systematically priced factors in the cross-section of commodity futures. Commodity strategies with relatively higher exposure to the Dow Jones Commodity Index experience a significant reduction in average returns.
                                     </p>
                                 </div>
                                 <div
-                                    class="md:col-span-4 pl-8 border-l border-stone/10 dark:border-dark-border bg-stone/5 dark:bg-dark-surface -my-4 py-8 rounded-r-sm">
+                                    class="md:col-span-4 pl-8 border-l border-stone/10 dark:border-dark-border bg-stone/5 dark:bg-dark-surface -my-4 py-8 rounded-r-sm insight-block">
                                     <h4 class="font-sans text-micro font-bold uppercase text-crimson dark:text-crimson-light mb-4">Key Insight
                                     </h4>
                                     <p class="font-sans text-xs md:text-sm text-charcoal dark:text-dark-text leading-relaxed mb-8">
@@ -1049,8 +1147,8 @@
                                 Working Paper
                             </span>
                             <span
-                                class="toggle-icon text-stone dark:text-dark-muted text-xl font-light md:ml-4 group-hover:text-crimson dark:group-hover:text-crimson-light transition-transform duration-300 inline-block">
-                                +
+                                class="toggle-icon text-stone dark:text-dark-muted md:ml-4 group-hover:text-crimson dark:group-hover:text-crimson-light inline-block">
+                                <i class="fas fa-chevron-down text-sm"></i>
                             </span>
                         </div>
                     </div>
@@ -1059,14 +1157,14 @@
                         <div class="details-inner pb-12">
                             <div class="grid md:grid-cols-12 gap-6">
                                 <div class="hidden md:block md:col-span-2"></div>
-                                <div class="md:col-span-6 pr-8">
+                                <div class="md:col-span-6 pr-8 abstract-block">
                                     <h4 class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted mb-4">Abstract</h4>
                                     <p class="font-serif text-lg text-charcoal dark:text-dark-text leading-relaxed">
                                         Previous research finds that machine learning methods predict short-term return variation in the cross-section of stocks, even when these methods do not impose strict economic restrictions. However, without such restrictions, the models' predictions fail to generalize in important ways, such as predicting time-series variation in returns to the market portfolio and long-short characteristic sorted portfolios. I show that this shortfall can be remedied by imposing restrictions that reflect findings in the financial economics literature in the architectural design of a neural network model and provide recommendations for using machine learning methods in asset pricing. Additionally, I study return predictability over multiple future horizons, shedding light on the dynamics of intermediate and long-run conditional expected returns.
                                     </p>
                                 </div>
                                 <div
-                                    class="md:col-span-4 pl-8 border-l border-stone/10 dark:border-dark-border bg-stone/5 dark:bg-dark-surface -my-4 py-8 rounded-r-sm">
+                                    class="md:col-span-4 pl-8 border-l border-stone/10 dark:border-dark-border bg-stone/5 dark:bg-dark-surface -my-4 py-8 rounded-r-sm insight-block">
                                     <h4 class="font-sans text-micro font-bold uppercase text-crimson dark:text-crimson-light mb-4">Key Insight
                                     </h4>
                                     <p class="font-sans text-xs md:text-sm text-charcoal dark:text-dark-text leading-relaxed mb-8">
@@ -1150,24 +1248,30 @@
             activeWrappers.forEach(wrapper => {
                 if (wrapper.parentElement !== element) {
                     wrapper.classList.remove('open');
+                    wrapper.parentElement.classList.remove('expanded');
                     const icon = wrapper.parentElement.querySelector('.toggle-icon');
                     if (icon) {
-                        icon.innerHTML = '+';
+                        icon.classList.remove('rotated');
                     }
                 }
             });
 
             const wrapper = element.querySelector('.details-wrapper');
             const icon = element.querySelector('.toggle-icon');
+            const isOpening = !wrapper.classList.contains('open');
 
             wrapper.classList.toggle('open');
+            element.classList.toggle('expanded');
 
             if (icon) {
-                if (wrapper.classList.contains('open')) {
-                    icon.innerHTML = '−';
-                } else {
-                    icon.innerHTML = '+';
-                }
+                icon.classList.toggle('rotated');
+            }
+
+            // Smooth scroll to show expanded content
+            if (isOpening) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
             }
         }
 
