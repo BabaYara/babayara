@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' }" x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))" :class="{ 'dark': darkMode }">
 
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,27 @@
     <title>Fahiz Baba-Yara | Assistant Professor of Finance</title>
     <meta name="description"
         content="Academic portfolio of Fahiz Baba-Yara, Assistant Professor of Finance at Kelley School of Business.">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Fahiz Baba-Yara | Assistant Professor of Finance">
+    <meta property="og:description" content="Academic portfolio featuring research on Asset Pricing, Return Predictability, and Machine Learning in Finance.">
+    <meta property="og:image" content="https://babayara.com/Portrait05.webp">
+    <meta property="og:url" content="https://babayara.com">
+    <meta property="og:site_name" content="Fahiz Baba-Yara">
+    <meta property="profile:first_name" content="Fahiz">
+    <meta property="profile:last_name" content="Baba-Yara">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fahiz Baba-Yara | Assistant Professor of Finance">
+    <meta name="twitter:description" content="Academic portfolio featuring research on Asset Pricing, Return Predictability, and Machine Learning in Finance.">
+    <meta name="twitter:image" content="https://babayara.com/Portrait05.webp">
+
+    <!-- Additional SEO -->
+    <meta name="author" content="Fahiz Baba-Yara">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://babayara.com">
 
     <!-- Fonts: Crimson Pro (Serif) & Inter (Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,10 +39,14 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Alpine.js for dark mode -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     fontFamily: {
@@ -30,12 +55,19 @@
                     },
                     colors: {
                         crimson: '#990000',
+                        'crimson-light': '#cc3333',
                         ink: '#111111',
                         charcoal: '#333333',
                         stone: '#888888',
                         line: '#E5E5E5',
                         paper: '#ffffff',
                         subtle: '#F9FAFB',
+                        // Dark mode colors
+                        'dark-bg': '#0a0a0a',
+                        'dark-surface': '#141414',
+                        'dark-border': '#2a2a2a',
+                        'dark-text': '#e5e5e5',
+                        'dark-muted': '#a0a0a0',
                     },
                     fontSize: {
                         'micro': ['0.65rem', { lineHeight: '1rem', letterSpacing: '0.15em' }],
@@ -58,6 +90,18 @@
             background-color: #ffffff;
             color: #111111;
             -webkit-font-smoothing: antialiased;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Dark Mode */
+        .dark body {
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+        }
+
+        .dark ::selection {
+            background: rgba(204, 51, 51, 0.3);
+            color: #cc3333;
         }
 
         /* Hover States for List Items */
@@ -119,103 +163,331 @@
                 transform: translateY(0);
             }
         }
+
+        /* Alpine.js cloak */
+        [x-cloak] {
+            display: none !important;
+        }
+
+        /* Scroll Animations */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-reveal-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .scroll-reveal-left.revealed {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Stagger delays for children */
+        .stagger-1 { transition-delay: 0.1s; }
+        .stagger-2 { transition-delay: 0.2s; }
+        .stagger-3 { transition-delay: 0.3s; }
+
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            .scroll-reveal,
+            .scroll-reveal-left,
+            .fade-enter {
+                opacity: 1;
+                transform: none;
+                animation: none;
+                transition: none;
+            }
+        }
+
+        /* Focus visible styles for accessibility */
+        *:focus-visible {
+            outline: 2px solid #990000;
+            outline-offset: 2px;
+        }
+
+        .dark *:focus-visible {
+            outline-color: #cc3333;
+        }
+
+        /* Skip to content link */
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #990000;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0 0 0.5rem 0.5rem;
+            z-index: 100;
+            transition: top 0.3s ease;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
     </style>
+
+    <!-- JSON-LD Structured Data for Academic SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Fahiz Baba-Yara",
+        "givenName": "Fahiz",
+        "familyName": "Baba-Yara",
+        "jobTitle": "Assistant Professor of Finance",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Kelley School of Business",
+            "parentOrganization": {
+                "@type": "EducationalOrganization",
+                "name": "Indiana University"
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "1309 E. Tenth Street",
+                "addressLocality": "Bloomington",
+                "addressRegion": "IN",
+                "postalCode": "47405",
+                "addressCountry": "US"
+            }
+        },
+        "email": "fbabayara@iu.edu",
+        "url": "https://babayara.com",
+        "image": "https://babayara.com/Portrait05.webp",
+        "sameAs": [],
+        "alumniOf": [],
+        "knowsAbout": [
+            "Asset Pricing",
+            "Return Predictability",
+            "Machine Learning in Finance",
+            "Financial Economics"
+        ],
+        "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Finance Professor",
+            "occupationLocation": {
+                "@type": "Country",
+                "name": "United States"
+            },
+            "educationRequirements": "PhD in Finance"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Research Publications by Fahiz Baba-Yara",
+        "itemListElement": [
+            {
+                "@type": "ScholarlyArticle",
+                "position": 1,
+                "name": "Persistent and Transitory Components of Firm Characteristics",
+                "author": [
+                    {"@type": "Person", "name": "Fahiz Baba-Yara"},
+                    {"@type": "Person", "name": "Martijn Boons"},
+                    {"@type": "Person", "name": "Andrea Tamoni"}
+                ],
+                "datePublished": "2024",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Journal of Financial Economics"
+                },
+                "about": "Decomposition of firm characteristics into persistent and transitory components for improved investment strategies"
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "position": 2,
+                "name": "Value Return Predictability Across Asset Classes",
+                "author": [
+                    {"@type": "Person", "name": "Fahiz Baba-Yara"},
+                    {"@type": "Person", "name": "Martijn Boons"},
+                    {"@type": "Person", "name": "Andrea Tamoni"}
+                ],
+                "datePublished": "2021",
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Review of Finance"
+                },
+                "about": "Cross-asset class value return predictability analysis"
+            },
+            {
+                "@type": "ScholarlyArticle",
+                "position": 3,
+                "name": "Risk from the Inside Out: Employee News Consumption",
+                "author": [
+                    {"@type": "Person", "name": "Fahiz Baba-Yara"},
+                    {"@type": "Person", "name": "Fotis Grigoris"},
+                    {"@type": "Person", "name": "Preetesh Kantak"}
+                ],
+                "datePublished": "2025",
+                "about": "Novel firm risk measure based on employee news consumption patterns"
+            }
+        ]
+    }
+    </script>
 </head>
 
-<body class="antialiased">
+<body class="antialiased bg-paper dark:bg-dark-bg text-ink dark:text-dark-text transition-colors duration-300">
+
+    <!-- Skip to Content Link (A11y) -->
+    <a href="#main-content" class="skip-link font-sans font-bold text-sm uppercase tracking-wider">
+        Skip to main content
+    </a>
 
     <!-- Minimal Nav -->
-    <nav class="fixed top-0 w-full z-50 pointer-events-none mix-blend-multiply">
+    <nav class="fixed top-0 w-full z-50 pointer-events-none" :class="darkMode ? '' : 'mix-blend-multiply'">
         <div class="max-w-6xl mx-auto px-6 md:px-12 h-24 flex justify-between items-center pointer-events-auto">
             <a href="#"
-                class="font-sans text-micro font-bold uppercase text-ink/60 hover:text-crimson transition-colors">
+                class="font-sans text-micro font-bold uppercase text-ink/60 dark:text-dark-text/60 hover:text-crimson dark:hover:text-crimson-light transition-colors">
                 F. Baba-Yara
             </a>
 
-            <div class="hidden md:flex gap-12 font-sans text-micro font-bold uppercase text-stone">
-                <a href="#about" class="hover:text-ink transition-colors">About</a>
-                <a href="#research" class="hover:text-ink transition-colors">Research</a>
-                <a href="#teaching" class="hover:text-ink transition-colors">Teaching</a>
+            <div class="flex items-center gap-8 md:gap-12">
+                <div class="hidden md:flex gap-12 font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted">
+                    <a href="#about" class="hover:text-ink dark:hover:text-dark-text transition-colors">About</a>
+                    <a href="#research" class="hover:text-ink dark:hover:text-dark-text transition-colors">Research</a>
+                    <a href="#teaching" class="hover:text-ink dark:hover:text-dark-text transition-colors">Teaching</a>
+                </div>
+
+                <!-- Dark Mode Toggle -->
+                <button @click="darkMode = !darkMode"
+                    class="w-10 h-10 rounded-full flex items-center justify-center text-stone dark:text-dark-muted hover:text-ink dark:hover:text-dark-text hover:bg-subtle dark:hover:bg-dark-surface transition-all"
+                    :aria-label="darkMode ? 'Switch to light mode' : 'Switch to dark mode'">
+                    <i class="fas fa-sun text-sm" x-show="darkMode" x-cloak></i>
+                    <i class="fas fa-moon text-sm" x-show="!darkMode"></i>
+                </button>
             </div>
         </div>
     </nav>
 
-    <main class="max-w-6xl mx-auto px-6 md:px-12 pt-40 pb-32">
+    <main id="main-content" class="max-w-6xl mx-auto px-6 md:px-12 pt-40 pb-32" role="main">
 
         <!-- Hero: Editorial Layout -->
-        <section id="about" class="mb-48 fade-enter relative">
+        <section id="about" class="mb-48 fade-enter relative" aria-labelledby="hero-name">
 
             <!-- Sticky Contact (Absolute) -->
             <div class="hidden md:block absolute right-0 top-4 text-right z-10">
                 <a href="mailto:fbabayara@iu.edu"
-                    class="block font-sans text-xs font-medium text-stone hover:text-crimson transition-colors mb-3">fbabayara@iu.edu</a>
+                    class="block font-sans text-xs font-medium text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors mb-3"
+                    aria-label="Email Fahiz Baba-Yara">fbabayara@iu.edu</a>
+                <div class="flex justify-end gap-3 mb-3">
+                    <a href="https://scholar.google.com/citations?user=cOs0q6MAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"
+                        class="text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors"
+                        aria-label="Google Scholar Profile">
+                        <i class="fas fa-graduation-cap text-sm"></i>
+                    </a>
+                    <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2811355" target="_blank" rel="noopener noreferrer"
+                        class="text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors"
+                        aria-label="SSRN Author Page">
+                        <i class="fas fa-file-alt text-sm"></i>
+                    </a>
+                </div>
                 <a href="cv.pdf" target="_blank"
-                    class="inline-block border border-stone/20 px-4 py-2 rounded-full font-sans text-[10px] font-bold uppercase tracking-widest text-stone hover:border-crimson hover:text-crimson transition-colors">
+                    class="inline-block border border-stone/20 dark:border-dark-border px-4 py-2 rounded-full font-sans text-[10px] font-bold uppercase tracking-widest text-stone dark:text-dark-muted hover:border-crimson dark:hover:border-crimson-light hover:text-crimson dark:hover:text-crimson-light transition-colors"
+                    aria-label="Download Curriculum Vitae">
                     Curriculum Vitae
                 </a>
             </div>
 
-            <h1 class="font-serif text-hero md:text-mega text-ink mb-16 tracking-tight">
+            <h1 id="hero-name" class="font-serif text-hero md:text-mega text-ink dark:text-dark-text mb-16 tracking-tight">
                 Fahiz <br class="hidden md:block">Baba-Yara
             </h1>
 
             <div class="grid md:grid-cols-12 gap-8 md:gap-12 items-start">
-                <!-- Portrait Image -->
+                <!-- Portrait Image (Optimized with WebP + srcset) -->
                 <div class="md:col-span-4 order-first">
                     <div class="relative">
-                        <img src="Portrait05.jpg" alt="Fahiz Baba-Yara"
-                            class="w-full max-w-xs md:max-w-none grayscale hover:grayscale-0 transition-all duration-700 rounded-sm shadow-lg">
-                        <div class="absolute inset-0 border border-stone/10 rounded-sm pointer-events-none"></div>
+                        <picture>
+                            <source type="image/webp"
+                                srcset="Portrait05-400w.webp 400w, Portrait05-600w.webp 600w, Portrait05-800w.webp 800w, Portrait05.webp 895w"
+                                sizes="(max-width: 768px) 320px, 400px">
+                            <source type="image/jpeg"
+                                srcset="Portrait05-400w.jpg 400w, Portrait05-600w.jpg 600w, Portrait05.jpg 895w"
+                                sizes="(max-width: 768px) 320px, 400px">
+                            <img src="Portrait05.jpg" alt="Fahiz Baba-Yara, Assistant Professor of Finance at Kelley School of Business"
+                                class="w-full max-w-xs md:max-w-none grayscale hover:grayscale-0 transition-all duration-700 rounded-sm shadow-lg"
+                                loading="eager"
+                                width="895" height="875">
+                        </picture>
+                        <div class="absolute inset-0 border border-stone/10 dark:border-dark-border rounded-sm pointer-events-none"></div>
                     </div>
                 </div>
 
                 <div class="md:col-span-7 md:col-start-6 space-y-10">
-                    <p class="text-2xl md:text-3xl font-serif text-charcoal leading-snug font-light">
+                    <p class="text-2xl md:text-3xl font-serif text-charcoal dark:text-dark-text leading-snug font-light">
                         Assistant Professor of Finance at the <span
-                            class="text-ink border-b border-stone/20 pb-0.5">Kelley School of Business</span>.
+                            class="text-ink dark:text-dark-text border-b border-stone/20 dark:border-dark-border pb-0.5">Kelley School of Business</span>.
                     </p>
-                    <p class="text-base font-sans text-stone leading-relaxed max-w-lg">
+                    <p class="text-base font-sans text-stone dark:text-dark-muted leading-relaxed max-w-lg">
                         My work separates persistent fundamentals from transitory noise in financial markets. Research
                         interests include Asset Pricing, Return Predictability, and Machine Learning.
                     </p>
 
                     <!-- Mobile Contact -->
-                    <div class="md:hidden pt-6 flex gap-6 text-sm font-medium text-stone">
-                        <a href="cv.pdf" target="_blank" class="hover:text-crimson border-b border-stone/20 pb-0.5">CV</a>
+                    <div class="md:hidden pt-6 flex flex-wrap gap-4 text-sm font-medium text-stone dark:text-dark-muted">
+                        <a href="cv.pdf" target="_blank" class="hover:text-crimson dark:hover:text-crimson-light border-b border-stone/20 dark:border-dark-border pb-0.5" aria-label="Download CV">CV</a>
                         <a href="mailto:fbabayara@iu.edu"
-                            class="hover:text-crimson border-b border-stone/20 pb-0.5">Email</a>
+                            class="hover:text-crimson dark:hover:text-crimson-light border-b border-stone/20 dark:border-dark-border pb-0.5" aria-label="Send Email">Email</a>
+                        <a href="https://scholar.google.com/citations?user=cOs0q6MAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"
+                            class="hover:text-crimson dark:hover:text-crimson-light" aria-label="Google Scholar">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                        <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2811355" target="_blank" rel="noopener noreferrer"
+                            class="hover:text-crimson dark:hover:text-crimson-light" aria-label="SSRN">
+                            <i class="fas fa-file-alt"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener noreferrer"
+                            class="hover:text-crimson dark:hover:text-crimson-light" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Research: Gallery List -->
-        <section id="research" class="mb-40">
+        <section id="research" class="mb-40" aria-labelledby="research-heading">
             <!-- Section Header -->
-            <div class="grid md:grid-cols-12 gap-6 mb-8 fade-enter delay-100">
+            <div class="grid md:grid-cols-12 gap-6 mb-8 scroll-reveal">
                 <div class="hidden md:block md:col-span-2"></div>
-                <div class="md:col-span-10 border-b border-ink/80 pb-4 flex justify-between items-end">
-                    <h2 class="font-sans text-micro font-bold uppercase text-ink">Selected Research</h2>
+                <div class="md:col-span-10 border-b border-ink/80 dark:border-dark-text/80 pb-4 flex justify-between items-end">
+                    <h2 id="research-heading" class="font-sans text-micro font-bold uppercase text-ink dark:text-dark-text">Selected Research</h2>
                 </div>
             </div>
 
-            <div class="space-y-0 fade-enter delay-200">
+            <div class="space-y-0" role="list" aria-label="Research publications">
 
                 <!-- Paper 1 -->
-                <article class="paper-row group border-b border-stone/10 hover:bg-subtle cursor-pointer"
-                    onclick="toggleDetails(this)">
+                <article class="paper-row group border-b border-stone/10 dark:border-dark-border hover:bg-subtle dark:hover:bg-dark-surface cursor-pointer scroll-reveal stagger-1"
+                    onclick="toggleDetails(this)" role="listitem">
                     <div class="py-12 grid md:grid-cols-12 gap-6 relative">
 
                         <!-- Hover Indicator -->
                         <div
-                            class="absolute -left-4 top-14 text-crimson opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300">
+                            class="absolute -left-4 top-14 text-crimson dark:text-crimson-light opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300">
                             <i class="fas fa-arrow-right text-xs"></i>
                         </div>
 
                         <!-- Year (Hanging) -->
                         <div class="hidden md:block md:col-span-2 pt-2">
                             <div
-                                class="font-sans text-micro font-bold uppercase text-stone group-hover:text-ink transition-colors">
+                                class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted group-hover:text-ink dark:group-hover:text-dark-text transition-colors">
                                 2024
                             </div>
                         </div>
@@ -223,22 +495,22 @@
                         <!-- Main Content -->
                         <div class="md:col-span-7">
                             <h3
-                                class="font-serif text-3xl md:text-4xl text-ink leading-tight group-hover:text-crimson transition-colors duration-300">
+                                class="font-serif text-3xl md:text-4xl text-ink dark:text-dark-text leading-tight group-hover:text-crimson dark:group-hover:text-crimson-light transition-colors duration-300">
                                 Persistent and Transitory Components of Firm Characteristics
                             </h3>
-                            <div class="mt-3 text-sm text-stone font-sans font-light">
-                                with <span class="text-charcoal font-medium">Martijn Boons</span> & <span
-                                    class="text-charcoal font-medium">Andrea Tamoni</span>
+                            <div class="mt-3 text-sm text-stone dark:text-dark-muted font-sans font-light">
+                                with <span class="text-charcoal dark:text-dark-text font-medium">Martijn Boons</span> & <span
+                                    class="text-charcoal dark:text-dark-text font-medium">Andrea Tamoni</span>
                             </div>
                         </div>
 
                         <!-- Journal Status -->
                         <div class="md:col-span-3 md:text-right pt-2 flex justify-between md:block items-center">
-                            <span class="font-sans text-micro font-bold uppercase text-ink/70">
+                            <span class="font-sans text-micro font-bold uppercase text-ink/70 dark:text-dark-text/70">
                                 Journal of Financial Economics
                             </span>
                             <span
-                                class="toggle-icon text-stone text-xl font-light md:ml-4 group-hover:text-crimson transition-transform duration-300 inline-block">
+                                class="toggle-icon text-stone dark:text-dark-muted text-xl font-light md:ml-4 group-hover:text-crimson dark:group-hover:text-crimson-light transition-transform duration-300 inline-block">
                                 +
                             </span>
                         </div>
@@ -252,8 +524,8 @@
 
                                 <!-- Abstract -->
                                 <div class="md:col-span-6 pr-8">
-                                    <h4 class="font-sans text-micro font-bold uppercase text-stone mb-4">Abstract</h4>
-                                    <p class="font-serif text-lg text-charcoal leading-relaxed">
+                                    <h4 class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted mb-4">Abstract</h4>
+                                    <p class="font-serif text-lg text-charcoal dark:text-dark-text leading-relaxed">
                                         We decompose firm characteristics into persistent and transitory components. We
                                         find that the pricing of characteristics is almost exclusively driven by their
                                         persistent components. A strategy that trades on the persistent component yields
@@ -264,22 +536,22 @@
 
                                 <!-- Key Insights (Highlighted) -->
                                 <div
-                                    class="md:col-span-4 pl-8 border-l border-stone/10 bg-stone/5 -my-4 py-8 rounded-r-sm">
-                                    <h4 class="font-sans text-micro font-bold uppercase text-crimson mb-4">Key Insight
+                                    class="md:col-span-4 pl-8 border-l border-stone/10 dark:border-dark-border bg-stone/5 dark:bg-dark-surface -my-4 py-8 rounded-r-sm">
+                                    <h4 class="font-sans text-micro font-bold uppercase text-crimson dark:text-crimson-light mb-4">Key Insight
                                     </h4>
-                                    <p class="font-sans text-xs md:text-sm text-charcoal leading-relaxed mb-8">
+                                    <p class="font-sans text-xs md:text-sm text-charcoal dark:text-dark-text leading-relaxed mb-8">
                                         Investors should ignore short-term characteristic fluctuations. The signal is
                                         entirely in the long-term persistence.
                                     </p>
 
                                     <div class="flex flex-col gap-3">
                                         <a href="101_Persistence.pdf" target="_blank"
-                                            class="text-left font-sans text-micro font-bold uppercase text-stone hover:text-crimson transition-colors flex items-center gap-3"
+                                            class="text-left font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors flex items-center gap-3"
                                             onclick="event.stopPropagation()">
                                             <i class="far fa-file-pdf text-lg"></i> Download PDF
                                         </a>
                                         <button
-                                            class="text-left font-sans text-micro font-bold uppercase text-stone hover:text-crimson transition-colors flex items-center gap-3"
+                                            class="text-left font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors flex items-center gap-3"
                                             onclick="copyCitation(event)">
                                             <i class="fas fa-quote-right text-lg"></i> Copy Citation
                                         </button>
@@ -291,38 +563,38 @@
                 </article>
 
                 <!-- Paper 2 -->
-                <article class="paper-row group border-b border-stone/10 hover:bg-subtle cursor-pointer"
-                    onclick="toggleDetails(this)">
+                <article class="paper-row group border-b border-stone/10 dark:border-dark-border hover:bg-subtle dark:hover:bg-dark-surface cursor-pointer scroll-reveal stagger-2"
+                    onclick="toggleDetails(this)" role="listitem">
                     <div class="py-12 grid md:grid-cols-12 gap-6 relative">
                         <div
-                            class="absolute -left-4 top-14 text-crimson opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300">
+                            class="absolute -left-4 top-14 text-crimson dark:text-crimson-light opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300">
                             <i class="fas fa-arrow-right text-xs"></i>
                         </div>
 
                         <div class="hidden md:block md:col-span-2 pt-2">
                             <div
-                                class="font-sans text-micro font-bold uppercase text-stone group-hover:text-ink transition-colors">
+                                class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted group-hover:text-ink dark:group-hover:text-dark-text transition-colors">
                                 2021
                             </div>
                         </div>
 
                         <div class="md:col-span-7">
                             <h3
-                                class="font-serif text-3xl md:text-4xl text-ink leading-tight group-hover:text-crimson transition-colors duration-300">
+                                class="font-serif text-3xl md:text-4xl text-ink dark:text-dark-text leading-tight group-hover:text-crimson dark:group-hover:text-crimson-light transition-colors duration-300">
                                 Value Return Predictability Across Asset Classes
                             </h3>
-                            <div class="mt-3 text-sm text-stone font-sans font-light">
-                                with <span class="text-charcoal font-medium">Martijn Boons</span> & <span
-                                    class="text-charcoal font-medium">Andrea Tamoni</span>
+                            <div class="mt-3 text-sm text-stone dark:text-dark-muted font-sans font-light">
+                                with <span class="text-charcoal dark:text-dark-text font-medium">Martijn Boons</span> & <span
+                                    class="text-charcoal dark:text-dark-text font-medium">Andrea Tamoni</span>
                             </div>
                         </div>
 
                         <div class="md:col-span-3 md:text-right pt-2 flex justify-between md:block items-center">
-                            <span class="font-sans text-micro font-bold uppercase text-ink/70">
+                            <span class="font-sans text-micro font-bold uppercase text-ink/70 dark:text-dark-text/70">
                                 Review of Finance
                             </span>
                             <span
-                                class="toggle-icon text-stone text-xl font-light md:ml-4 group-hover:text-crimson transition-transform duration-300 inline-block">
+                                class="toggle-icon text-stone dark:text-dark-muted text-xl font-light md:ml-4 group-hover:text-crimson dark:group-hover:text-crimson-light transition-transform duration-300 inline-block">
                                 +
                             </span>
                         </div>
@@ -333,8 +605,8 @@
                             <div class="grid md:grid-cols-12 gap-6">
                                 <div class="hidden md:block md:col-span-2"></div>
                                 <div class="md:col-span-6 pr-8">
-                                    <h4 class="font-sans text-micro font-bold uppercase text-stone mb-4">Abstract</h4>
-                                    <p class="font-serif text-lg text-charcoal leading-relaxed">
+                                    <h4 class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted mb-4">Abstract</h4>
+                                    <p class="font-serif text-lg text-charcoal dark:text-dark-text leading-relaxed">
                                         We show that returns to value strategies in individual equities, industries,
                                         commodities, currencies, global government bonds, and global stock indexes are
                                         predictable in the time series by their respective value spreads. A single
@@ -342,21 +614,21 @@
                                     </p>
                                 </div>
                                 <div
-                                    class="md:col-span-4 pl-8 border-l border-stone/10 bg-stone/5 -my-4 py-8 rounded-r-sm">
-                                    <h4 class="font-sans text-micro font-bold uppercase text-crimson mb-4">Key Insight
+                                    class="md:col-span-4 pl-8 border-l border-stone/10 dark:border-dark-border bg-stone/5 dark:bg-dark-surface -my-4 py-8 rounded-r-sm">
+                                    <h4 class="font-sans text-micro font-bold uppercase text-crimson dark:text-crimson-light mb-4">Key Insight
                                     </h4>
-                                    <p class="font-sans text-xs md:text-sm text-charcoal leading-relaxed mb-8">
+                                    <p class="font-sans text-xs md:text-sm text-charcoal dark:text-dark-text leading-relaxed mb-8">
                                         Value predictability is a global phenomenon, not just a US equity anomaly. It is
                                         driven by a shared risk factor.
                                     </p>
                                     <div class="flex flex-col gap-3">
                                         <a href="106_ValueReturn.pdf" target="_blank"
-                                            class="text-left font-sans text-micro font-bold uppercase text-stone hover:text-crimson transition-colors flex items-center gap-3"
+                                            class="text-left font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors flex items-center gap-3"
                                             onclick="event.stopPropagation()">
                                             <i class="far fa-file-pdf text-lg"></i> Download PDF
                                         </a>
                                         <button
-                                            class="text-left font-sans text-micro font-bold uppercase text-stone hover:text-crimson transition-colors flex items-center gap-3"
+                                            class="text-left font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors flex items-center gap-3"
                                             onclick="copyCitation(event)">
                                             <i class="fas fa-quote-right text-lg"></i> Copy Citation
                                         </button>
@@ -368,38 +640,38 @@
                 </article>
 
                 <!-- Paper 3 -->
-                <article class="paper-row group border-b border-stone/10 hover:bg-subtle cursor-pointer"
-                    onclick="toggleDetails(this)">
+                <article class="paper-row group border-b border-stone/10 dark:border-dark-border hover:bg-subtle dark:hover:bg-dark-surface cursor-pointer scroll-reveal stagger-3"
+                    onclick="toggleDetails(this)" role="listitem">
                     <div class="py-12 grid md:grid-cols-12 gap-6 relative">
                         <div
-                            class="absolute -left-4 top-14 text-crimson opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300">
+                            class="absolute -left-4 top-14 text-crimson dark:text-crimson-light opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300">
                             <i class="fas fa-arrow-right text-xs"></i>
                         </div>
 
                         <div class="hidden md:block md:col-span-2 pt-2">
                             <div
-                                class="font-sans text-micro font-bold uppercase text-stone group-hover:text-ink transition-colors">
+                                class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted group-hover:text-ink dark:group-hover:text-dark-text transition-colors">
                                 2025
                             </div>
                         </div>
 
                         <div class="md:col-span-7">
                             <h3
-                                class="font-serif text-3xl md:text-4xl text-ink leading-tight group-hover:text-crimson transition-colors duration-300">
+                                class="font-serif text-3xl md:text-4xl text-ink dark:text-dark-text leading-tight group-hover:text-crimson dark:group-hover:text-crimson-light transition-colors duration-300">
                                 Risk from the Inside Out: Employee News Consumption
                             </h3>
-                            <div class="mt-3 text-sm text-stone font-sans font-light">
-                                with <span class="text-charcoal font-medium">Fotis Grigoris</span> & <span
-                                    class="text-charcoal font-medium">Preetesh Kantak</span>
+                            <div class="mt-3 text-sm text-stone dark:text-dark-muted font-sans font-light">
+                                with <span class="text-charcoal dark:text-dark-text font-medium">Fotis Grigoris</span> & <span
+                                    class="text-charcoal dark:text-dark-text font-medium">Preetesh Kantak</span>
                             </div>
                         </div>
 
                         <div class="md:col-span-3 md:text-right pt-2 flex justify-between md:block items-center">
-                            <span class="font-sans text-micro font-bold uppercase text-stone italic">
+                            <span class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted italic">
                                 Working Paper
                             </span>
                             <span
-                                class="toggle-icon text-stone text-xl font-light md:ml-4 group-hover:text-crimson transition-transform duration-300 inline-block">
+                                class="toggle-icon text-stone dark:text-dark-muted text-xl font-light md:ml-4 group-hover:text-crimson dark:group-hover:text-crimson-light transition-transform duration-300 inline-block">
                                 +
                             </span>
                         </div>
@@ -410,8 +682,8 @@
                             <div class="grid md:grid-cols-12 gap-6">
                                 <div class="hidden md:block md:col-span-2"></div>
                                 <div class="md:col-span-6 pr-8">
-                                    <h4 class="font-sans text-micro font-bold uppercase text-stone mb-4">Abstract</h4>
-                                    <p class="font-serif text-lg text-charcoal leading-relaxed">
+                                    <h4 class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted mb-4">Abstract</h4>
+                                    <p class="font-serif text-lg text-charcoal dark:text-dark-text leading-relaxed">
                                         We propose a novel measure of firm risk based on the news consumption patterns
                                         of employees inside the firm. We show that when employees read more negative
                                         news about the economy or their sector, the firm's future stock returns are
@@ -419,21 +691,21 @@
                                     </p>
                                 </div>
                                 <div
-                                    class="md:col-span-4 pl-8 border-l border-stone/10 bg-stone/5 -my-4 py-8 rounded-r-sm">
-                                    <h4 class="font-sans text-micro font-bold uppercase text-crimson mb-4">Key Insight
+                                    class="md:col-span-4 pl-8 border-l border-stone/10 dark:border-dark-border bg-stone/5 dark:bg-dark-surface -my-4 py-8 rounded-r-sm">
+                                    <h4 class="font-sans text-micro font-bold uppercase text-crimson dark:text-crimson-light mb-4">Key Insight
                                     </h4>
-                                    <p class="font-sans text-xs md:text-sm text-charcoal leading-relaxed mb-8">
+                                    <p class="font-sans text-xs md:text-sm text-charcoal dark:text-dark-text leading-relaxed mb-8">
                                         Internal employee attention serves as a leading indicator for firm risk,
                                         distinct from external market sentiment.
                                     </p>
                                     <div class="flex flex-col gap-3">
                                         <a href="103_NewsConsump.pdf" target="_blank"
-                                            class="text-left font-sans text-micro font-bold uppercase text-stone hover:text-crimson transition-colors flex items-center gap-3"
+                                            class="text-left font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors flex items-center gap-3"
                                             onclick="event.stopPropagation()">
                                             <i class="far fa-file-pdf text-lg"></i> Download PDF
                                         </a>
                                         <button
-                                            class="text-left font-sans text-micro font-bold uppercase text-stone hover:text-crimson transition-colors flex items-center gap-3"
+                                            class="text-left font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors flex items-center gap-3"
                                             onclick="copyCitation(event)">
                                             <i class="fas fa-quote-right text-lg"></i> Copy Citation
                                         </button>
@@ -448,11 +720,11 @@
         </section>
 
         <!-- Teaching & Contact -->
-        <section id="teaching" class="fade-enter delay-300">
+        <section id="teaching" class="scroll-reveal" aria-labelledby="teaching-heading">
             <div class="grid md:grid-cols-12 gap-6 mb-12">
                 <div class="hidden md:block md:col-span-2"></div>
-                <div class="md:col-span-10 border-b border-ink/80 pb-4">
-                    <h2 class="font-sans text-micro font-bold uppercase text-ink">Teaching & Contact</h2>
+                <div class="md:col-span-10 border-b border-ink/80 dark:border-dark-text/80 pb-4">
+                    <h2 id="teaching-heading" class="font-sans text-micro font-bold uppercase text-ink dark:text-dark-text">Teaching & Contact</h2>
                 </div>
             </div>
 
@@ -461,27 +733,27 @@
 
                 <div class="md:col-span-5 space-y-12">
                     <div class="group">
-                        <div class="font-serif text-xl text-ink group-hover:text-crimson transition-colors">
+                        <div class="font-serif text-xl text-ink dark:text-dark-text group-hover:text-crimson dark:group-hover:text-crimson-light transition-colors">
                             F303 Intermediate Investments
                         </div>
-                        <div class="font-sans text-micro font-bold uppercase text-stone mt-2">Undergraduate</div>
+                        <div class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted mt-2">Undergraduate</div>
                     </div>
                     <div class="group">
-                        <div class="font-serif text-xl text-ink group-hover:text-crimson transition-colors">
+                        <div class="font-serif text-xl text-ink dark:text-dark-text group-hover:text-crimson dark:group-hover:text-crimson-light transition-colors">
                             F600 Asset Pricing Theory
                         </div>
-                        <div class="font-sans text-micro font-bold uppercase text-stone mt-2">PhD Level</div>
+                        <div class="font-sans text-micro font-bold uppercase text-stone dark:text-dark-muted mt-2">PhD Level</div>
                     </div>
                 </div>
 
                 <div class="md:col-span-5 md:text-right mt-12 md:mt-0 flex flex-col justify-between h-full">
-                    <address class="not-italic font-serif text-lg text-charcoal leading-relaxed mb-8">
+                    <address class="not-italic font-serif text-lg text-charcoal dark:text-dark-text leading-relaxed mb-8">
                         Kelley School of Business<br>
                         1309 E. Tenth Street<br>
                         Bloomington, IN 47405
                     </address>
 
-                    <div class="font-sans text-micro font-bold uppercase text-stone/40">
+                    <div class="font-sans text-micro font-bold uppercase text-stone/40 dark:text-dark-muted/40">
                         &copy; 2025 Fahiz Baba-Yara
                     </div>
                 </div>
@@ -492,8 +764,8 @@
 
     <!-- Notification Toast -->
     <div id="toast"
-        class="fixed bottom-12 left-1/2 -translate-x-1/2 bg-ink text-paper px-6 py-3 rounded-full shadow-2xl flex items-center gap-3 transition-all duration-300 translate-y-32 opacity-0 z-50">
-        <span class="font-sans text-micro font-bold uppercase tracking-widest text-white">Citation Copied</span>
+        class="fixed bottom-12 left-1/2 -translate-x-1/2 bg-ink dark:bg-dark-text text-paper dark:text-dark-bg px-6 py-3 rounded-full shadow-2xl flex items-center gap-3 transition-all duration-300 translate-y-32 opacity-0 z-50">
+        <span class="font-sans text-micro font-bold uppercase tracking-widest">Citation Copied</span>
     </div>
 
     <script>
@@ -538,6 +810,40 @@
                 }, 2000);
             });
         }
+
+        // Scroll Reveal Animation using Intersection Observer
+        (function initScrollReveal() {
+            // Check for reduced motion preference
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (prefersReducedMotion) {
+                // Show all elements immediately if user prefers reduced motion
+                document.querySelectorAll('.scroll-reveal, .scroll-reveal-left').forEach(el => {
+                    el.classList.add('revealed');
+                });
+                return;
+            }
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -50px 0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target); // Only animate once
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all scroll-reveal elements
+            document.querySelectorAll('.scroll-reveal, .scroll-reveal-left').forEach(el => {
+                observer.observe(el);
+            });
+        })();
     </script>
 </body>
 
