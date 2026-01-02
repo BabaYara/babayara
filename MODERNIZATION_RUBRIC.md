@@ -39,8 +39,9 @@
 | **Load performance** | CDN dependencies | Self-host critical | 3/5 |
 | **Accessibility** | Full ARIA + skip link | Audit complete | 5/5 |
 | **Touch target size** | 44px buttons | WCAG 2.2 AA compliant | 5/5 |
+| **Microinteractions** | Card hover lift + shadow | Implemented Jan 2026 | 5/5 |
 
-**Subtotal: 22/25**
+**Subtotal: 27/30** (expanded section)
 
 ### Hardening Actions:
 - [x] Add skip-to-content link
@@ -48,6 +49,7 @@
 - [ ] Add scroll progress indicator
 - [x] Add prefers-reduced-motion support
 - [x] **NEW:** Increase touch targets to 44px (WCAG 2.2)
+- [x] **NEW:** Add card hover microinteractions (lift + shadow)
 
 ---
 
