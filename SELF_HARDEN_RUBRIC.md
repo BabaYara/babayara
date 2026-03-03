@@ -133,6 +133,13 @@ A scoring row is invalid if any condition is true:
 | 2026-03-03 | Writing authenticity (skill 12) | — | new | Added anti-AI voice criterion; bans trigger words, enforces varied structure | `SELF_HARDEN_RUBRIC.md` |
 | 2026-03-03 | Copywriting discipline (skill 13) | — | new | Added grammar/precision criterion; enforces subject-verb agreement, brevity | `SELF_HARDEN_RUBRIC.md` |
 | 2026-03-03 | Rubric version | v2 | v3 | Extended skill count from 10 to 13; max raw score now 65 | `SELF_HARDEN_RUBRIC.md` |
+| 2026-03-03 | Responsive reflow (6) | 3 | 4 | Added overflow-x:hidden safety, responsive filter grid, smaller stat numbers on mobile | `index.html` |
+| 2026-03-03 | Touch target ergonomics (5) | 3 | 4 | Evidence badge buttons now min-h 44px; filter pills remain 24px+ | `index.html` |
+| 2026-03-03 | Visual hierarchy (1) | 4 | 4 | Gradient hover accent on research cards; 3-tier dark elevation; portrait dark shadow | `index.html` |
+| 2026-03-03 | Motion/cognitive load (7) | 3 | 4 | Added research-card, portrait-hover, paper-title to prefers-reduced-motion block | `index.html` |
+| 2026-03-03 | Content freshness (11) | 3 | 4 | Verified all papers against SSRN/Scholar; years, venues, statuses confirmed accurate | `index.html` |
+| 2026-03-03 | Writing authenticity (12) | 4 | 5 | Zero AI trigger words found; varied sentence structure confirmed across all prose | `index.html` |
+| 2026-03-03 | Copywriting discipline (13) | 3 | 4 | Tightened contribution summaries; verb-forward concision; contact prose streamlined | `index.html` |
 
 ## References
 

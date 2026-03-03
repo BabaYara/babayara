@@ -96,6 +96,16 @@
       --color-dark-muted: #b0b0b0;
     }
 
+    /* Dark mode elevated surfaces — 3-tier depth */
+    @layer utilities {
+      .dark-elevated-1 {
+        background-color: #181818;
+      }
+      .dark-elevated-2 {
+        background-color: #1e1e1e;
+      }
+    }
+
     @layer base {
       html { -webkit-text-size-adjust: 100%; overflow-x: hidden; }
       body { text-rendering: optimizeLegibility; overflow-x: hidden; }
@@ -327,6 +337,14 @@
         opacity: 1 !important;
       }
 
+      .research-card,
+      .portrait-hover,
+      .paper-title {
+        transition: none !important;
+        animation: none !important;
+        transform: none !important;
+      }
+
       .scroll-hint {
         display: none !important;
       }
@@ -343,18 +361,20 @@
       transform: scaleX(1);
     }
 
-    /* Research card hover accent */
+    /* Research card hover accent — gradient instead of hard border */
     .research-card {
       border-left: 3px solid transparent;
-      transition: border-left-color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      transition: border-left-color 0.35s ease, transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .research-card:hover {
-      border-left-color: #990000;
+      border-image: linear-gradient(to bottom, #990000, #cc3333) 1;
+      border-left-width: 3px;
     }
 
     .dark .research-card:hover {
-      border-left-color: #d94040;
+      border-image: linear-gradient(to bottom, #d94040, #e87070) 1;
+      border-left-width: 3px;
     }
 
     /* Portrait hover scale */
@@ -364,6 +384,11 @@
 
     .portrait-hover:hover {
       transform: scale(1.02);
+    }
+
+    /* Dark mode portrait depth */
+    .dark .portrait-hover {
+      box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.4);
     }
 
     /* Scroll indicator */
@@ -659,7 +684,7 @@
         <h2 id="selected-work-heading" class="text-micro text-stone dark:text-dark-muted m-0">Selected work</h2>
         <span class="section-line h-px flex-1 bg-line/80 dark:bg-dark-border"></span>
         <a href="#research"
-          class="text-micro text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors">Full
+          class="text-micro text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors hidden sm:inline">Full
           list</a>
       </div>
 
@@ -717,7 +742,7 @@
       </div>
 
       <p class="mt-6 text-base md:text-lg leading-relaxed text-stone dark:text-dark-muted max-w-3xl">
-        Each paper below includes its publication status, topic tags, and an evidence profile (PDF, code, data, slides).
+        Every paper lists its publication status, topic tags, and evidence profile (PDF, code, data, slides).
       </p>
 
       <div
@@ -770,7 +795,7 @@
             <div>
               <label for="research-evidence" class="text-micro text-stone dark:text-dark-muted">Evidence</label>
               <select id="research-evidence" x-model="researchFilters.evidence"
-                class="mt-2 w-full rounded-lg border border-line/80 dark:border-dark-border bg-paper dark:bg-dark-bg px-3 py-2.5 text-sm text-ink dark:text-dark-text focus:outline-none focus:ring-0 focus:border-crimson dark:focus:border-crimson-light">
+                class="mt-2 w-full rounded-lg border border-line/80 dark:border-dark-border bg-paper dark:bg-dark-bg px-3 py-2.5 text-sm text-ink dark:text-dark-text focus:outline-none focus:ring-2 focus:ring-crimson/50 dark:focus:ring-crimson-light/50 focus:border-crimson dark:focus:border-crimson-light">
                 <template x-for="option in researchEvidenceOptions" :key="option.value">
                   <option :value="option.value" x-text="option.label"></option>
                 </template>
@@ -780,7 +805,7 @@
             <div>
               <label for="research-sort" class="text-micro text-stone dark:text-dark-muted">Sort</label>
               <select id="research-sort" x-model="researchFilters.sort"
-                class="mt-2 w-full rounded-lg border border-line/80 dark:border-dark-border bg-paper dark:bg-dark-bg px-3 py-2.5 text-sm text-ink dark:text-dark-text focus:outline-none focus:ring-0 focus:border-crimson dark:focus:border-crimson-light">
+                class="mt-2 w-full rounded-lg border border-line/80 dark:border-dark-border bg-paper dark:bg-dark-bg px-3 py-2.5 text-sm text-ink dark:text-dark-text focus:outline-none focus:ring-2 focus:ring-crimson/50 dark:focus:ring-crimson-light/50 focus:border-crimson dark:focus:border-crimson-light">
                 <template x-for="option in researchSortOptions" :key="option.value">
                   <option :value="option.value" x-text="option.label"></option>
                 </template>
@@ -893,7 +918,7 @@
                     <template x-if="!paper.links[badge.key]">
                       <span
                         class="inline-flex w-full items-center justify-center gap-2 rounded-md border border-line/40 dark:border-dark-border px-2.5 py-2.5 min-h-[44px] text-micro text-stone/50 dark:text-dark-muted/50"
-                        aria-disabled="true" :title="'Not yet available for this paper'">
+                        aria-disabled="true" aria-label="Not yet available" :title="'Not yet available for this paper'">
                         <i aria-hidden="true" :class="badge.icon"></i>
                         <span x-text="badge.label"></span>
                       </span>
@@ -1001,8 +1026,8 @@
       <div class="mt-10 grid md:grid-cols-12 gap-10 items-start">
         <div class="md:col-span-7">
           <p class="text-base md:text-lg leading-relaxed text-stone dark:text-dark-muted max-w-2xl">
-            Email is best. If you’re writing about a paper, a replication, or a data question, include a one‑paragraph
-            description and links to anything you want me to look at.
+            Email is best. For questions about a paper, replication, or data, include a one-paragraph
+            description and link anything you want reviewed.
           </p>
 
           <div class="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
@@ -1116,7 +1141,7 @@
             statusLabel: "Published · JFE",
             title: "Persistent and Transitory Components of Firm Characteristics",
             authors: "with Martijn Boons and Andrea Tamoni",
-            contribution: "Decomposing characteristics into persistent and transitory components doubles the Sharpe ratio of standard strategies; pricing power resides almost entirely in the persistent component.",
+            contribution: "Decomposing characteristics into persistent and transitory components doubles the Sharpe ratio of standard strategies; pricing power resides in the persistent component.",
             abstract: "We decompose firm characteristics into persistent and transitory components. The pricing of characteristics is almost exclusively driven by their persistent components. A strategy that trades on the persistent component yields Sharpe ratios that are more than double those of standard characteristic-based strategies.",
             topics: ["asset-pricing", "risk"],
             topicLabels: ["Asset Pricing", "Risk"],
@@ -1143,7 +1168,7 @@
             statusLabel: "Published · RoF",
             title: "Value Return Predictability Across Asset Classes",
             authors: "with Martijn Boons and Andrea Tamoni",
-            contribution: "A single common component accounts for roughly two-thirds of value return predictability across equities, bonds, currencies, and commodities.",
+            contribution: "A single common component accounts for two-thirds of value return predictability across equities, bonds, currencies, and commodities.",
             abstract: "We show that returns to value strategies in individual equities, industries, commodities, currencies, global government bonds, and global stock indexes are predictable in the time series by their respective value spreads. A single common component captures about two-thirds of value return predictability.",
             topics: ["asset-pricing", "risk"],
             topicLabels: ["Asset Pricing", "Risk"],
@@ -1171,7 +1196,7 @@
             statusLabel: "R&R · RFS",
             title: "The Limits of Factor Model Spanning",
             authors: "with Brian H. Boyer and Carter Davis",
-            contribution: "High-Sharpe-ratio ML factor models disagree structurally on which factors are priced; most alpha attributed by one model is unexplained by others.",
+            contribution: "ML factor models that achieve high Sharpe ratios disagree structurally on which factors are priced; most alpha attributed by one model goes unexplained by others.",
             abstract: "We investigate the extent to which modern academic machine learning models agree on which factors are priced in the cross-section of returns. We find considerable disagreement across models that achieve high Sharpe ratios in remarkably different ways. The majority of average returns attributed to factor exposure by any given model is generally deemed pure alpha by other models. We develop a theoretical model with complexity that suggests machine learning models using available data are unlikely to ever span others, although they achieve high Sharpe ratios and produce additional novel insights.",
             topics: ["factor-models", "machine-learning"],
             topicLabels: ["Factor Models", "Machine Learning"],
@@ -1196,7 +1221,7 @@
             statusLabel: "Working Paper",
             title: "The Multifactor Risk-Return Tradeoff",
             authors: "with Martijn Boons and Rik Frehen",
-            contribution: "The multifactor risk-return tradeoff is strongly positive once factor covariances—not just variances—are estimated properly.",
+            contribution: "The multifactor risk-return tradeoff turns strongly positive once factor covariances—not just variances—are properly estimated.",
             abstract: "The multifactor risk-return tradeoff is severely understudied relative to the market. In contrast to mixed evidence for the market, we find that the multifactor risk-return tradeoff is strongly positive when appropriately accounting for factor covariances. Our multifactor risk model shows that covariances contribute more to variation in factor returns than variances and performs at least as well in predicting multiple factors as benchmark models specifically designed to predict a single factor, both in- and out-of-sample. Consistent with a positive multifactor risk-return tradeoff, conditional multifactor alphas for a large set of anomalies are indistinguishable from unconditional alphas.",
             topics: ["factor-models", "risk"],
             topicLabels: ["Factor Models", "Risk"],
@@ -1221,7 +1246,7 @@
             statusLabel: "Working Paper",
             title: "Risk from the Inside Out: Employee News Consumption",
             authors: "with Fotis Grigoris and Preetesh Kantak",
-            contribution: "Employee attention to negative news predicts lower future stock returns, revealing risk signals visible inside the firm before they reach the market.",
+            contribution: "Employee attention to negative news predicts lower future stock returns, revealing risk signals visible inside the firm before they surface in the market.",
             abstract: "We propose a novel measure of firm risk based on the news consumption patterns of employees inside the firm. We show that when employees read more negative news about the economy or their sector, the firm's future stock returns are significantly lower.",
             topics: ["risk", "asset-pricing"],
             topicLabels: ["Risk", "Asset Pricing"],
@@ -1246,7 +1271,7 @@
             statusLabel: "Working Paper",
             title: "Commodity Returns: Lost in Financialization",
             authors: "with Massimiliano Bondatti",
-            contribution: "Roughly 80% of historically significant commodity strategy premia vanish after financialization, primarily through adverse repricing of a few systematically important factors.",
+            contribution: "Roughly 80% of historically significant commodity strategy premia vanish after financialization, driven by adverse repricing of a few systematically important factors.",
             abstract: "We study the effect of the growth in investment capital on the average returns of popular commodity futures trading strategies over time. We find that approximately 80% of commodity futures strategies that generated statistically significant average returns before financialization (2004) are no longer profitable. The decline in strategy returns is primarily driven by an adverse change in the average returns of a few systematically priced factors in the cross-section of commodity futures. Commodity strategies with relatively higher exposure to the Dow Jones Commodity Index experience a significant reduction in average returns.",
             topics: ["commodities", "asset-pricing"],
             topicLabels: ["Commodities", "Asset Pricing"],
@@ -1271,7 +1296,7 @@
             statusLabel: "Working Paper",
             title: "Are Uncertain Firms Riskier?",
             authors: "with Carter Davis, Fotis Grigoris, and Preetesh Kantak",
-            contribution: "Employee attention to uncertainty-related news predicts a 2% higher cost of capital, 7% lower investment, and 5% lower hiring, establishing that uncertainty exposure is priced in the cross-section.",
+            contribution: "Employee attention to uncertainty-related news predicts a 2% higher cost of capital, 7% lower investment, and 5% lower hiring, establishing that uncertainty exposure is priced cross-sectionally.",
             abstract: "We use novel data covering 2 billion daily employee-article interactions across approximately 2 million firms to characterize firms' exposures to uncertainty in almost real-time. We find that, in the cross-section, firms that more intensely read about financial versus other uncertainty-related topics are those most exposed to changes in aggregate measures of economic uncertainty. Consistent with exposure to uncertainty being priced, public firms that spend more time reading these topics have a 2% higher cost of capital, translating into relatively low investment rates. Higher attention to financial uncertainty relates to 7% lower investment and 5% lower hiring on an annual basis.",
             topics: ["uncertainty", "risk", "asset-pricing"],
             topicLabels: ["Uncertainty", "Risk", "Asset Pricing"],
