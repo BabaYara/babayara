@@ -1,0 +1,9 @@
+published=2
+rr=1
+working=4
+papers_with_code=2
+papers_with_data=1
+papers_total=7
+focus_visible_rules=2
+reduced_motion_rules=3
+skip_link_rules=3

@@ -1,0 +1,7 @@
+#111111 on #ffffff = 18.88:1
+#666666 on #ffffff = 5.74:1
+#990000 on #ffffff = 8.92:1
+#e5e5e5 on #0a0a0a = 15.72:1
+#b0b0b0 on #0a0a0a = 9.13:1
+#cc3333 on #0a0a0a = 3.85:1
+#2a2a2a on #0a0a0a = 1.38:1
