@@ -80,7 +80,7 @@
       --font-serif: "Crimson Pro", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 
       --color-crimson: #990000;
-      --color-crimson-light: #cc3333;
+      --color-crimson-light: #d94040;
 
       --color-ink: #111111;
       --color-charcoal: #333333;
@@ -121,7 +121,7 @@
         text-transform: uppercase;
       }
       .text-mega {
-        font-size: clamp(2.8rem, 7vw, 6.3rem);
+        font-size: clamp(2.25rem, 7vw, 6.3rem);
         line-height: 1.0;
         letter-spacing: -0.03em;
       }
@@ -194,15 +194,15 @@
 
     /* Dark mode accents */
     html.dark .text-crimson {
-      color: #cc3333 !important;
+      color: #d94040 !important;
     }
 
     html.dark .hover\:text-crimson:hover {
-      color: #cc3333 !important;
+      color: #d94040 !important;
     }
 
     html.dark .hover\:border-crimson:hover {
-      border-color: #cc3333 !important;
+      border-color: #d94040 !important;
     }
 
     /* Dark mode toast */
@@ -219,7 +219,7 @@
     }
 
     .dark *:focus-visible {
-      outline-color: #cc3333;
+      outline-color: #d94040;
     }
 
     /* Respect reduced motion beyond just animations. */
@@ -354,7 +354,7 @@
     }
 
     .dark .research-card:hover {
-      border-left-color: #cc3333;
+      border-left-color: #d94040;
     }
 
     /* Portrait hover scale */
@@ -463,6 +463,18 @@
           "issueNumber": "2",
           "pageStart": "449",
           "pageEnd": "484"
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "position": 3,
+          "name": "Are Uncertain Firms Riskier?",
+          "author": [
+            { "@type": "Person", "name": "Fahiz Baba‑Yara" },
+            { "@type": "Person", "name": "Carter Davis" },
+            { "@type": "Person", "name": "Fotis Grigoris" },
+            { "@type": "Person", "name": "Preetesh Kantak" }
+          ],
+          "datePublished": "2023"
         }
       ]
     }
@@ -778,7 +790,7 @@
 
           <div class="lg:col-span-12 border-t border-line/60 dark:border-dark-border pt-6">
             <div class="flex flex-wrap items-end justify-between gap-5">
-              <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
+              <div class="grid grid-cols-3 gap-6">
                 <div>
                   <div class="text-micro text-stone dark:text-dark-muted">Visible papers</div>
                   <div class="mt-1 font-serif text-4xl leading-none text-ink dark:text-dark-text"
@@ -880,8 +892,8 @@
                     </template>
                     <template x-if="!paper.links[badge.key]">
                       <span
-                        class="inline-flex w-full items-center justify-center gap-2 rounded-md border border-line/50 dark:border-dark-border/70 px-2.5 py-2 text-micro text-stone/60 dark:text-dark-muted/60"
-                        aria-disabled="true">
+                        class="inline-flex w-full items-center justify-center gap-2 rounded-md border border-line/40 dark:border-dark-border px-2.5 py-2 text-micro text-stone/50 dark:text-dark-muted/50"
+                        aria-disabled="true" :title="'Not yet available for this paper'">
                         <i aria-hidden="true" :class="badge.icon"></i>
                         <span x-text="badge.label"></span>
                       </span>
@@ -1074,6 +1086,7 @@
           { value: "factor-models", label: "Factor models" },
           { value: "machine-learning", label: "Machine learning" },
           { value: "risk", label: "Risk" },
+          { value: "uncertainty", label: "Uncertainty" },
           { value: "commodities", label: "Commodities" }
         ],
         researchEvidenceOptions: [
@@ -1249,6 +1262,31 @@
   author={Baba-Yara, Fahiz and Bondatti, Massimiliano},
   note={Working Paper},
   year={2022}
+}`
+          },
+          {
+            id: "uncertain-firms-riskier",
+            year: "2023",
+            status: "working",
+            statusLabel: "Working Paper",
+            title: "Are Uncertain Firms Riskier?",
+            authors: "with Carter Davis, Fotis Grigoris, and Preetesh Kantak",
+            contribution: "Employee attention to uncertainty-related news predicts a 2% higher cost of capital, 7% lower investment, and 5% lower hiring, establishing that uncertainty exposure is priced in the cross-section.",
+            abstract: "We use novel data covering 2 billion daily employee-article interactions across approximately 2 million firms to characterize firms' exposures to uncertainty in almost real-time. We find that, in the cross-section, firms that more intensely read about financial versus other uncertainty-related topics are those most exposed to changes in aggregate measures of economic uncertainty. Consistent with exposure to uncertainty being priced, public firms that spend more time reading these topics have a 2% higher cost of capital, translating into relatively low investment rates. Higher attention to financial uncertainty relates to 7% lower investment and 5% lower hiring on an annual basis.",
+            topics: ["uncertainty", "risk", "asset-pricing"],
+            topicLabels: ["Uncertainty", "Risk", "Asset Pricing"],
+            links: {
+              primary: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4354256",
+              pdf: null,
+              code: null,
+              data: null,
+              slides: null
+            },
+            bibtex: `@unpublished{babayara2023uncertain,
+  title={Are Uncertain Firms Riskier?},
+  author={Baba-Yara, Fahiz and Davis, Carter and Grigoris, Fotis and Kantak, Preetesh},
+  note={Working Paper},
+  year={2023}
 }`
           },
           {
