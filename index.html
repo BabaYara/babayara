@@ -97,8 +97,8 @@
     }
 
     @layer base {
-      html { -webkit-text-size-adjust: 100%; }
-      body { text-rendering: optimizeLegibility; }
+      html { -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+      body { text-rendering: optimizeLegibility; overflow-x: hidden; }
 
       ::selection {
         background: color-mix(in srgb, var(--color-crimson) 12%, transparent);
@@ -721,8 +721,8 @@
       </p>
 
       <div
-        class="mt-10 rounded-xl border border-line/70 dark:border-dark-border bg-subtle/40 dark:bg-dark-surface/40 p-6">
-        <div class="grid lg:grid-cols-12 gap-8">
+        class="mt-10 rounded-xl border border-line/70 dark:border-dark-border bg-subtle/40 dark:bg-dark-surface/40 p-4 sm:p-6">
+        <div class="grid lg:grid-cols-12 gap-6 lg:gap-8">
           <div class="lg:col-span-12">
             <label for="research-search" class="text-micro text-stone dark:text-dark-muted">Search</label>
             <div class="relative mt-2">
@@ -734,7 +734,7 @@
             </div>
           </div>
 
-          <div class="lg:col-span-4">
+          <div class="sm:col-span-6 lg:col-span-4">
             <div class="text-micro text-stone dark:text-dark-muted mb-3">Status</div>
             <div class="flex flex-wrap gap-2">
               <template x-for="option in researchStatusOptions" :key="option.value">
@@ -750,7 +750,7 @@
             </div>
           </div>
 
-          <div class="lg:col-span-5">
+          <div class="sm:col-span-6 lg:col-span-5">
             <div class="text-micro text-stone dark:text-dark-muted mb-3">Topic</div>
             <div class="flex flex-wrap gap-2">
               <template x-for="option in researchTopicOptions" :key="option.value">
@@ -766,7 +766,7 @@
             </div>
           </div>
 
-          <div class="lg:col-span-3 space-y-4">
+          <div class="grid grid-cols-2 lg:grid-cols-1 gap-4 sm:col-span-12 lg:col-span-3">
             <div>
               <label for="research-evidence" class="text-micro text-stone dark:text-dark-muted">Evidence</label>
               <select id="research-evidence" x-model="researchFilters.evidence"
@@ -790,20 +790,20 @@
 
           <div class="lg:col-span-12 border-t border-line/60 dark:border-dark-border pt-6">
             <div class="flex flex-wrap items-end justify-between gap-5">
-              <div class="grid grid-cols-3 gap-6">
+              <div class="grid grid-cols-3 gap-4 sm:gap-6">
                 <div>
                   <div class="text-micro text-stone dark:text-dark-muted">Visible papers</div>
-                  <div class="mt-1 font-serif text-4xl leading-none text-ink dark:text-dark-text"
+                  <div class="mt-1 font-serif text-3xl sm:text-4xl leading-none text-ink dark:text-dark-text"
                     x-text="filteredResearchPapers.length"></div>
                 </div>
                 <div>
                   <div class="text-micro text-stone dark:text-dark-muted">With code</div>
-                  <div class="mt-1 font-serif text-4xl leading-none text-ink dark:text-dark-text"
+                  <div class="mt-1 font-serif text-3xl sm:text-4xl leading-none text-ink dark:text-dark-text"
                     x-text="visiblePapersWithCode"></div>
                 </div>
                 <div>
                   <div class="text-micro text-stone dark:text-dark-muted">With data</div>
-                  <div class="mt-1 font-serif text-4xl leading-none text-ink dark:text-dark-text"
+                  <div class="mt-1 font-serif text-3xl sm:text-4xl leading-none text-ink dark:text-dark-text"
                     x-text="visiblePapersWithData"></div>
                 </div>
               </div>
@@ -879,12 +879,12 @@
 
             <div class="mt-5">
               <div class="text-micro text-stone dark:text-dark-muted mb-2">Evidence</div>
-              <div class="grid grid-cols-2 gap-2">
+              <div class="grid grid-cols-2 gap-2 sm:gap-2">
                 <template x-for="badge in researchEvidenceBadges" :key="badge.key">
                   <div>
                     <template x-if="paper.links[badge.key]">
                       <a :href="paper.links[badge.key]" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex w-full items-center justify-center gap-2 rounded-md border border-line/70 dark:border-dark-border px-2.5 py-2 text-micro text-ink dark:text-dark-text hover:border-crimson dark:hover:border-crimson-light hover:text-crimson dark:hover:text-crimson-light transition-colors"
+                        class="inline-flex w-full items-center justify-center gap-2 rounded-md border border-line/70 dark:border-dark-border px-2.5 py-2.5 min-h-[44px] text-micro text-ink dark:text-dark-text hover:border-crimson dark:hover:border-crimson-light hover:text-crimson dark:hover:text-crimson-light transition-colors"
                         :aria-label="badge.label + ' for ' + paper.title">
                         <i aria-hidden="true" :class="badge.icon"></i>
                         <span x-text="badge.label"></span>
@@ -892,7 +892,7 @@
                     </template>
                     <template x-if="!paper.links[badge.key]">
                       <span
-                        class="inline-flex w-full items-center justify-center gap-2 rounded-md border border-line/40 dark:border-dark-border px-2.5 py-2 text-micro text-stone/50 dark:text-dark-muted/50"
+                        class="inline-flex w-full items-center justify-center gap-2 rounded-md border border-line/40 dark:border-dark-border px-2.5 py-2.5 min-h-[44px] text-micro text-stone/50 dark:text-dark-muted/50"
                         aria-disabled="true" :title="'Not yet available for this paper'">
                         <i aria-hidden="true" :class="badge.icon"></i>
                         <span x-text="badge.label"></span>
