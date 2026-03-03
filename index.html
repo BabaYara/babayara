@@ -8,7 +8,7 @@
 
   <title>Fahiz Baba‑Yara | Assistant Professor of Finance</title>
   <meta name="description"
-    content="Academic portfolio of Fahiz Baba‑Yara, Assistant Professor of Finance at Indiana University’s Kelley School of Business. Empirical asset pricing: signal extraction, return predictability, factor models, and machine learning." />
+    content="Fahiz Baba‑Yara, Assistant Professor of Finance at Indiana University’s Kelley School of Business. Research on signal decomposition in firm characteristics, return predictability, factor models, and machine learning in asset pricing." />
 
   <!-- Color scheme + theming -->
   <meta name="color-scheme" content="light dark" />
@@ -19,7 +19,7 @@
   <meta property="og:type" content="profile" />
   <meta property="og:title" content="Fahiz Baba‑Yara | Assistant Professor of Finance" />
   <meta property="og:description"
-    content="Empirical asset pricing research on signal extraction: persistence vs. noise, return predictability, factor models, and machine learning." />
+    content="Research on signal decomposition in firm characteristics, return predictability, factor models, and machine learning in asset pricing." />
   <meta property="og:image" content="https://babayara.com/Portrait05.jpg" />
   <meta property="og:image:alt" content="Portrait of Fahiz Baba-Yara" />
   <meta property="og:url" content="https://babayara.com" />
@@ -31,7 +31,7 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Fahiz Baba‑Yara | Assistant Professor of Finance" />
   <meta name="twitter:description"
-    content="Empirical asset pricing research on signal extraction: persistence vs. noise, return predictability, factor models, and machine learning." />
+    content="Research on signal decomposition in firm characteristics, return predictability, factor models, and machine learning in asset pricing." />
   <meta name="twitter:image" content="https://babayara.com/Portrait05.jpg" />
   <meta name="twitter:image:alt" content="Portrait of Fahiz Baba-Yara" />
 
@@ -124,6 +124,18 @@
         font-size: clamp(2.8rem, 7vw, 6.3rem);
         line-height: 1.0;
         letter-spacing: -0.03em;
+      }
+      .text-section-heading {
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.15;
+      }
+      .text-hero-subtitle {
+        font-size: clamp(1.35rem, 2.5vw, 1.875rem);
+        line-height: 1.35;
+      }
+      .text-card-title {
+        font-size: clamp(1.25rem, 2vw, 1.5rem);
+        line-height: 1.3;
       }
     }
   </style>
@@ -307,11 +319,70 @@
 
       .fade-enter,
       .details-wrapper,
-      .toggle-icon {
+      .toggle-icon,
+      .section-line {
         transition: none !important;
         animation: none !important;
         transform: none !important;
         opacity: 1 !important;
+      }
+
+      .scroll-hint {
+        display: none !important;
+      }
+    }
+
+    /* Section divider draw-in */
+    .section-line {
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .section-line.in-view {
+      transform: scaleX(1);
+    }
+
+    /* Research card hover accent */
+    .research-card {
+      border-left: 3px solid transparent;
+      transition: border-left-color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .research-card:hover {
+      border-left-color: #990000;
+    }
+
+    .dark .research-card:hover {
+      border-left-color: #cc3333;
+    }
+
+    /* Portrait hover scale */
+    .portrait-hover {
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .portrait-hover:hover {
+      transform: scale(1.02);
+    }
+
+    /* Scroll indicator */
+    .scroll-hint {
+      animation: scrollBounce 2s ease-in-out infinite;
+      opacity: 0.5;
+    }
+
+    @keyframes scrollBounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: translateY(6px);
+        opacity: 0.8;
       }
     }
   </style>
@@ -373,7 +444,9 @@
             { "@type": "Person", "name": "Andrea Tamoni" }
           ],
           "datePublished": "2024",
-          "publisher": { "@type": "Organization", "name": "Journal of Financial Economics" }
+          "publisher": { "@type": "Organization", "name": "Journal of Financial Economics" },
+          "volumeNumber": "154",
+          "pageStart": "103808"
         },
         {
           "@type": "ScholarlyArticle",
@@ -385,7 +458,11 @@
             { "@type": "Person", "name": "Andrea Tamoni" }
           ],
           "datePublished": "2021",
-          "publisher": { "@type": "Organization", "name": "Review of Finance" }
+          "publisher": { "@type": "Organization", "name": "Review of Finance" },
+          "volumeNumber": "25",
+          "issueNumber": "2",
+          "pageStart": "449",
+          "pageEnd": "484"
         }
       ]
     }
@@ -439,11 +516,15 @@
 
             <div
               class="absolute right-0 mt-3 w-56 rounded-lg border border-line/80 dark:border-dark-border bg-paper dark:bg-dark-bg shadow-lg dark:shadow-none p-4">
-              <div class="flex flex-col gap-3 text-micro text-stone dark:text-dark-muted">
-                <a href="#about" class="hover:text-ink dark:hover:text-dark-text transition-colors">About</a>
-                <a href="#research" class="hover:text-ink dark:hover:text-dark-text transition-colors">Research</a>
-                <a href="#teaching" class="hover:text-ink dark:hover:text-dark-text transition-colors">Teaching</a>
-                <a href="#contact" class="hover:text-ink dark:hover:text-dark-text transition-colors">Contact</a>
+              <div class="flex flex-col gap-1 text-micro text-stone dark:text-dark-muted">
+                <a href="#about"
+                  class="block py-2 px-1 hover:text-ink dark:hover:text-dark-text transition-colors">About</a>
+                <a href="#research"
+                  class="block py-2 px-1 hover:text-ink dark:hover:text-dark-text transition-colors">Research</a>
+                <a href="#teaching"
+                  class="block py-2 px-1 hover:text-ink dark:hover:text-dark-text transition-colors">Teaching</a>
+                <a href="#contact"
+                  class="block py-2 px-1 hover:text-ink dark:hover:text-dark-text transition-colors">Contact</a>
                 <a href="cv.pdf" target="_blank" rel="noopener noreferrer"
                   class="pt-3 border-t border-line/70 dark:border-dark-border hover:text-crimson dark:hover:text-crimson-light transition-colors">
                   Download CV
@@ -471,25 +552,21 @@
             Fahiz Baba‑Yara
           </h1>
 
-          <p
-            class="font-serif text-2xl md:text-3xl leading-snug text-charcoal dark:text-dark-text/90 font-light max-w-2xl">
+          <p class="font-serif text-hero-subtitle text-charcoal dark:text-dark-text/90 font-light max-w-2xl">
             Empirical asset pricing is a measurement problem masquerading as a discovery problem.
           </p>
 
           <div class="mt-7 space-y-4 text-base md:text-lg leading-relaxed text-stone dark:text-dark-muted max-w-2xl">
             <p>
-              I’m an empirical asset pricing researcher at Indiana University’s Kelley School of Business. I study
-              return predictability,
-              factor models, and what machine learning does once you make it respect basic asset‑pricing discipline.
+              I study how persistent and transitory signals in firm characteristics shape
+              return predictability, factor model performance, and the behavior of machine
+              learning methods in asset pricing.
             </p>
             <p class="text-sm md:text-base">
-              Research interests: empirical asset pricing, return predictability, factor portfolios, and machine
-              learning in finance.
-              <span class="text-stone/50 dark:text-dark-muted/50 mx-1">·</span>
               <a href="https://scholar.google.com/citations?user=cOs0q6MAAAAJ&amp;hl=en" target="_blank"
                 rel="noopener noreferrer"
                 class="hover:text-crimson dark:hover:text-crimson-light transition-colors">Google Scholar</a>
-              <span class="text-stone/50 dark:text-dark-muted/50 mx-1">·</span>
+              <span class="text-stone/50 dark:text-dark-muted/50 mx-1">&middot;</span>
               <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2811355" target="_blank"
                 rel="noopener noreferrer"
                 class="hover:text-crimson dark:hover:text-crimson-light transition-colors">SSRN</a>
@@ -510,7 +587,6 @@
               <i aria-hidden="true" class="fa-regular fa-file-lines"></i>
               Curriculum Vitae
             </a>
-
           </div>
 
           <!-- At a glance -->
@@ -536,11 +612,17 @@
               </div>
             </div>
           </div>
+
+          <!-- Scroll indicator -->
+          <div class="scroll-hint mt-10 text-center text-stone dark:text-dark-muted md:hidden" aria-hidden="true">
+            <i class="fa-solid fa-chevron-down text-sm"></i>
+          </div>
+
         </div>
 
         <!-- Portrait -->
         <div class="md:col-span-5 md:justify-self-end">
-          <div class="relative max-w-sm md:max-w-none">
+          <div class="relative max-w-sm md:max-w-none portrait-hover">
             <picture>
               <source type="image/webp"
                 srcset="Portrait05-400w.webp 400w, Portrait05-600w.webp 600w, Portrait05-800w.webp 800w, Portrait05.webp 895w"
@@ -549,7 +631,7 @@
                 sizes="(max-width: 768px) 340px, 420px" />
               <img src="Portrait05.jpg"
                 alt="Fahiz Baba‑Yara, Assistant Professor of Finance at Kelley School of Business"
-                class="w-full rounded-sm shadow-md dark:shadow-none grayscale hover:grayscale-0 transition-[filter] duration-700"
+                class="w-full max-h-[480px] md:max-h-none object-cover rounded-sm shadow-md dark:shadow-none grayscale hover:grayscale-0 transition-[filter] duration-700"
                 loading="eager" fetchpriority="high" decoding="async" width="895" height="875" />
             </picture>
             <div class="absolute inset-0 rounded-sm border border-line/60 dark:border-dark-border pointer-events-none">
@@ -563,22 +645,22 @@
     <section class="mb-24 md:mb-36 scroll-mt-24" aria-labelledby="selected-work-heading">
       <div class="flex items-center gap-3 mb-4">
         <h2 id="selected-work-heading" class="text-micro text-stone dark:text-dark-muted m-0">Selected work</h2>
-        <span class="h-px flex-1 bg-line/80 dark:bg-dark-border"></span>
+        <span class="section-line h-px flex-1 bg-line/80 dark:bg-dark-border"></span>
         <a href="#research"
           class="text-micro text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors">Full
           list</a>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-6">
+      <div class="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <a href="101_Persistence.pdf" target="_blank" rel="noopener noreferrer"
           class="group rounded-lg border border-line/70 dark:border-dark-border bg-paper dark:bg-dark-bg p-7 hover:bg-subtle/60 dark:hover:bg-dark-surface/60 hover:-translate-y-1 hover:shadow-lg dark:hover:shadow-none transition-all duration-300">
           <div class="text-micro text-stone dark:text-dark-muted mb-3">JFE · 2024</div>
           <div
-            class="font-serif text-2xl leading-snug text-ink dark:text-dark-text group-hover:text-crimson dark:group-hover:text-crimson-light transition-colors">
+            class="font-serif text-card-title text-ink dark:text-dark-text group-hover:text-crimson dark:group-hover:text-crimson-light transition-colors">
             Persistent and Transitory Components of Firm Characteristics
           </div>
           <div class="mt-3 text-sm leading-relaxed text-stone dark:text-dark-muted">
-            Decompose characteristics; most pricing lives in the persistent component.
+            Persistent components of characteristics drive pricing; strategies built on them double the Sharpe ratio.
           </div>
         </a>
 
@@ -586,11 +668,11 @@
           class="group rounded-lg border border-line/70 dark:border-dark-border bg-paper dark:bg-dark-bg p-7 hover:bg-subtle/60 dark:hover:bg-dark-surface/60 hover:-translate-y-1 hover:shadow-lg dark:hover:shadow-none transition-all duration-300">
           <div class="text-micro text-stone dark:text-dark-muted mb-3">RoF · 2021</div>
           <div
-            class="font-serif text-2xl leading-snug text-ink dark:text-dark-text group-hover:text-crimson dark:group-hover:text-crimson-light transition-colors">
+            class="font-serif text-card-title text-ink dark:text-dark-text group-hover:text-crimson dark:group-hover:text-crimson-light transition-colors">
             Value Return Predictability Across Asset Classes
           </div>
           <div class="mt-3 text-sm leading-relaxed text-stone dark:text-dark-muted">
-            Value predictability is global and shares a large common component.
+            A single common component explains roughly two-thirds of global value return predictability.
           </div>
         </a>
 
@@ -598,11 +680,11 @@
           class="group rounded-lg border border-line/70 dark:border-dark-border bg-paper dark:bg-dark-bg p-7 hover:bg-subtle/60 dark:hover:bg-dark-surface/60 hover:-translate-y-1 hover:shadow-lg dark:hover:shadow-none transition-all duration-300">
           <div class="text-micro text-stone dark:text-dark-muted mb-3">Working paper · 2025</div>
           <div
-            class="font-serif text-2xl leading-snug text-ink dark:text-dark-text group-hover:text-crimson dark:group-hover:text-crimson-light transition-colors">
+            class="font-serif text-card-title text-ink dark:text-dark-text group-hover:text-crimson dark:group-hover:text-crimson-light transition-colors">
             The Multifactor Risk‑Return Tradeoff
           </div>
           <div class="mt-3 text-sm leading-relaxed text-stone dark:text-dark-muted">
-            Covariances do the heavy lifting; the tradeoff sharpens when measured correctly.
+            Factor covariances, not just variances, are what make the multifactor tradeoff strongly positive.
           </div>
         </a>
       </div>
@@ -614,7 +696,7 @@
         <div class="flex items-end justify-between gap-6">
           <div>
             <div class="text-micro text-stone dark:text-dark-muted mb-2">01</div>
-            <h2 id="research-heading" class="font-serif text-4xl md:text-5xl leading-tight text-ink dark:text-dark-text">
+            <h2 id="research-heading" class="font-serif text-section-heading text-ink dark:text-dark-text">
               Research
             </h2>
           </div>
@@ -623,11 +705,11 @@
       </div>
 
       <p class="mt-6 text-base md:text-lg leading-relaxed text-stone dark:text-dark-muted max-w-3xl">
-        Filter by publication status and topic, then scan each paper's evidence profile (PDF, code, data, slides) with
-        a one-line contribution.
+        Each paper below includes its publication status, topic tags, and an evidence profile (PDF, code, data, slides).
       </p>
 
-      <div class="mt-10 rounded-xl border border-line/70 dark:border-dark-border bg-subtle/40 dark:bg-dark-surface/40 p-6">
+      <div
+        class="mt-10 rounded-xl border border-line/70 dark:border-dark-border bg-subtle/40 dark:bg-dark-surface/40 p-6">
         <div class="grid lg:grid-cols-12 gap-8">
           <div class="lg:col-span-12">
             <label for="research-search" class="text-micro text-stone dark:text-dark-muted">Search</label>
@@ -696,7 +778,7 @@
 
           <div class="lg:col-span-12 border-t border-line/60 dark:border-dark-border pt-6">
             <div class="flex flex-wrap items-end justify-between gap-5">
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-6">
                 <div>
                   <div class="text-micro text-stone dark:text-dark-muted">Visible papers</div>
                   <div class="mt-1 font-serif text-4xl leading-none text-ink dark:text-dark-text"
@@ -746,20 +828,18 @@
       <div class="mt-10 grid md:grid-cols-2 xl:grid-cols-3 gap-6" aria-live="polite">
         <template x-for="paper in filteredResearchPapers" :key="paper.id">
           <article
-            class="rounded-xl border border-line/70 dark:border-dark-border bg-paper dark:bg-dark-bg p-6 flex flex-col hover:-translate-y-0.5 hover:shadow-lg dark:hover:shadow-none transition-all duration-200">
+            class="research-card rounded-xl border border-line/70 dark:border-dark-border bg-paper dark:bg-dark-bg p-6 flex flex-col hover:-translate-y-0.5 hover:shadow-lg dark:hover:shadow-none transition-all duration-200">
             <div class="flex items-start justify-between gap-3">
               <div class="text-micro text-stone dark:text-dark-muted" x-text="paper.year"></div>
               <div class="flex flex-col items-end gap-2">
-                <span class="inline-flex rounded-full border px-3 py-1 text-micro"
-                  :class="paper.status === 'published'
+                <span class="inline-flex rounded-full border px-3 py-1 text-micro" :class="paper.status === 'published'
                     ? 'border-emerald-700/40 text-emerald-700 dark:border-emerald-300/40 dark:text-emerald-300'
                     : paper.status === 'rr'
                       ? 'border-amber-700/40 text-amber-700 dark:border-amber-300/40 dark:text-amber-300'
                       : 'border-line/80 text-stone dark:border-dark-border dark:text-dark-muted'">
                   <span x-text="paper.statusLabel"></span>
                 </span>
-                <span class="inline-flex rounded-full border px-3 py-1 text-micro"
-                  :class="paperEvidenceCount(paper) >= 3
+                <span class="inline-flex rounded-full border px-3 py-1 text-micro" :class="paperEvidenceCount(paper) >= 3
                     ? 'border-emerald-700/40 text-emerald-700 dark:border-emerald-300/40 dark:text-emerald-300'
                     : paperEvidenceCount(paper) >= 2
                       ? 'border-amber-700/40 text-amber-700 dark:border-amber-300/40 dark:text-amber-300'
@@ -771,7 +851,8 @@
 
             <h3 class="mt-4 font-serif text-2xl leading-snug text-ink dark:text-dark-text" x-text="paper.title"></h3>
             <p class="mt-2 text-sm text-stone dark:text-dark-muted" x-text="paper.authors"></p>
-            <p class="mt-4 text-sm leading-relaxed text-charcoal dark:text-dark-text/90" x-text="paper.contribution"></p>
+            <p class="mt-4 text-sm leading-relaxed text-charcoal dark:text-dark-text/90" x-text="paper.contribution">
+            </p>
 
             <div class="mt-5">
               <div class="text-micro text-stone dark:text-dark-muted mb-2">Topics</div>
@@ -831,7 +912,8 @@
               </div>
             </details>
 
-            <div class="mt-5 pt-5 border-t border-line/60 dark:border-dark-border flex items-center justify-between gap-4">
+            <div
+              class="mt-5 pt-5 border-t border-line/60 dark:border-dark-border flex items-center justify-between gap-4">
               <a :href="paper.links.primary" target="_blank" rel="noopener noreferrer"
                 class="text-micro text-stone dark:text-dark-muted hover:text-crimson dark:hover:text-crimson-light transition-colors inline-flex items-center gap-2">
                 <i aria-hidden="true" class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -859,7 +941,7 @@
       <div class="border-b border-ink/80 dark:border-dark-text/80 pb-4">
         <div>
           <div class="text-micro text-stone dark:text-dark-muted mb-2">02</div>
-          <h2 id="teaching-heading" class="font-serif text-4xl md:text-5xl leading-tight text-ink dark:text-dark-text">
+          <h2 id="teaching-heading" class="font-serif text-section-heading text-ink dark:text-dark-text">
             Teaching
           </h2>
         </div>
@@ -898,7 +980,7 @@
       <div class="border-b border-ink/80 dark:border-dark-text/80 pb-4">
         <div>
           <div class="text-micro text-stone dark:text-dark-muted mb-2">03</div>
-          <h2 id="contact-heading" class="font-serif text-4xl md:text-5xl leading-tight text-ink dark:text-dark-text">
+          <h2 id="contact-heading" class="font-serif text-section-heading text-ink dark:text-dark-text">
             Contact
           </h2>
         </div>
@@ -962,7 +1044,7 @@
   <footer class="border-t border-line/70 dark:border-dark-border bg-paper dark:bg-dark-bg">
     <div
       class="max-w-6xl mx-auto px-6 md:px-12 py-8 text-xs text-stone dark:text-dark-muted flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-      <div>&copy; 2026 Fahiz Baba‑Yara · Updated January 1, 2026</div>
+      <div>&copy; 2026 Fahiz Baba‑Yara · Updated March 2026</div>
       <a href="#top" class="hover:text-crimson dark:hover:text-crimson-light transition-colors">Back to top</a>
     </div>
   </footer>
@@ -970,7 +1052,8 @@
   <!-- Notification Toast -->
   <div id="toast"
     class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-ink text-paper dark:bg-dark-text dark:text-dark-bg px-6 py-3 rounded-full shadow-2xl flex items-center gap-3 transition-all duration-300 translate-y-24 opacity-0 z-50"
-    role="status" aria-live="polite" aria-atomic="true" aria-hidden="true">
+    style="transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1);" role="status" aria-live="polite"
+    aria-atomic="true" aria-hidden="true">
     <span id="toast-message" class="text-micro tracking-[0.18em]">Citation copied</span>
   </div>
 
@@ -1020,8 +1103,8 @@
             statusLabel: "Published · JFE",
             title: "Persistent and Transitory Components of Firm Characteristics",
             authors: "with Martijn Boons and Andrea Tamoni",
-            contribution: "Pricing power sits in persistent characteristics; short-run wiggles are mostly noise.",
-            abstract: "We decompose firm characteristics into persistent and transitory components. We find that the pricing of characteristics is almost exclusively driven by their persistent components. A strategy that trades on the persistent component yields Sharpe ratios that are more than double those of standard characteristic-based strategies.",
+            contribution: "Decomposing characteristics into persistent and transitory components doubles the Sharpe ratio of standard strategies; pricing power resides almost entirely in the persistent component.",
+            abstract: "We decompose firm characteristics into persistent and transitory components. The pricing of characteristics is almost exclusively driven by their persistent components. A strategy that trades on the persistent component yields Sharpe ratios that are more than double those of standard characteristic-based strategies.",
             topics: ["asset-pricing", "risk"],
             topicLabels: ["Asset Pricing", "Risk"],
             links: {
@@ -1035,6 +1118,8 @@
   title={Persistent and Transitory Components of Firm Characteristics},
   author={Baba-Yara, Fahiz and Boons, Martijn and Tamoni, Andrea},
   journal={Journal of Financial Economics},
+  volume={154},
+  pages={103808},
   year={2024}
 }`
           },
@@ -1045,7 +1130,7 @@
             statusLabel: "Published · RoF",
             title: "Value Return Predictability Across Asset Classes",
             authors: "with Martijn Boons and Andrea Tamoni",
-            contribution: "Value predictability is global and heavily driven by a common cross-asset component.",
+            contribution: "A single common component accounts for roughly two-thirds of value return predictability across equities, bonds, currencies, and commodities.",
             abstract: "We show that returns to value strategies in individual equities, industries, commodities, currencies, global government bonds, and global stock indexes are predictable in the time series by their respective value spreads. A single common component captures about two-thirds of value return predictability.",
             topics: ["asset-pricing", "risk"],
             topicLabels: ["Asset Pricing", "Risk"],
@@ -1057,7 +1142,7 @@
               slides: null
             },
             bibtex: `@article{babayara2021value,
-  title={Value Return Predictability Across Asset Classes and Commonalities in Risk Premia},
+  title={Value Return Predictability across Asset Classes and Commonalities in Risk Premia},
   author={Baba-Yara, Fahiz and Boons, Martijn and Tamoni, Andrea},
   journal={Review of Finance},
   volume={25},
@@ -1073,7 +1158,7 @@
             statusLabel: "R&R · RFS",
             title: "The Limits of Factor Model Spanning",
             authors: "with Brian H. Boyer and Carter Davis",
-            contribution: "High-performing ML factor models disagree structurally, so full spanning is unlikely in practice.",
+            contribution: "High-Sharpe-ratio ML factor models disagree structurally on which factors are priced; most alpha attributed by one model is unexplained by others.",
             abstract: "We investigate the extent to which modern academic machine learning models agree on which factors are priced in the cross-section of returns. We find considerable disagreement across models that achieve high Sharpe ratios in remarkably different ways. The majority of average returns attributed to factor exposure by any given model is generally deemed pure alpha by other models. We develop a theoretical model with complexity that suggests machine learning models using available data are unlikely to ever span others, although they achieve high Sharpe ratios and produce additional novel insights.",
             topics: ["factor-models", "machine-learning"],
             topicLabels: ["Factor Models", "Machine Learning"],
@@ -1098,7 +1183,7 @@
             statusLabel: "Working Paper",
             title: "The Multifactor Risk-Return Tradeoff",
             authors: "with Martijn Boons and Rik Frehen",
-            contribution: "Covariances drive the multifactor tradeoff; estimating them well sharpens expected-return signals.",
+            contribution: "The multifactor risk-return tradeoff is strongly positive once factor covariances—not just variances—are estimated properly.",
             abstract: "The multifactor risk-return tradeoff is severely understudied relative to the market. In contrast to mixed evidence for the market, we find that the multifactor risk-return tradeoff is strongly positive when appropriately accounting for factor covariances. Our multifactor risk model shows that covariances contribute more to variation in factor returns than variances and performs at least as well in predicting multiple factors as benchmark models specifically designed to predict a single factor, both in- and out-of-sample. Consistent with a positive multifactor risk-return tradeoff, conditional multifactor alphas for a large set of anomalies are indistinguishable from unconditional alphas.",
             topics: ["factor-models", "risk"],
             topicLabels: ["Factor Models", "Risk"],
@@ -1123,7 +1208,7 @@
             statusLabel: "Working Paper",
             title: "Risk from the Inside Out: Employee News Consumption",
             authors: "with Fotis Grigoris and Preetesh Kantak",
-            contribution: "Internal employee attention to negative news predicts lower future firm returns.",
+            contribution: "Employee attention to negative news predicts lower future stock returns, revealing risk signals visible inside the firm before they reach the market.",
             abstract: "We propose a novel measure of firm risk based on the news consumption patterns of employees inside the firm. We show that when employees read more negative news about the economy or their sector, the firm's future stock returns are significantly lower.",
             topics: ["risk", "asset-pricing"],
             topicLabels: ["Risk", "Asset Pricing"],
@@ -1148,7 +1233,7 @@
             statusLabel: "Working Paper",
             title: "Commodity Returns: Lost in Financialization",
             authors: "with Massimiliano Bondatti",
-            contribution: "Financialization erased most commodity strategy premia that were historically significant.",
+            contribution: "Roughly 80% of historically significant commodity strategy premia vanish after financialization, primarily through adverse repricing of a few systematically important factors.",
             abstract: "We study the effect of the growth in investment capital on the average returns of popular commodity futures trading strategies over time. We find that approximately 80% of commodity futures strategies that generated statistically significant average returns before financialization (2004) are no longer profitable. The decline in strategy returns is primarily driven by an adverse change in the average returns of a few systematically priced factors in the cross-section of commodity futures. Commodity strategies with relatively higher exposure to the Dow Jones Commodity Index experience a significant reduction in average returns.",
             topics: ["commodities", "asset-pricing"],
             topicLabels: ["Commodities", "Asset Pricing"],
@@ -1173,7 +1258,7 @@
             statusLabel: "Working Paper",
             title: "Machine Learning and Return Predictability Across Firms, Time and Portfolios",
             authors: "Solo-authored",
-            contribution: "Imposing economic structure in ML improves out-of-domain generalization in asset pricing.",
+            contribution: "Imposing economic structure on neural network models restores out-of-domain generalization: the model predicts time-series variation in market and portfolio returns, not just cross-sectional sorts.",
             abstract: "Previous research finds that machine learning methods predict short-term return variation in the cross-section of stocks, even when these methods do not impose strict economic restrictions. However, without such restrictions, the models' predictions fail to generalize in important ways, such as predicting time-series variation in returns to the market portfolio and long-short characteristic sorted portfolios. I show that this shortfall can be remedied by imposing restrictions that reflect findings in the financial economics literature in the architectural design of a neural network model and provide recommendations for using machine learning methods in asset pricing. Additionally, I study return predictability over multiple future horizons, shedding light on the dynamics of intermediate and long-run conditional expected returns.",
             topics: ["machine-learning", "asset-pricing"],
             topicLabels: ["Machine Learning", "Asset Pricing"],
@@ -1456,6 +1541,38 @@
           alert("Could not copy citation. Please copy manually.");
         }
       });
+    })();
+
+    /* IntersectionObserver: section-line draw-in */
+    (function initSectionLineObserver() {
+      const prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReducedMotion) {
+        document.querySelectorAll(".section-line").forEach(el => el.classList.add("in-view"));
+        return;
+      }
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      document.querySelectorAll(".section-line").forEach(el => observer.observe(el));
+    })();
+
+    /* Auto-hide scroll indicator on first scroll */
+    (function initScrollHintHide() {
+      const hint = document.querySelector(".scroll-hint");
+      if (!hint) return;
+      const hideHint = () => {
+        hint.style.transition = "opacity 0.5s ease";
+        hint.style.opacity = "0";
+        setTimeout(() => hint.remove(), 600);
+        window.removeEventListener("scroll", hideHint);
+      };
+      window.addEventListener("scroll", hideHint, { passive: true });
+      setTimeout(hideHint, 5000);
     })();
   </script>
 </body>

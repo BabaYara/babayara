@@ -1,9 +1,9 @@
-# Self-Harden Rubric: Visual Governance Quality
+# Self-Harden Rubric: Visual & Content Governance Quality
 
-**Rubric Version:** `v2`  
-**Last Updated:** `2026-02-16`  
+**Rubric Version:** `v3`  
+**Last Updated:** `2026-03-03`  
 **Owner:** Website self-hardening loop  
-**Scope:** Deterministic visual governance for `index.html` and rubric artifacts.
+**Scope:** Deterministic visual, content, and writing governance for `index.html` and rubric artifacts.
 
 ## Normative vs Advisory
 
@@ -12,9 +12,9 @@
 
 ## Deterministic Scoring Contract [NORMATIVE]
 
-- Score exactly 10 skills from `0-5` each. Maximum raw score is `50`.
+- Score exactly 13 skills from `0-5` each. Maximum raw score is `65`.
 - Blocker skills are: `3) Contrast`, `4) Focus`, `5) Target Size`, `6) Reflow`.
-- If any blocker score is `<4`, the validated total is capped at `30/50`.
+- If any blocker score is `<4`, the validated total is capped at `30/65`.
 - Any skill scored `>=4` without valid evidence is auto-downgraded to `2`.
 - Evidence older than `90 days` cannot support a score of `5`.
 - A score entry with `confidence=low` is auto-downgraded by `1` point.
@@ -57,6 +57,9 @@
 | 8 | Perceived speed and stability | web.dev LCP/INP/CLS guidance | No | LCP <=2.5s, INP <=200ms, CLS <=0.1 (75p intent) | Lighthouse/RUM snapshot with date and context |
 | 9 | Design token governance | Design Tokens CG format + consistency heuristic | No | Color/spacing/typography mostly tokenized; raw literals justified and minimized | Token inventory + hardcoded literal scan |
 | 10 | Component consistency | NN/g consistency heuristic | No | Reusable patterns for controls/cards/focus/rhythm across sections | Component pattern checklist + screenshot set |
+| 11 | Content freshness and research accuracy | Scholarly record fidelity | No | Paper statuses, years, venue labels, and BibTeX match public records (SSRN, journal DOI pages); footer date current within 90 days | Side-by-side diff of site data vs. source-of-truth records |
+| 12 | Writing authenticity (anti-AI) | AI detection avoidance heuristics | No | Varied sentence length/structure; zero AI trigger words ("delve," "utilize," "comprehensive," "landscape"); active voice ≥70%; domain-specific terminology preferred over generic synonyms | Automated word-frequency scan + manual voice audit |
+| 13 | Copywriting discipline | Strunk & White + Chicago Manual of Style | No | Zero subject-verb agreement errors; no redundant phrasing; single precise word preferred over multi-word circumlocution; tone consistent with senior academic professional | Grammar-check output + before/after diff of prose edits |
 
 ## Evidence Traceability Hardening Contract (Worst Skill First) [NORMATIVE]
 
@@ -126,6 +129,10 @@ A scoring row is invalid if any condition is true:
 | 2026-02-16 | Evidence traceability (rubric quality) | 0 | 5 | Added mandatory schema, rejection rules, and downgrade gates | `SELF_HARDEN_RUBRIC.md` |
 | 2026-02-16 | Arithmetic integrity (rubric quality) | 1 | 5 | Added score formula, cap logic, and mismatch invalidation | `SELF_HARDEN_RUBRIC.md` |
 | 2026-02-16 | Standards mapping (rubric quality) | 2 | 5 | Added per-skill mapping to WCAG/CWV/NN-g/DTCG | `SELF_HARDEN_RUBRIC.md` |
+| 2026-03-03 | Content freshness (skill 11) | — | new | Added research accuracy criterion; paper metadata must match public records | `SELF_HARDEN_RUBRIC.md` |
+| 2026-03-03 | Writing authenticity (skill 12) | — | new | Added anti-AI voice criterion; bans trigger words, enforces varied structure | `SELF_HARDEN_RUBRIC.md` |
+| 2026-03-03 | Copywriting discipline (skill 13) | — | new | Added grammar/precision criterion; enforces subject-verb agreement, brevity | `SELF_HARDEN_RUBRIC.md` |
+| 2026-03-03 | Rubric version | v2 | v3 | Extended skill count from 10 to 13; max raw score now 65 | `SELF_HARDEN_RUBRIC.md` |
 
 ## References
 
