@@ -55,7 +55,7 @@ To enforce honest scoring, this rubric assesses its own `index.html`. Since the 
 
 | # | Skill | Standards Mapping | Blocker | Pass Threshold for `4+` | Required Evidence |
 |---|---|---|---|---|---|
-| 1 | Visual hierarchy and scanability | NN/g scan behavior + heuristic #8 | No | First viewport communicates identity, role, value, and clear next action in <=5 seconds | Desktop + mobile screenshot with annotated scan path |
+| 1 | Visual hierarchy and scanability | NN/g scan behavior + heuristic #8 | Yes | Typography-first, margin-aligned layout for collections; zero reliance on generic cards/containers for layout structure | Desktop + mobile screenshot with annotated scan path |
 | 2 | Typography readability | WCAG 1.4.12 (Text Spacing) | No | Body copy remains readable under text-spacing overrides; line length typically <=80 chars desktop | Screenshot + CSS proof of spacing resilience |
 | 3 | Color contrast and semantic signaling | WCAG 1.4.3, 1.4.11 | Yes | Text >=4.5:1 (normal), >=3:1 (large/UI); color is not sole meaning cue | Contrast samples tied to selectors/components |
 | 4 | Focus states and keyboard clarity | WCAG 2.4.7, 2.4.11 | Yes | Visible, unobscured focus indicator on all interactive controls | Keyboard walkthrough evidence across nav/forms/cards |
@@ -64,7 +64,7 @@ To enforce honest scoring, this rubric assesses its own `index.html`. Since the 
 | 7 | Motion and cognitive load control | WCAG 2.3.3 | No | Non-essential motion reduced under `prefers-reduced-motion` | Before/after state evidence + CSS/JS pointers |
 | 8 | Perceived speed and stability | web.dev LCP/INP/CLS guidance | No | LCP <=2.5s, INP <=200ms, CLS <=0.1 (75p intent) | Lighthouse/RUM snapshot with date and context |
 | 9 | Design token governance | Design Tokens CG format + consistency heuristic | No | Color/spacing/typography mostly tokenized; raw literals justified and minimized | Token inventory + hardcoded literal scan |
-| 10 | Component consistency | NN/g consistency heuristic | No | Reusable patterns for controls/cards/focus/rhythm across sections | Component pattern checklist + screenshot set |
+| 10 | Component consistency | NN/g consistency heuristic | Yes | Reusable patterns for typography, margins, and rhythm across sections; strict avoidance of card bloat or structural containment | Component pattern checklist + screenshot set |
 | 11 | Content freshness and research accuracy | Scholarly record fidelity | No | Paper statuses, years, venue labels, and BibTeX match public records (SSRN, journal DOI pages); footer date current within 90 days | Side-by-side diff of site data vs. source-of-truth records |
 | 12 | Writing authenticity (anti-AI) | AI detection avoidance heuristics | No | Varied sentence length/structure; zero AI trigger words ("delve," "utilize," "comprehensive," "landscape"); active voice >=70%; domain-specific terminology preferred over generic synonyms | Automated word-frequency scan + manual voice audit |
 | 13 | Copywriting discipline | Strunk & White + Chicago Manual of Style | No | Zero subject-verb agreement errors; no redundant phrasing; single precise word preferred over multi-word circumlocution; tone consistent with senior academic professional | Grammar-check output + before/after diff of prose edits |
@@ -153,6 +153,8 @@ A scoring row is invalid if any condition is true:
 | 2026-03-04 | Context-Aware Theming (14) | — | new | Added criterion enforcing `prefers-color-scheme` and dark mode contrast fidelity natively | `SELF_HARDEN_RUBRIC.md` |
 | 2026-03-04 | Semantic HTML & Native Elements (15) | — | new | Added blocker criterion enforcing native HTML elements over custom ARIA components | `SELF_HARDEN_RUBRIC.md` |
 | 2026-03-04 | Rubric version | v3 | v4 | Increased scope to 15 skills based on 2026 web.dev and WebAIM research; max raw score 75 | `SELF_HARDEN_RUBRIC.md` |
+| 2026-03-04 | Visual hierarchy (1) | — | — | Made blocker; enforced typography-first and margin-aligned list structure | `SELF_HARDEN_RUBRIC.md` |
+| 2026-03-04 | Component consistency (10) | — | — | Made blocker; banned container bloat in favor of margin-aligned rhythm | `SELF_HARDEN_RUBRIC.md` |
 
 ## References
 
