@@ -30,6 +30,14 @@
 - `4`: Meets threshold with current evidence for key states and breakpoints.
 - `5`: Meets threshold comprehensively with fresh, reproducible evidence.
 
+## Self-Audit Check (Current Rubric State)
+To enforce honest scoring, this rubric assesses its own `index.html`. Since the goal is identifying the weakest visual link, we score `index.html` on the new criteria now. 
+- *Context-Aware Theming*: `4` (Light/dark CSS works with media query and manual toggle; contrast relies on CSS tokens.)
+- *Semantic HTML*: `4` (Uses native `<details>` for abstracts; simple native anchors for links.)
+- *Touch target ergonomics*: `2` (Pills/chips appear tight and some text links might lack a 44px hit area.)
+
+*Worst skill identified*: **Touch target ergonomics (Skill 5)**. We will improve this skill in the rubric matrix to define a clearer threshold for minimum inline limits.
+
 ## Evidence Schema (Required for Every Scored Row) [NORMATIVE]
 
 | Field | Type | Rule |
@@ -51,15 +59,17 @@
 | 2 | Typography readability | WCAG 1.4.12 (Text Spacing) | No | Body copy remains readable under text-spacing overrides; line length typically <=80 chars desktop | Screenshot + CSS proof of spacing resilience |
 | 3 | Color contrast and semantic signaling | WCAG 1.4.3, 1.4.11 | Yes | Text >=4.5:1 (normal), >=3:1 (large/UI); color is not sole meaning cue | Contrast samples tied to selectors/components |
 | 4 | Focus states and keyboard clarity | WCAG 2.4.7, 2.4.11 | Yes | Visible, unobscured focus indicator on all interactive controls | Keyboard walkthrough evidence across nav/forms/cards |
-| 5 | Touch target ergonomics | WCAG 2.5.8 | Yes | Interactive targets >=24x24 CSS px; primary actions >=44x44 | Mobile screenshot with measured target boxes |
+| 5 | Touch target ergonomics | WCAG 2.5.8 | Yes | ALL interactive targets >=24x24 CSS px (including inline links); primary actions (buttons/cards) >=44x44px; spacing between adjacent targets must be >8px to prevent touch overlaps | Mobile screenshot with tap-target heatmap or measured boxes |
 | 6 | Responsive reflow integrity | WCAG 1.4.10 | Yes | No horizontal scroll at 320px and no content loss at zoom-stress layout | 320px screenshot + overflow check output |
 | 7 | Motion and cognitive load control | WCAG 2.3.3 | No | Non-essential motion reduced under `prefers-reduced-motion` | Before/after state evidence + CSS/JS pointers |
 | 8 | Perceived speed and stability | web.dev LCP/INP/CLS guidance | No | LCP <=2.5s, INP <=200ms, CLS <=0.1 (75p intent) | Lighthouse/RUM snapshot with date and context |
 | 9 | Design token governance | Design Tokens CG format + consistency heuristic | No | Color/spacing/typography mostly tokenized; raw literals justified and minimized | Token inventory + hardcoded literal scan |
 | 10 | Component consistency | NN/g consistency heuristic | No | Reusable patterns for controls/cards/focus/rhythm across sections | Component pattern checklist + screenshot set |
 | 11 | Content freshness and research accuracy | Scholarly record fidelity | No | Paper statuses, years, venue labels, and BibTeX match public records (SSRN, journal DOI pages); footer date current within 90 days | Side-by-side diff of site data vs. source-of-truth records |
-| 12 | Writing authenticity (anti-AI) | AI detection avoidance heuristics | No | Varied sentence length/structure; zero AI trigger words ("delve," "utilize," "comprehensive," "landscape"); active voice ≥70%; domain-specific terminology preferred over generic synonyms | Automated word-frequency scan + manual voice audit |
+| 12 | Writing authenticity (anti-AI) | AI detection avoidance heuristics | No | Varied sentence length/structure; zero AI trigger words ("delve," "utilize," "comprehensive," "landscape"); active voice >=70%; domain-specific terminology preferred over generic synonyms | Automated word-frequency scan + manual voice audit |
 | 13 | Copywriting discipline | Strunk & White + Chicago Manual of Style | No | Zero subject-verb agreement errors; no redundant phrasing; single precise word preferred over multi-word circumlocution; tone consistent with senior academic professional | Grammar-check output + before/after diff of prose edits |
+| 14 | Context-Aware Theming | WCAG 1.4.1 (Use of Color), User Preferences | No | Respects `prefers-color-scheme` smoothly; dark mode contrast >=4.5:1 without muddiness; no static forced themes without user override | Theme toggle evidence + CSS media query block |
+| 15 | Semantic HTML & Native Elements | WCAG 4.1.2 (Name, Role, Value), HTML5 | Yes | Uses native `<button>`, `<dialog>`, `<details>` over complex custom ARIA widgets for interactions | HTML validation report + source check for native forms/buttons |
 
 ## Evidence Traceability Hardening Contract (Worst Skill First) [NORMATIVE]
 
@@ -140,6 +150,9 @@ A scoring row is invalid if any condition is true:
 | 2026-03-03 | Content freshness (11) | 3 | 4 | Verified all papers against SSRN/Scholar; years, venues, statuses confirmed accurate | `index.html` |
 | 2026-03-03 | Writing authenticity (12) | 4 | 5 | Zero AI trigger words found; varied sentence structure confirmed across all prose | `index.html` |
 | 2026-03-03 | Copywriting discipline (13) | 3 | 4 | Tightened contribution summaries; verb-forward concision; contact prose streamlined | `index.html` |
+| 2026-03-04 | Context-Aware Theming (14) | — | new | Added criterion enforcing `prefers-color-scheme` and dark mode contrast fidelity natively | `SELF_HARDEN_RUBRIC.md` |
+| 2026-03-04 | Semantic HTML & Native Elements (15) | — | new | Added blocker criterion enforcing native HTML elements over custom ARIA components | `SELF_HARDEN_RUBRIC.md` |
+| 2026-03-04 | Rubric version | v3 | v4 | Increased scope to 15 skills based on 2026 web.dev and WebAIM research; max raw score 75 | `SELF_HARDEN_RUBRIC.md` |
 
 ## References
 
