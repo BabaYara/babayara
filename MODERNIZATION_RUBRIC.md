@@ -1,163 +1,71 @@
-# Website Modernization Rubric
-## Self-Evolving Quality Framework for babayara.com
+# Website Modernization Rubric (v2 Evidence-Scored)
 
----
+**Last Evaluated:** `2026-02-16`  
+**Evaluator:** Website self-hardening loop  
+**Target:** Local `index.html`  
+**Standard Baseline:** WCAG 2.2 AA blockers + selected AAA checks, NN/g scanability heuristics, web.dev CWV budgets.
 
-## Current Score: 100/125
-**Last Updated:** 2026-01-01
-**Phase:** Persona-Hardened (5-Persona Review Complete + Mobile Polish)
+Legacy baseline document is preserved at `artifacts/visual_audit/legacy_MODERNIZATION_RUBRIC_2026-01-01.md`.
 
----
+## Evidence Register (v2 Schema)
 
-## 1. VISUAL DESIGN (25 points)
+| evidence_id | artifact_path | metric_name | measured_value | threshold | capture_method | captured_at | owner |
+|---|---|---|---|---|---|---|---|
+| E-001 | `artifacts/screenshots/local-desktop-light.png` | First-screen scanability | Identity + role + intro + CTA visible | 5-second scan should reveal who/what/next action | Playwright screenshot via PowerShell | 2026-02-16 | Codex |
+| E-002 | `artifacts/screenshots/local-desktop-dark.png` | Dark-mode readability | All major sections readable; dense card grid | Must preserve readability and hierarchy in dark mode | Playwright screenshot via PowerShell | 2026-02-16 | Codex |
+| E-003 | `artifacts/screenshots/local-mobile-light.png` | Mobile reflow and tap ergonomics | No horizontal overflow observed; dense controls | No horizontal scroll at 320-390px equivalent | Playwright screenshot via PowerShell | 2026-02-16 | Codex |
+| E-004 | `artifacts/screenshots/local-mobile-dark.png` | Mobile dark-mode readability | Readable but high density; muted separators | Preserve legibility and interaction clarity | Playwright screenshot via PowerShell | 2026-02-16 | Codex |
+| E-005 | `artifacts/visual_audit/metrics/contrast_samples.txt` | Contrast spot checks | Includes `#cc3333 on #0a0a0a = 3.85:1` | >=4.5:1 for normal text, >=3:1 for large/UI | Node script using WCAG luminance formula | 2026-02-16 | Codex |
+| E-006 | `artifacts/visual_audit/metrics/code_signals.txt` | Accessibility and evidence metadata | `focus_visible_rules=2`, `reduced_motion_rules=3`, `papers_with_code=2`, `papers_with_data=1` | Presence and consistency of implementation signals | `rg` static analysis over `index.html` | 2026-02-16 | Codex |
+| E-007 | `index.html` | Token and component consistency | Theme tokens exist but hardcoded fallback hex values remain | Minimize raw literals and enforce reusable patterns | Manual source inspection | 2026-02-16 | Codex |
 
-| Criterion | Current | Target | Score |
-|-----------|---------|--------|-------|
-| **Typography hierarchy** | Crimson Pro + Inter | Maintain | 5/5 |
-| **Color consistency** | Crimson accent theme | Maintain | 5/5 |
-| **Whitespace balance** | Good spacing | Optimize mobile | 4/5 |
-| **Image integration** | Portrait with grayscale | Maintain | 5/5 |
-| **Dark mode functionality** | CSS fallback added | Test cross-browser | 5/5 |
+## Skill Scores (0-5)
 
-**Subtotal: 24/25**
+| # | Skill | Score | Confidence | Evidence | Notes |
+|---|---|---:|---|---|---|
+| 1 | Visual hierarchy and scanability | 3 | medium | E-001, E-003 | Identity and role are clear; first-screen action hierarchy is weaker than desired |
+| 2 | Typography readability | 3 | medium | E-001, E-003, E-007 | Core text is readable; repeated micro-text and dense labels reduce scanning speed |
+| 3 | Color contrast and semantic signaling (Blocker) | 2 | high | E-002, E-004, E-005 | Dark accent sample at `3.85:1` is below 4.5:1 for normal text contexts |
+| 4 | Focus states and keyboard clarity (Blocker) | 3 | medium | E-006, E-007 | Focus style exists globally; full keyboard traversal evidence is incomplete |
+| 5 | Touch target ergonomics (Blocker) | 2 | medium | E-003, E-007 | Primary buttons are large, but multiple compact text links/chips remain tight on mobile |
+| 6 | Responsive reflow integrity (Blocker) | 4 | high | E-003, E-004 | Reflow is stable in captured mobile views with no observed horizontal scrolling |
+| 7 | Motion and cognitive load control | 4 | high | E-006, E-007 | Reduced-motion media query and guarded transitions are implemented |
+| 8 | Perceived speed and stability | 1 | low | E-001, E-006 | No CWV/Lighthouse metrics captured; low-confidence rule applies downgrade |
+| 9 | Design token governance | 2 | high | E-005, E-007 | Token system exists, but fallback styles include many hardcoded color literals |
+| 10 | Component consistency | 3 | medium | E-001, E-003, E-007 | Repeated card/button patterns exist; hierarchy and density still vary by section |
 
-### Hardening Actions:
-- [x] Add portrait with grayscale effect and hover transition
-- [x] Optimize portrait image (WebP format, responsive srcset)
-- [ ] Add subtle background textures or gradients
-- [x] Implement dark mode toggle with Alpine.js
-- [x] **FIX:** Add CSS fallback for dark mode (Tailwind v4 issue)
+**Raw Total:** `27/50`
 
----
+## Blocker Status
 
-## 2. USER EXPERIENCE (25 points)
+| Blocker Skill | Score | Pass Rule | Status |
+|---|---:|---|---|
+| 3) Contrast | 2 | >=4 | Fail |
+| 4) Focus clarity | 3 | >=4 | Fail |
+| 5) Touch target size | 2 | >=4 | Fail |
+| 6) Reflow integrity | 4 | >=4 | Pass |
 
-| Criterion | Current | Target | Score |
-|-----------|---------|--------|-------|
-| **Navigation clarity** | Minimal top nav | Add scroll indicator | 4/5 |
-| **Mobile responsiveness** | Good breakpoints | Test all devices | 5/5 |
-| **Load performance** | CDN dependencies | Self-host critical | 3/5 |
-| **Accessibility** | Full ARIA + skip link | Audit complete | 5/5 |
-| **Touch target size** | 44px buttons | WCAG 2.2 AA compliant | 5/5 |
-| **Microinteractions** | Card hover lift + shadow | Implemented Jan 2026 | 5/5 |
+At least one blocker failed, so validated score is capped at `30/50`.  
+**Validated Total:** `27/50` (cap active but non-binding because raw score is already below cap).
 
-**Subtotal: 27/30** (expanded section)
+## Arithmetic Integrity
 
-### Hardening Actions:
-- [x] Add skip-to-content link
-- [x] Implement focus-visible states
-- [ ] Add scroll progress indicator
-- [x] Add prefers-reduced-motion support
-- [x] **NEW:** Increase touch targets to 44px (WCAG 2.2)
-- [x] **NEW:** Add card hover microinteractions (lift + shadow)
+- Current v2 table math check: `PASS` (`27/50` equals the sum of all 10 rows).
+- Legacy arithmetic check from January rubric: `FAIL` (example: `27/30` shown inside a section labeled `25 points`).
 
----
+## Top 3 Governance Failures (Current State)
 
-## 3. CONTENT & INFORMATION ARCHITECTURE (25 points)
+1. Evidence traceability was absent in the legacy modernization rubric format.
+2. Legacy rubric arithmetic was inconsistent across section totals.
+3. Performance claims lacked CWV evidence (LCP/INP/CLS), forcing low-confidence scoring.
 
-| Criterion | Current | Target | Score |
-|-----------|---------|--------|-------|
-| **Research presentation** | Accordion format | Add filters/search | 4/5 |
-| **Professional credibility** | CV + papers | Add awards/grants | 4/5 |
-| **Contact accessibility** | Email + address | Add office hours | 4/5 |
-| **Content freshness** | Updated Jan 2026 | Add news/updates | 4/5 |
-| **SEO optimization** | JSON-LD added | Expand coverage | 5/5 |
+## Worst Skill and Immediate Fix
 
-**Subtotal: 21/25**
+**Worst skill:** `Evidence traceability` (legacy governance score `0/5`, now addressed structurally by v2 schema).  
+**Immediate fix in force:** Every future criterion score must include a valid `evidence_id` row and a score-delta rationale.
 
-### Hardening Actions:
-- [x] Add JSON-LD structured data for Person/Scholar
-- [ ] Create individual paper pages with full citations
-- [x] Add Google Scholar / SSRN / LinkedIn links
-- [x] Implement Open Graph + Twitter Card meta tags
-- [ ] Add a "News" or "Updates" section
+## Near-Term Remediation Priorities
 
----
-
-## 4. TECHNICAL FOUNDATION (25 points)
-
-| Criterion | Current | Target | Score |
-|-----------|---------|--------|-------|
-| **Code organization** | Single HTML file | Consider components | 3/5 |
-| **Asset optimization** | WebP + srcset | Add lazy load | 4/5 |
-| **Security headers** | GitHub Pages default | Add CSP headers | 3/5 |
-| **Analytics** | None | Add privacy-respecting | 4/5 |
-| **Build process** | None | Consider static gen | 3/5 |
-
-**Subtotal: 17/25**
-
----
-
-## 5. AUDIENCE-SPECIFIC CONTENT (25 points) — NEW
-
-> [!NOTE]
-> Added after 5-persona adversarial review (Jan 2026)
-
-| Criterion | Current | Target | Score |
-|-----------|---------|--------|-------|
-| **PhD recruitment statement** | "For Students" card added | Maintain | 5/5 |
-| **Code/data availability** | Missing | Link repos/replication | 0/5 |
-| **Grants/awards section** | Missing | Add highlights | 0/5 |
-| **Conference presentations** | Missing | Add recent talks | 0/5 |
-| **Office hours/availability** | Missing | Add schedule | 0/5 |
-
-**Subtotal: 5/25**
-
-### Hardening Actions:
-- [x] **NEW:** Add "For Students" card with PhD recruitment statement
-- [ ] Add GitHub links or replication package references to papers
-- [ ] Add grants/awards highlights section
-- [ ] Add recent talks/presentations list
-- [ ] Add office hours or availability note
-
----
-
-## PERSONA REVIEW FRAMEWORK
-
-The rubric is now hardened by 5 adversarial personas:
-
-1. **🎓 Tenure Committee Member** — Professional credibility, publication clarity
-2. **📚 PhD Student** — Research accessibility, mentorship signals
-3. **♿ Accessibility Expert** — WCAG 2.2 AA compliance
-4. **🎨 UX/Visual Designer** — Typography, whitespace, polish
-5. **💼 Quant Finance Recruiter** — Technical skills visibility, code availability
-
----
-
-## EVOLUTION PROTOCOL
-
-### Phase 5: Persona-Hardening (CURRENT)
-- [x] 5-persona visual audit and research
-- [x] Adversarial debate simulation
-- [x] Dark mode CSS fix
-- [x] PhD recruitment statement
-- [x] Touch target improvements
-- [ ] Code/data links for papers
-- [ ] Grants/awards section
-
----
-
-## SCORING METHODOLOGY
-
-**Score Ranges (out of 125):**
-- 110-125: Exemplary multi-audience academic portfolio
-- 95-109: Professional and polished
-- 80-94: Good foundation, room for growth
-- 65-79: Functional but dated
-- Below 65: Needs significant work
-
----
-
-## NEXT PRIORITY ACTIONS
-
-1. **This week:** Add GitHub/replication links to ML paper
-2. **This month:** Add grants/awards section
-3. **Ongoing:** Update research papers as published
-
----
-
-*This rubric self-hardens by:*
-- Adding new criteria as web standards evolve
-- Incorporating persona-specific feedback
-- Tracking technical debt
-- Quarterly persona re-reviews
+1. Fix dark-mode accent contrast use for normal-size text contexts.
+2. Raise mobile hit-area consistency for small inline controls and chips.
+3. Capture Lighthouse/CWV evidence to replace low-confidence performance scoring.

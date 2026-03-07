@@ -1,0 +1,37 @@
+Visual inspection notes
+
+Method used in this run
+- Read the actual local `index.html`.
+- Visually inspected the provided local desktop render: `renders/desktop.png`.
+- Visually inspected the provided local mobile render: `renders/mobile.png`.
+- Read the local sentence register and paper text directly from the HTML.
+- Did **not** reproduce a fresh browser-engine render in this run, so earlier bundle claims about Chromium/Playwright remain inherited history rather than current-run fact.
+
+What the page already does well
+1. The first screen is calm and document-like rather than app-like.
+2. The navigation is sparse and predictable.
+3. The portrait treatment is restrained and not styled into nonsense.
+4. The research list reads as one edited document instead of a card zoo.
+5. Contact information is quiet and easy to scan.
+
+What specifically needed improvement
+1. The page no longer needed a structural redesign; it needed sentence-level tightening.
+2. The multifactor blurb was a little colloquial (“line up more clearly”) and now reads more precisely.
+3. The employee-news abstract lines were factual but slightly clunky; the revised wording is tighter without changing substance.
+4. The drift note for the employee-news paper needed cleaner grammar (“with a different coauthor line”).
+5. The value-paper summary benefited from “aligns” instead of “lines up” to keep the tone scholarly and controlled.
+
+Quoted-line audit
+- The exact user-flagged sentence is absent from the deployed home page observed in this run.
+- The exact sentence is also absent from the shipped local public HTML.
+- The local page continues to use the quieter intro sentence: “Published and working papers are listed below.”
+
+Residual caution
+- Because the current run relied on provided render artifacts rather than a fresh browser-engine render, layout claims remain modest.
+- The copy edits in this run are narrow enough that they do not imply a likely visual regression.
+
+Environment note added 2026-03-07:
+- Attempted a fresh local browser-engine render using system Chromium and Playwright (including a temporary local http.server).
+- The environment blocked navigation with `ERR_BLOCKED_BY_ADMINISTRATOR`.
+- Therefore this run's visual review remains grounded in: (i) direct inspection of the final local HTML/CSS/DOM and (ii) provided `renders/desktop.png` and `renders/mobile.png`, which were visually inspected in this run.
+- No fresh browser-engine screenshot claim is made.

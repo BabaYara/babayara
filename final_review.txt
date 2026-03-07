@@ -1,0 +1,73 @@
+Final review — 5 rounds
+
+Note: names are used as review lenses, not as real-person endorsements.
+
+Round 1 — truth model
+- Dieter Rams: Truth model is controlled enough for shipping the local bundle. Evidence: [E14][E15][E16][E20][E23]
+- Kenya Hara: Truth model is controlled enough for shipping the local bundle. Evidence: [E14][E15][E16][E20][E23]
+- Naoto Fukasawa: Truth model is controlled enough for shipping the local bundle. Evidence: [E14][E15][E16][E20][E23]
+- Steve Krug: Truth model is controlled enough for shipping the local bundle. Evidence: [E14][E15][E16][E20][E23]
+- Jen Simmons: Truth model is controlled enough for shipping the local bundle. Evidence: [E14][E15][E16][E20][E23]
+- Harry Roberts: Truth model is controlled enough for shipping the local bundle. Evidence: [E14][E15][E16][E20][E23]
+- Sara Soueidan: Truth model is controlled enough for shipping the local bundle. Evidence: [E14][E15][E16][E20][E23]
+- Jeremy Keith: Truth model is controlled enough for shipping the local bundle. Evidence: [E14][E15][E16][E20][E23]
+- Martin Splitt: Truth model is controlled enough for shipping the local bundle. Evidence: [E14][E15][E16][E20][E23]
+- Troy Hunt: Truth model is controlled enough for shipping the local bundle. Evidence: [E14][E15][E16][E20][E23]
+- Helen Sword: Truth model is controlled enough for shipping the local bundle. Evidence: [E14][E15][E16][E20][E23]
+Ship / revise / block: revise
+
+Round 2 — copy and scan rhythm
+- Dieter Rams: Copy rhythm is calm, factual, and largely free of interface boilerplate. Evidence: [E07][E08][L01][L02][L03]
+- Kenya Hara: Copy rhythm is calm, factual, and largely free of interface boilerplate. Evidence: [E07][E08][L01][L02][L03]
+- Naoto Fukasawa: Copy rhythm is calm, factual, and largely free of interface boilerplate. Evidence: [E07][E08][L01][L02][L03]
+- Steve Krug: Copy rhythm is calm, factual, and largely free of interface boilerplate. Evidence: [E07][E08][L01][L02][L03]
+- Jen Simmons: Copy rhythm is calm, factual, and largely free of interface boilerplate. Evidence: [E07][E08][L01][L02][L03]
+- Harry Roberts: Copy rhythm is calm, factual, and largely free of interface boilerplate. Evidence: [E07][E08][L01][L02][L03]
+- Sara Soueidan: Copy rhythm is calm, factual, and largely free of interface boilerplate. Evidence: [E07][E08][L01][L02][L03]
+- Jeremy Keith: Copy rhythm is calm, factual, and largely free of interface boilerplate. Evidence: [E07][E08][L01][L02][L03]
+- Martin Splitt: Copy rhythm is calm, factual, and largely free of interface boilerplate. Evidence: [E07][E08][L01][L02][L03]
+- Troy Hunt: Copy rhythm is calm, factual, and largely free of interface boilerplate. Evidence: [E07][E08][L01][L02][L03]
+- Helen Sword: Copy rhythm is calm, factual, and largely free of interface boilerplate. Evidence: [E07][E08][L01][L02][L03]
+Ship / revise / block: revise
+
+Round 3 — accessibility and resilience
+- Dieter Rams: Semantic structure, focus visibility, target sizing, and reduced-motion handling remain intact. Evidence: [E06][E09][E10][E11][L01]
+- Kenya Hara: Semantic structure, focus visibility, target sizing, and reduced-motion handling remain intact. Evidence: [E06][E09][E10][E11][L01]
+- Naoto Fukasawa: Semantic structure, focus visibility, target sizing, and reduced-motion handling remain intact. Evidence: [E06][E09][E10][E11][L01]
+- Steve Krug: Semantic structure, focus visibility, target sizing, and reduced-motion handling remain intact. Evidence: [E06][E09][E10][E11][L01]
+- Jen Simmons: Semantic structure, focus visibility, target sizing, and reduced-motion handling remain intact. Evidence: [E06][E09][E10][E11][L01]
+- Harry Roberts: Semantic structure, focus visibility, target sizing, and reduced-motion handling remain intact. Evidence: [E06][E09][E10][E11][L01]
+- Sara Soueidan: Semantic structure, focus visibility, target sizing, and reduced-motion handling remain intact. Evidence: [E06][E09][E10][E11][L01]
+- Jeremy Keith: Semantic structure, focus visibility, target sizing, and reduced-motion handling remain intact. Evidence: [E06][E09][E10][E11][L01]
+- Martin Splitt: Semantic structure, focus visibility, target sizing, and reduced-motion handling remain intact. Evidence: [E06][E09][E10][E11][L01]
+- Troy Hunt: Semantic structure, focus visibility, target sizing, and reduced-motion handling remain intact. Evidence: [E06][E09][E10][E11][L01]
+- Helen Sword: Semantic structure, focus visibility, target sizing, and reduced-motion handling remain intact. Evidence: [E06][E09][E10][E11][L01]
+Ship / revise / block: revise
+
+Round 4 — scholarly-record drift
+- Dieter Rams: Record drift is disclosed conservatively instead of being flattened into false certainty. Evidence: [E20][E21][E22][E23][L06]
+- Kenya Hara: Record drift is disclosed conservatively instead of being flattened into false certainty. Evidence: [E20][E21][E22][E23][L06]
+- Naoto Fukasawa: Record drift is disclosed conservatively instead of being flattened into false certainty. Evidence: [E20][E21][E22][E23][L06]
+- Steve Krug: Record drift is disclosed conservatively instead of being flattened into false certainty. Evidence: [E20][E21][E22][E23][L06]
+- Jen Simmons: Record drift is disclosed conservatively instead of being flattened into false certainty. Evidence: [E20][E21][E22][E23][L06]
+- Harry Roberts: Record drift is disclosed conservatively instead of being flattened into false certainty. Evidence: [E20][E21][E22][E23][L06]
+- Sara Soueidan: Record drift is disclosed conservatively instead of being flattened into false certainty. Evidence: [E20][E21][E22][E23][L06]
+- Jeremy Keith: Record drift is disclosed conservatively instead of being flattened into false certainty. Evidence: [E20][E21][E22][E23][L06]
+- Martin Splitt: Record drift is disclosed conservatively instead of being flattened into false certainty. Evidence: [E20][E21][E22][E23][L06]
+- Troy Hunt: Record drift is disclosed conservatively instead of being flattened into false certainty. Evidence: [E20][E21][E22][E23][L06]
+- Helen Sword: Record drift is disclosed conservatively instead of being flattened into false certainty. Evidence: [E20][E21][E22][E23][L06]
+Ship / revise / block: ship
+
+Round 5 — ship decision
+- Dieter Rams: Remaining uncertainty is disclosed, not hidden, so the bundle is ready to ship. Evidence: [L01][L04][L05]
+- Kenya Hara: Remaining uncertainty is disclosed, not hidden, so the bundle is ready to ship. Evidence: [L01][L04][L05]
+- Naoto Fukasawa: Remaining uncertainty is disclosed, not hidden, so the bundle is ready to ship. Evidence: [L01][L04][L05]
+- Steve Krug: Remaining uncertainty is disclosed, not hidden, so the bundle is ready to ship. Evidence: [L01][L04][L05]
+- Jen Simmons: Remaining uncertainty is disclosed, not hidden, so the bundle is ready to ship. Evidence: [L01][L04][L05]
+- Harry Roberts: Remaining uncertainty is disclosed, not hidden, so the bundle is ready to ship. Evidence: [L01][L04][L05]
+- Sara Soueidan: Remaining uncertainty is disclosed, not hidden, so the bundle is ready to ship. Evidence: [L01][L04][L05]
+- Jeremy Keith: Remaining uncertainty is disclosed, not hidden, so the bundle is ready to ship. Evidence: [L01][L04][L05]
+- Martin Splitt: Remaining uncertainty is disclosed, not hidden, so the bundle is ready to ship. Evidence: [L01][L04][L05]
+- Troy Hunt: Remaining uncertainty is disclosed, not hidden, so the bundle is ready to ship. Evidence: [L01][L04][L05]
+- Helen Sword: Remaining uncertainty is disclosed, not hidden, so the bundle is ready to ship. Evidence: [L01][L04][L05]
+Ship / revise / block: ship

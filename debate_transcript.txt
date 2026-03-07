@@ -1,0 +1,143 @@
+Core expert debate — 10 turns
+
+Note: names are used as review lenses, not as real-person endorsements.
+
+Turn 1 — quoted-defect truth
+- Dieter Rams: Risk: ornamental excess. Disagrees most with Kenya Hara this turn. Concrete ask: Verify the exact user-quoted line on both the deployed page and the local draft before claiming any removal. Evidence: [E16][L05]
+- Kenya Hara: Risk: decorative emptiness. Disagrees most with Dieter Rams this turn. Concrete ask: Verify the exact user-quoted line on both the deployed page and the local draft before claiming any removal. Evidence: [E16][L05]
+- Naoto Fukasawa: Risk: awkwardness and loss of calm. Disagrees most with Steve Krug this turn. Concrete ask: Verify the exact user-quoted line on both the deployed page and the local draft before claiming any removal. Evidence: [E16][L05]
+- Steve Krug: Risk: scan friction and weak information scent. Disagrees most with Kenya Hara this turn. Concrete ask: Verify the exact user-quoted line on both the deployed page and the local draft before claiming any removal. Evidence: [E16][L05]
+- Jen Simmons: Risk: layout brittleness. Disagrees most with Harry Roberts this turn. Concrete ask: Verify the exact user-quoted line on both the deployed page and the local draft before claiming any removal. Evidence: [E16][L05]
+- Harry Roberts: Risk: hidden performance tax. Disagrees most with Jen Simmons this turn. Concrete ask: Verify the exact user-quoted line on both the deployed page and the local draft before claiming any removal. Evidence: [E16][L05]
+- Sara Soueidan: Risk: inaccessible semantics and weak focus affordances. Disagrees most with Harry Roberts this turn. Concrete ask: Verify the exact user-quoted line on both the deployed page and the local draft before claiming any removal. Evidence: [E16][L05]
+- Jeremy Keith: Risk: progressive-enhancement failure. Disagrees most with Martin Splitt this turn. Concrete ask: Verify the exact user-quoted line on both the deployed page and the local draft before claiming any removal. Evidence: [E16][L05]
+- Martin Splitt: Risk: metadata drift and discoverability loss. Disagrees most with Jeremy Keith this turn. Concrete ask: Verify the exact user-quoted line on both the deployed page and the local draft before claiming any removal. Evidence: [E16][L05]
+- Troy Hunt: Risk: privacy leakage and unsafe deployment assumptions. Disagrees most with Martin Splitt this turn. Concrete ask: Verify the exact user-quoted line on both the deployed page and the local draft before claiming any removal. Evidence: [E16][L05]
+- Helen Sword: Risk: turgid prose and generic AI cadence. Disagrees most with Martin Splitt this turn. Concrete ask: Verify the exact user-quoted line on both the deployed page and the local draft before claiming any removal. Evidence: [E16][L05]
+Turn outcome: quoted-defect existence check becomes mandatory.
+
+Turn 2 — website disambiguation
+- Dieter Rams: Risk: ornamental excess. Disagrees most with Jen Simmons this turn. Concrete ask: Write in `context.json` whether 'website' means deployed page, local bundle, or both. Evidence: [E01][E02]
+- Kenya Hara: Risk: decorative emptiness. Disagrees most with Steve Krug this turn. Concrete ask: Write in `context.json` whether 'website' means deployed page, local bundle, or both. Evidence: [E01][E02]
+- Naoto Fukasawa: Risk: awkwardness and loss of calm. Disagrees most with Jen Simmons this turn. Concrete ask: Write in `context.json` whether 'website' means deployed page, local bundle, or both. Evidence: [E01][E02]
+- Steve Krug: Risk: scan friction and weak information scent. Disagrees most with Naoto Fukasawa this turn. Concrete ask: Write in `context.json` whether 'website' means deployed page, local bundle, or both. Evidence: [E01][E02]
+- Jen Simmons: Risk: layout brittleness. Disagrees most with Dieter Rams this turn. Concrete ask: Write in `context.json` whether 'website' means deployed page, local bundle, or both. Evidence: [E01][E02]
+- Harry Roberts: Risk: hidden performance tax. Disagrees most with Kenya Hara this turn. Concrete ask: Write in `context.json` whether 'website' means deployed page, local bundle, or both. Evidence: [E01][E02]
+- Sara Soueidan: Risk: inaccessible semantics and weak focus affordances. Disagrees most with Steve Krug this turn. Concrete ask: Write in `context.json` whether 'website' means deployed page, local bundle, or both. Evidence: [E01][E02]
+- Jeremy Keith: Risk: progressive-enhancement failure. Disagrees most with Jen Simmons this turn. Concrete ask: Write in `context.json` whether 'website' means deployed page, local bundle, or both. Evidence: [E01][E02]
+- Martin Splitt: Risk: metadata drift and discoverability loss. Disagrees most with Dieter Rams this turn. Concrete ask: Write in `context.json` whether 'website' means deployed page, local bundle, or both. Evidence: [E01][E02]
+- Troy Hunt: Risk: privacy leakage and unsafe deployment assumptions. Disagrees most with Harry Roberts this turn. Concrete ask: Write in `context.json` whether 'website' means deployed page, local bundle, or both. Evidence: [E01][E02]
+- Helen Sword: Risk: turgid prose and generic AI cadence. Disagrees most with Steve Krug this turn. Concrete ask: Write in `context.json` whether 'website' means deployed page, local bundle, or both. Evidence: [E01][E02]
+Turn outcome: deployed-vs-local language is now explicit.
+
+Turn 3 — stable evidence IDs
+- Dieter Rams: Risk: ornamental excess. Disagrees most with Martin Splitt this turn. Concrete ask: Rebuild the ledger with stable `E##` and `L##` IDs before regenerating reviewer files. Evidence: [E02][E03][L04]
+- Kenya Hara: Risk: decorative emptiness. Disagrees most with Harry Roberts this turn. Concrete ask: Rebuild the ledger with stable `E##` and `L##` IDs before regenerating reviewer files. Evidence: [E02][E03][L04]
+- Naoto Fukasawa: Risk: awkwardness and loss of calm. Disagrees most with Harry Roberts this turn. Concrete ask: Rebuild the ledger with stable `E##` and `L##` IDs before regenerating reviewer files. Evidence: [E02][E03][L04]
+- Steve Krug: Risk: scan friction and weak information scent. Disagrees most with Helen Sword this turn. Concrete ask: Rebuild the ledger with stable `E##` and `L##` IDs before regenerating reviewer files. Evidence: [E02][E03][L04]
+- Jen Simmons: Risk: layout brittleness. Disagrees most with Jeremy Keith this turn. Concrete ask: Rebuild the ledger with stable `E##` and `L##` IDs before regenerating reviewer files. Evidence: [E02][E03][L04]
+- Harry Roberts: Risk: hidden performance tax. Disagrees most with Martin Splitt this turn. Concrete ask: Rebuild the ledger with stable `E##` and `L##` IDs before regenerating reviewer files. Evidence: [E02][E03][L04]
+- Sara Soueidan: Risk: inaccessible semantics and weak focus affordances. Disagrees most with Jen Simmons this turn. Concrete ask: Rebuild the ledger with stable `E##` and `L##` IDs before regenerating reviewer files. Evidence: [E02][E03][L04]
+- Jeremy Keith: Risk: progressive-enhancement failure. Disagrees most with Harry Roberts this turn. Concrete ask: Rebuild the ledger with stable `E##` and `L##` IDs before regenerating reviewer files. Evidence: [E02][E03][L04]
+- Martin Splitt: Risk: metadata drift and discoverability loss. Disagrees most with Steve Krug this turn. Concrete ask: Rebuild the ledger with stable `E##` and `L##` IDs before regenerating reviewer files. Evidence: [E02][E03][L04]
+- Troy Hunt: Risk: privacy leakage and unsafe deployment assumptions. Disagrees most with Kenya Hara this turn. Concrete ask: Rebuild the ledger with stable `E##` and `L##` IDs before regenerating reviewer files. Evidence: [E02][E03][L04]
+- Helen Sword: Risk: turgid prose and generic AI cadence. Disagrees most with Kenya Hara this turn. Concrete ask: Rebuild the ledger with stable `E##` and `L##` IDs before regenerating reviewer files. Evidence: [E02][E03][L04]
+Turn outcome: reviewer artifacts now depend on stable evidence IDs.
+
+Turn 4 — method provenance
+- Dieter Rams: Risk: ornamental excess. Disagrees most with Helen Sword this turn. Concrete ask: Relabel inherited rendering/tool claims as inherited history unless this run verifies them again. Evidence: [E01][E05][L02][L03]
+- Kenya Hara: Risk: decorative emptiness. Disagrees most with Martin Splitt this turn. Concrete ask: Relabel inherited rendering/tool claims as inherited history unless this run verifies them again. Evidence: [E01][E05][L02][L03]
+- Naoto Fukasawa: Risk: awkwardness and loss of calm. Disagrees most with Martin Splitt this turn. Concrete ask: Relabel inherited rendering/tool claims as inherited history unless this run verifies them again. Evidence: [E01][E05][L02][L03]
+- Steve Krug: Risk: scan friction and weak information scent. Disagrees most with Martin Splitt this turn. Concrete ask: Relabel inherited rendering/tool claims as inherited history unless this run verifies them again. Evidence: [E01][E05][L02][L03]
+- Jen Simmons: Risk: layout brittleness. Disagrees most with Steve Krug this turn. Concrete ask: Relabel inherited rendering/tool claims as inherited history unless this run verifies them again. Evidence: [E01][E05][L02][L03]
+- Harry Roberts: Risk: hidden performance tax. Disagrees most with Troy Hunt this turn. Concrete ask: Relabel inherited rendering/tool claims as inherited history unless this run verifies them again. Evidence: [E01][E05][L02][L03]
+- Sara Soueidan: Risk: inaccessible semantics and weak focus affordances. Disagrees most with Jeremy Keith this turn. Concrete ask: Relabel inherited rendering/tool claims as inherited history unless this run verifies them again. Evidence: [E01][E05][L02][L03]
+- Jeremy Keith: Risk: progressive-enhancement failure. Disagrees most with Steve Krug this turn. Concrete ask: Relabel inherited rendering/tool claims as inherited history unless this run verifies them again. Evidence: [E01][E05][L02][L03]
+- Martin Splitt: Risk: metadata drift and discoverability loss. Disagrees most with Helen Sword this turn. Concrete ask: Relabel inherited rendering/tool claims as inherited history unless this run verifies them again. Evidence: [E01][E05][L02][L03]
+- Troy Hunt: Risk: privacy leakage and unsafe deployment assumptions. Disagrees most with Jeremy Keith this turn. Concrete ask: Relabel inherited rendering/tool claims as inherited history unless this run verifies them again. Evidence: [E01][E05][L02][L03]
+- Helen Sword: Risk: turgid prose and generic AI cadence. Disagrees most with Dieter Rams this turn. Concrete ask: Relabel inherited rendering/tool claims as inherited history unless this run verifies them again. Evidence: [E01][E05][L02][L03]
+Turn outcome: inherited method claims are downgraded unless re-verified.
+
+Turn 5 — narrow-change bias
+- Dieter Rams: Risk: ornamental excess. Disagrees most with Steve Krug this turn. Concrete ask: Keep changes sentence-level unless a real structural defect appears in the HTML or render artifacts. Evidence: [L01][L02][L03]
+- Kenya Hara: Risk: decorative emptiness. Disagrees most with Helen Sword this turn. Concrete ask: Keep changes sentence-level unless a real structural defect appears in the HTML or render artifacts. Evidence: [L01][L02][L03]
+- Naoto Fukasawa: Risk: awkwardness and loss of calm. Disagrees most with Troy Hunt this turn. Concrete ask: Keep changes sentence-level unless a real structural defect appears in the HTML or render artifacts. Evidence: [L01][L02][L03]
+- Steve Krug: Risk: scan friction and weak information scent. Disagrees most with Dieter Rams this turn. Concrete ask: Keep changes sentence-level unless a real structural defect appears in the HTML or render artifacts. Evidence: [L01][L02][L03]
+- Jen Simmons: Risk: layout brittleness. Disagrees most with Martin Splitt this turn. Concrete ask: Keep changes sentence-level unless a real structural defect appears in the HTML or render artifacts. Evidence: [L01][L02][L03]
+- Harry Roberts: Risk: hidden performance tax. Disagrees most with Helen Sword this turn. Concrete ask: Keep changes sentence-level unless a real structural defect appears in the HTML or render artifacts. Evidence: [L01][L02][L03]
+- Sara Soueidan: Risk: inaccessible semantics and weak focus affordances. Disagrees most with Martin Splitt this turn. Concrete ask: Keep changes sentence-level unless a real structural defect appears in the HTML or render artifacts. Evidence: [L01][L02][L03]
+- Jeremy Keith: Risk: progressive-enhancement failure. Disagrees most with Troy Hunt this turn. Concrete ask: Keep changes sentence-level unless a real structural defect appears in the HTML or render artifacts. Evidence: [L01][L02][L03]
+- Martin Splitt: Risk: metadata drift and discoverability loss. Disagrees most with Troy Hunt this turn. Concrete ask: Keep changes sentence-level unless a real structural defect appears in the HTML or render artifacts. Evidence: [L01][L02][L03]
+- Troy Hunt: Risk: privacy leakage and unsafe deployment assumptions. Disagrees most with Dieter Rams this turn. Concrete ask: Keep changes sentence-level unless a real structural defect appears in the HTML or render artifacts. Evidence: [L01][L02][L03]
+- Helen Sword: Risk: turgid prose and generic AI cadence. Disagrees most with Harry Roberts this turn. Concrete ask: Keep changes sentence-level unless a real structural defect appears in the HTML or render artifacts. Evidence: [L01][L02][L03]
+Turn outcome: page changes stay narrow because no structural defect forced a redesign.
+
+Turn 6 — employee-news identity drift
+- Dieter Rams: Risk: ornamental excess. Disagrees most with Kenya Hara this turn. Concrete ask: Show one canonical employee-news entry and subordinate the title/coauthor drift note. Evidence: [E20][E21][E22][L06]
+- Kenya Hara: Risk: decorative emptiness. Disagrees most with Dieter Rams this turn. Concrete ask: Show one canonical employee-news entry and subordinate the title/coauthor drift note. Evidence: [E20][E21][E22][L06]
+- Naoto Fukasawa: Risk: awkwardness and loss of calm. Disagrees most with Steve Krug this turn. Concrete ask: Show one canonical employee-news entry and subordinate the title/coauthor drift note. Evidence: [E20][E21][E22][L06]
+- Steve Krug: Risk: scan friction and weak information scent. Disagrees most with Kenya Hara this turn. Concrete ask: Show one canonical employee-news entry and subordinate the title/coauthor drift note. Evidence: [E20][E21][E22][L06]
+- Jen Simmons: Risk: layout brittleness. Disagrees most with Harry Roberts this turn. Concrete ask: Show one canonical employee-news entry and subordinate the title/coauthor drift note. Evidence: [E20][E21][E22][L06]
+- Harry Roberts: Risk: hidden performance tax. Disagrees most with Jen Simmons this turn. Concrete ask: Show one canonical employee-news entry and subordinate the title/coauthor drift note. Evidence: [E20][E21][E22][L06]
+- Sara Soueidan: Risk: inaccessible semantics and weak focus affordances. Disagrees most with Harry Roberts this turn. Concrete ask: Show one canonical employee-news entry and subordinate the title/coauthor drift note. Evidence: [E20][E21][E22][L06]
+- Jeremy Keith: Risk: progressive-enhancement failure. Disagrees most with Martin Splitt this turn. Concrete ask: Show one canonical employee-news entry and subordinate the title/coauthor drift note. Evidence: [E20][E21][E22][L06]
+- Martin Splitt: Risk: metadata drift and discoverability loss. Disagrees most with Jeremy Keith this turn. Concrete ask: Show one canonical employee-news entry and subordinate the title/coauthor drift note. Evidence: [E20][E21][E22][L06]
+- Troy Hunt: Risk: privacy leakage and unsafe deployment assumptions. Disagrees most with Martin Splitt this turn. Concrete ask: Show one canonical employee-news entry and subordinate the title/coauthor drift note. Evidence: [E20][E21][E22][L06]
+- Helen Sword: Risk: turgid prose and generic AI cadence. Disagrees most with Martin Splitt this turn. Concrete ask: Show one canonical employee-news entry and subordinate the title/coauthor drift note. Evidence: [E20][E21][E22][L06]
+Turn outcome: one canonical employee-news entry survives; drift moves to a note.
+
+Turn 7 — contact truth
+- Dieter Rams: Risk: ornamental excess. Disagrees most with Jen Simmons this turn. Concrete ask: Use the official email and avoid live office-detail bravado while the public records drift. Evidence: [E14][E15][E16]
+- Kenya Hara: Risk: decorative emptiness. Disagrees most with Steve Krug this turn. Concrete ask: Use the official email and avoid live office-detail bravado while the public records drift. Evidence: [E14][E15][E16]
+- Naoto Fukasawa: Risk: awkwardness and loss of calm. Disagrees most with Jen Simmons this turn. Concrete ask: Use the official email and avoid live office-detail bravado while the public records drift. Evidence: [E14][E15][E16]
+- Steve Krug: Risk: scan friction and weak information scent. Disagrees most with Naoto Fukasawa this turn. Concrete ask: Use the official email and avoid live office-detail bravado while the public records drift. Evidence: [E14][E15][E16]
+- Jen Simmons: Risk: layout brittleness. Disagrees most with Dieter Rams this turn. Concrete ask: Use the official email and avoid live office-detail bravado while the public records drift. Evidence: [E14][E15][E16]
+- Harry Roberts: Risk: hidden performance tax. Disagrees most with Kenya Hara this turn. Concrete ask: Use the official email and avoid live office-detail bravado while the public records drift. Evidence: [E14][E15][E16]
+- Sara Soueidan: Risk: inaccessible semantics and weak focus affordances. Disagrees most with Steve Krug this turn. Concrete ask: Use the official email and avoid live office-detail bravado while the public records drift. Evidence: [E14][E15][E16]
+- Jeremy Keith: Risk: progressive-enhancement failure. Disagrees most with Jen Simmons this turn. Concrete ask: Use the official email and avoid live office-detail bravado while the public records drift. Evidence: [E14][E15][E16]
+- Martin Splitt: Risk: metadata drift and discoverability loss. Disagrees most with Dieter Rams this turn. Concrete ask: Use the official email and avoid live office-detail bravado while the public records drift. Evidence: [E14][E15][E16]
+- Troy Hunt: Risk: privacy leakage and unsafe deployment assumptions. Disagrees most with Harry Roberts this turn. Concrete ask: Use the official email and avoid live office-detail bravado while the public records drift. Evidence: [E14][E15][E16]
+- Helen Sword: Risk: turgid prose and generic AI cadence. Disagrees most with Steve Krug this turn. Concrete ask: Use the official email and avoid live office-detail bravado while the public records drift. Evidence: [E14][E15][E16]
+Turn outcome: official email wins; office-detail bravado stays off the page.
+
+Turn 8 — scan rhythm
+- Dieter Rams: Risk: ornamental excess. Disagrees most with Martin Splitt this turn. Concrete ask: Prefer concise housekeeping copy and descriptive link labels over interface boilerplate. Evidence: [E07][E08][L01]
+- Kenya Hara: Risk: decorative emptiness. Disagrees most with Harry Roberts this turn. Concrete ask: Prefer concise housekeeping copy and descriptive link labels over interface boilerplate. Evidence: [E07][E08][L01]
+- Naoto Fukasawa: Risk: awkwardness and loss of calm. Disagrees most with Harry Roberts this turn. Concrete ask: Prefer concise housekeeping copy and descriptive link labels over interface boilerplate. Evidence: [E07][E08][L01]
+- Steve Krug: Risk: scan friction and weak information scent. Disagrees most with Helen Sword this turn. Concrete ask: Prefer concise housekeeping copy and descriptive link labels over interface boilerplate. Evidence: [E07][E08][L01]
+- Jen Simmons: Risk: layout brittleness. Disagrees most with Jeremy Keith this turn. Concrete ask: Prefer concise housekeeping copy and descriptive link labels over interface boilerplate. Evidence: [E07][E08][L01]
+- Harry Roberts: Risk: hidden performance tax. Disagrees most with Martin Splitt this turn. Concrete ask: Prefer concise housekeeping copy and descriptive link labels over interface boilerplate. Evidence: [E07][E08][L01]
+- Sara Soueidan: Risk: inaccessible semantics and weak focus affordances. Disagrees most with Jen Simmons this turn. Concrete ask: Prefer concise housekeeping copy and descriptive link labels over interface boilerplate. Evidence: [E07][E08][L01]
+- Jeremy Keith: Risk: progressive-enhancement failure. Disagrees most with Harry Roberts this turn. Concrete ask: Prefer concise housekeeping copy and descriptive link labels over interface boilerplate. Evidence: [E07][E08][L01]
+- Martin Splitt: Risk: metadata drift and discoverability loss. Disagrees most with Steve Krug this turn. Concrete ask: Prefer concise housekeeping copy and descriptive link labels over interface boilerplate. Evidence: [E07][E08][L01]
+- Troy Hunt: Risk: privacy leakage and unsafe deployment assumptions. Disagrees most with Kenya Hara this turn. Concrete ask: Prefer concise housekeeping copy and descriptive link labels over interface boilerplate. Evidence: [E07][E08][L01]
+- Helen Sword: Risk: turgid prose and generic AI cadence. Disagrees most with Kenya Hara this turn. Concrete ask: Prefer concise housekeeping copy and descriptive link labels over interface boilerplate. Evidence: [E07][E08][L01]
+Turn outcome: housekeeping copy stays short and link labels stay descriptive.
+
+Turn 9 — accessibility resilience
+- Dieter Rams: Risk: ornamental excess. Disagrees most with Helen Sword this turn. Concrete ask: Preserve semantic HTML, visible focus, sufficient target sizing, and reduced-motion handling. Evidence: [E06][E09][E10][E11][L01]
+- Kenya Hara: Risk: decorative emptiness. Disagrees most with Martin Splitt this turn. Concrete ask: Preserve semantic HTML, visible focus, sufficient target sizing, and reduced-motion handling. Evidence: [E06][E09][E10][E11][L01]
+- Naoto Fukasawa: Risk: awkwardness and loss of calm. Disagrees most with Martin Splitt this turn. Concrete ask: Preserve semantic HTML, visible focus, sufficient target sizing, and reduced-motion handling. Evidence: [E06][E09][E10][E11][L01]
+- Steve Krug: Risk: scan friction and weak information scent. Disagrees most with Martin Splitt this turn. Concrete ask: Preserve semantic HTML, visible focus, sufficient target sizing, and reduced-motion handling. Evidence: [E06][E09][E10][E11][L01]
+- Jen Simmons: Risk: layout brittleness. Disagrees most with Steve Krug this turn. Concrete ask: Preserve semantic HTML, visible focus, sufficient target sizing, and reduced-motion handling. Evidence: [E06][E09][E10][E11][L01]
+- Harry Roberts: Risk: hidden performance tax. Disagrees most with Troy Hunt this turn. Concrete ask: Preserve semantic HTML, visible focus, sufficient target sizing, and reduced-motion handling. Evidence: [E06][E09][E10][E11][L01]
+- Sara Soueidan: Risk: inaccessible semantics and weak focus affordances. Disagrees most with Jeremy Keith this turn. Concrete ask: Preserve semantic HTML, visible focus, sufficient target sizing, and reduced-motion handling. Evidence: [E06][E09][E10][E11][L01]
+- Jeremy Keith: Risk: progressive-enhancement failure. Disagrees most with Steve Krug this turn. Concrete ask: Preserve semantic HTML, visible focus, sufficient target sizing, and reduced-motion handling. Evidence: [E06][E09][E10][E11][L01]
+- Martin Splitt: Risk: metadata drift and discoverability loss. Disagrees most with Helen Sword this turn. Concrete ask: Preserve semantic HTML, visible focus, sufficient target sizing, and reduced-motion handling. Evidence: [E06][E09][E10][E11][L01]
+- Troy Hunt: Risk: privacy leakage and unsafe deployment assumptions. Disagrees most with Jeremy Keith this turn. Concrete ask: Preserve semantic HTML, visible focus, sufficient target sizing, and reduced-motion handling. Evidence: [E06][E09][E10][E11][L01]
+- Helen Sword: Risk: turgid prose and generic AI cadence. Disagrees most with Dieter Rams this turn. Concrete ask: Preserve semantic HTML, visible focus, sufficient target sizing, and reduced-motion handling. Evidence: [E06][E09][E10][E11][L01]
+Turn outcome: semantic and accessibility protections remain non-negotiable.
+
+Turn 10 — ship criteria
+- Dieter Rams: Risk: ornamental excess. Disagrees most with Steve Krug this turn. Concrete ask: Ship only after the final sentence register, reviewer files, current response, and embedded spec all match. Evidence: [L01][L04]
+- Kenya Hara: Risk: decorative emptiness. Disagrees most with Helen Sword this turn. Concrete ask: Ship only after the final sentence register, reviewer files, current response, and embedded spec all match. Evidence: [L01][L04]
+- Naoto Fukasawa: Risk: awkwardness and loss of calm. Disagrees most with Troy Hunt this turn. Concrete ask: Ship only after the final sentence register, reviewer files, current response, and embedded spec all match. Evidence: [L01][L04]
+- Steve Krug: Risk: scan friction and weak information scent. Disagrees most with Dieter Rams this turn. Concrete ask: Ship only after the final sentence register, reviewer files, current response, and embedded spec all match. Evidence: [L01][L04]
+- Jen Simmons: Risk: layout brittleness. Disagrees most with Martin Splitt this turn. Concrete ask: Ship only after the final sentence register, reviewer files, current response, and embedded spec all match. Evidence: [L01][L04]
+- Harry Roberts: Risk: hidden performance tax. Disagrees most with Helen Sword this turn. Concrete ask: Ship only after the final sentence register, reviewer files, current response, and embedded spec all match. Evidence: [L01][L04]
+- Sara Soueidan: Risk: inaccessible semantics and weak focus affordances. Disagrees most with Martin Splitt this turn. Concrete ask: Ship only after the final sentence register, reviewer files, current response, and embedded spec all match. Evidence: [L01][L04]
+- Jeremy Keith: Risk: progressive-enhancement failure. Disagrees most with Troy Hunt this turn. Concrete ask: Ship only after the final sentence register, reviewer files, current response, and embedded spec all match. Evidence: [L01][L04]
+- Martin Splitt: Risk: metadata drift and discoverability loss. Disagrees most with Troy Hunt this turn. Concrete ask: Ship only after the final sentence register, reviewer files, current response, and embedded spec all match. Evidence: [L01][L04]
+- Troy Hunt: Risk: privacy leakage and unsafe deployment assumptions. Disagrees most with Dieter Rams this turn. Concrete ask: Ship only after the final sentence register, reviewer files, current response, and embedded spec all match. Evidence: [L01][L04]
+- Helen Sword: Risk: turgid prose and generic AI cadence. Disagrees most with Harry Roberts this turn. Concrete ask: Ship only after the final sentence register, reviewer files, current response, and embedded spec all match. Evidence: [L01][L04]
+Turn outcome: ship only when the files, spec, and sentence register agree.

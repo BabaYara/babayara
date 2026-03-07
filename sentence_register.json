@@ -1,0 +1,216 @@
+[
+  {
+    "id": "S01",
+    "section": "top",
+    "text": "I study empirical asset pricing, return predictability, factor models, and machine learning.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S02",
+    "section": "top",
+    "text": "My work centers on measurement: separating persistent information from transitory noise, reading risk exposures before they are fully priced, and keeping predictive models economically disciplined.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S03",
+    "section": "research",
+    "text": "Published and working papers are listed below.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S04",
+    "section": "research",
+    "text": "Expected returns align more closely with factor risk once cross-factor covariances are estimated explicitly.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S05",
+    "section": "research",
+    "text": "The multifactor risk-return tradeoff turns strongly positive once factor covariances, not just variances, are accounted for.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S06",
+    "section": "research",
+    "text": "Covariances explain more variation in factor returns than variances and matter for both in-sample and out-of-sample prediction.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S07",
+    "section": "research",
+    "text": "Employee news consumption reveals macro risk exposures inside the firm before they fully surface in market outcomes.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S08",
+    "section": "research",
+    "text": "Employee news consumption helps characterize firms' exposure to macroeconomic risk.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S09",
+    "section": "research",
+    "text": "Firms whose employees read more macroeconomic news in advance are more exposed when conditions worsen later.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S10",
+    "section": "research",
+    "text": "Those firms also hedge more, face higher costs of capital, and invest and hire less.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S11",
+    "section": "research",
+    "text": "Earlier public records also appear under the title Are Uncertain Firms Riskier? with a different coauthor line.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": [
+      "Title/coauthor drift disclosed conservatively."
+    ]
+  },
+  {
+    "id": "S12",
+    "section": "research",
+    "text": "This entry follows the March 2024 draft title and author line.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": [
+      "Title/coauthor drift disclosed conservatively."
+    ]
+  },
+  {
+    "id": "S13",
+    "section": "research",
+    "text": "Separating persistent information from transitory noise sharpens characteristic-sorted strategies and pricing tests.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S14",
+    "section": "research",
+    "text": "Firm characteristics contain both persistent and transitory components, and the pricing of characteristics is driven largely by the persistent component.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S15",
+    "section": "research",
+    "text": "Strategies built on the persistent component deliver much higher Sharpe ratios than standard characteristic-based strategies.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S16",
+    "section": "research",
+    "text": "A large share of historically important commodity strategy premia appears to fade after financialization.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S17",
+    "section": "research",
+    "text": "Around four-fifths of commodity futures strategies that were profitable before financialization stop being profitable afterward.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S18",
+    "section": "research",
+    "text": "The decline appears to come from adverse repricing of a few systematically important factors.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S19",
+    "section": "research",
+    "text": "Value spreads forecast value returns across multiple asset classes, with a strong common component in risk premia.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S20",
+    "section": "research",
+    "text": "Value spreads predict value returns in equities, industries, commodities, currencies, and global bond and stock markets.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S21",
+    "section": "research",
+    "text": "A single common component explains about two-thirds of that predictability and aligns with broad variation in risk premia.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S22",
+    "section": "research",
+    "text": "Even high-Sharpe factor models do not span one another cleanly; strong fit alone does not resolve cross-model disagreement.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S23",
+    "section": "research",
+    "text": "Modern machine-learning factor models achieve high Sharpe ratios in very different ways and disagree on which factors are actually priced.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S24",
+    "section": "research",
+    "text": "Much of the return attributed to factor exposure by one model is treated as alpha by another.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S25",
+    "section": "research",
+    "text": "Economically structured neural networks generalize better than unconstrained prediction systems in asset-pricing settings.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S26",
+    "section": "research",
+    "text": "Unconstrained machine-learning models can predict short-run cross-sectional returns without generalizing to the time-series behavior of the market and long-short portfolios.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S27",
+    "section": "research",
+    "text": "Imposing economically motivated structure restores that out-of-domain generalization.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S28",
+    "section": "teaching",
+    "text": "Course details change by term, so current materials, schedules, and policies are posted on Canvas or the official course site for the relevant term.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S29",
+    "section": "teaching",
+    "text": "I referee for the Journal of Financial and Quantitative Analysis, the Journal of Economic Dynamics and Control, the Journal of Empirical Finance, and the Quarterly Journal of Finance.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  },
+  {
+    "id": "S30",
+    "section": "contact",
+    "text": "For questions about a paper, data, or replication, a short message with context is the fastest way to reach me.",
+    "source": "local HTML DOM + provided desktop/mobile render artifacts visually inspected in this run",
+    "notes": []
+  }
+]

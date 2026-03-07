@@ -1,0 +1,181 @@
+{
+  "session_date": "2026-03-07",
+  "project": "Prompt refinement, live/local truth audit, sentence-level copy cleanup, and reviewer regeneration for babayara.com",
+  "quoted_defect_audit": {
+    "requested_line_summary": "Two-sentence research-intro/process note about keeping papers, versions, and conflict notes together.",
+    "requested_line_sha256": "253e4164960c90206fd8a9790f969bdc94fdc5f79532dfb710a463e48ceef40d",
+    "live_site_status": "absent on deployed home page fetched 2026-03-07",
+    "local_bundle_status": "absent from shipped public HTML in the local bundle",
+    "live_site_actual_intro": "Filter by topic, status, or a keyword. All papers remain readable without JavaScript.",
+    "local_bundle_intro": "Published and working papers are listed below.",
+    "evidence": [
+      "E16",
+      "L01",
+      "L05"
+    ],
+    "rule": "Never claim a line was removed from 'the website' until the exact text has been checked against the deployed page, the local draft, both, or neither."
+  },
+  "truth_streams": {
+    "official_records": [
+      "E14",
+      "E15"
+    ],
+    "publisher_records": [
+      "E17",
+      "E18"
+    ],
+    "working_paper_records": [
+      "E20",
+      "E21",
+      "E22",
+      "E23",
+      "E24",
+      "E25",
+      "E26"
+    ],
+    "live_site": [
+      "E16"
+    ],
+    "local_bundle": [
+      "L01",
+      "L02",
+      "L03",
+      "L04",
+      "L05",
+      "L06"
+    ]
+  },
+  "method_provenance": {
+    "web_observed_this_run": [
+      "Official Indiana Kelley directory/profile snippets and IU vita PDF",
+      "Published JFE and Review of Finance records",
+      "Public SSRN / repository / public-PDF records for working papers",
+      "Deployed home page text fetched from babayara.com",
+      "OpenAI, MDN, W3C, GitHub Docs, and NNGroup guidance for context engineering and web quality"
+    ],
+    "local_reads_this_run": [
+      "index.html",
+      "site_snapshot/index.html",
+      "103_NewsConsump.pdf",
+      "cv.pdf",
+      "renders/desktop.png",
+      "renders/mobile.png"
+    ],
+    "render_honesty": "Current run visually inspected the provided desktop/mobile render artifacts and the actual local HTML DOM. It did not reproduce a fresh browser-engine render, so inherited bundle claims about Chromium/Playwright are treated as historical artifacts rather than current-run facts.",
+    "fresh_browser_render_attempt_2026_03_07": {
+      "attempted": true,
+      "tooling": [
+        "system chromium",
+        "playwright via system chromium",
+        "local http.server"
+      ],
+      "result": "blocked",
+      "observed_error": "ERR_BLOCKED_BY_ADMINISTRATOR",
+      "impact": "Current run relies on local HTML DOM inspection plus provided render artifacts for visual review; no fresh browser-engine screenshot was produced in this environment."
+    }
+  },
+  "state_capsule": {
+    "highest_salience": [
+      {
+        "id": "H1",
+        "claim": "Official Kelley/IU sources use fababa@iu.edu, while the live page still shows fbabayara@iu.edu.",
+        "evidence": [
+          "E14",
+          "E15",
+          "E16"
+        ],
+        "action": "Keep the official email in the local bundle and describe the live mismatch plainly."
+      },
+      {
+        "id": "H2",
+        "claim": "The exact user-quoted sentence is absent from both the deployed page and the local public HTML.",
+        "evidence": [
+          "E16",
+          "L01",
+          "L05"
+        ],
+        "action": "Do not claim a live deletion. Log the absence honestly and keep the sentence out of public artifacts."
+      },
+      {
+        "id": "H3",
+        "claim": "The employee-news project still has real public title/coauthor drift.",
+        "evidence": [
+          "E20",
+          "E21",
+          "E22",
+          "L06"
+        ],
+        "action": "Use one canonical visible entry, then subordinate the drift note."
+      },
+      {
+        "id": "H4",
+        "claim": "The factor-model paper has a local-only newer CV title that is not the current public SSRN title.",
+        "evidence": [
+          "E23",
+          "L06"
+        ],
+        "action": "Do not surface the local-only title as public fact without verification."
+      },
+      {
+        "id": "H5",
+        "claim": "Current-run render claims must be method-specific and honest.",
+        "evidence": [
+          "L02",
+          "L03"
+        ],
+        "action": "Describe provided render artifacts as provided render artifacts; do not inherit tool-method claims uncritically."
+      },
+      {
+        "id": "H6",
+        "claim": "The page already satisfies the high-level brief: calm, local-first, semantic, and free of essential JavaScript.",
+        "evidence": [
+          "L01",
+          "E06",
+          "E09",
+          "E10",
+          "E11"
+        ],
+        "action": "Keep changes narrow and sentence-level unless evidence points to a structural defect."
+      }
+    ],
+    "research_conflict_matrix": [
+      {
+        "project": "Employee news consumption paper",
+        "public_variants": [
+          "Risk from the Inside Out: Understanding Firm Risk through Employee News Consumption",
+          "Are Uncertain Firms Riskier?"
+        ],
+        "author_variants": [
+          "three-author March 2024 draft",
+          "four-author older public record including Carter Davis"
+        ],
+        "public_page_choice": "Use the March 2024 title and author line, then disclose earlier public drift in one short note."
+      },
+      {
+        "project": "Factor-model paper",
+        "public_variants": [
+          "The Limits of Factor Model Spanning",
+          "Messy Asset Pricing: Are Asset Pricing Models Moving Toward a Consensus?"
+        ],
+        "author_variants": [
+          "same public coauthor line",
+          "local CV title newer than current public SSRN title"
+        ],
+        "public_page_choice": "Keep the public page aligned to the current public SSRN title."
+      }
+    ],
+    "visual_findings": [
+      "The page still reads like an edited document rather than a dashboard.",
+      "No structural layout defect forced a CSS rewrite in this run.",
+      "The copy benefited from a few sentence-level edits: less colloquial phrasing in the multifactor blurb, cleaner drift-note grammar, and slightly tighter value and employee-news summaries.",
+      "Because the visual brief was already largely met, the best improvement was semantic and editorial, not decorative."
+    ],
+    "done": [
+      "Prompt guardrails refined in two passes.",
+      "Current-state response refined in three passes.",
+      "Sentence register regenerated from the final local copy with honest source labeling.",
+      "Reviewer files and debate transcripts regenerated from the final sentence register.",
+      "Spec patched so the embedded final index and current response match the shipped files."
+    ]
+  }
+}
