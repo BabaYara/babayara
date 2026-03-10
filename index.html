@@ -1,21 +1,25 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fahiz Baba-Yara | Assistant Professor of Finance</title>
-  <meta name="description" content="Academic website for Fahiz Baba-Yara, Assistant Professor of Finance at Indiana University. I study empirical asset pricing, return predictability, factor models, and machine learning.">
+  <meta name="description"
+    content="Academic website for Fahiz Baba-Yara, Assistant Professor of Finance at Indiana University. I study empirical asset pricing, return predictability, factor models, and machine learning.">
   <meta name="color-scheme" content="light dark">
   <link rel="canonical" href="https://babayara.com/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Fahiz Baba-Yara | Assistant Professor of Finance">
-  <meta property="og:description" content="I study empirical asset pricing, return predictability, factor models, and machine learning.">
+  <meta property="og:description"
+    content="I study empirical asset pricing, return predictability, factor models, and machine learning.">
   <meta property="og:url" content="https://babayara.com/">
   <meta property="og:image" content="https://babayara.com/Portrait05.jpg">
   <meta property="og:image:alt" content="Portrait of Fahiz Baba-Yara">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Fahiz Baba-Yara | Assistant Professor of Finance">
-  <meta name="twitter:description" content="I study empirical asset pricing, return predictability, factor models, and machine learning.">
+  <meta name="twitter:description"
+    content="I study empirical asset pricing, return predictability, factor models, and machine learning.">
   <meta name="twitter:image" content="https://babayara.com/Portrait05.jpg">
   <style>
     :root {
@@ -47,8 +51,14 @@
       }
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background: var(--bg);
@@ -59,8 +69,14 @@
       text-rendering: optimizeLegibility;
     }
 
-    img { max-width: 100%; display: block; }
-    figure { margin: 0; }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    figure {
+      margin: 0;
+    }
 
     a {
       color: var(--link);
@@ -68,7 +84,9 @@
       text-underline-offset: 0.16em;
     }
 
-    a:hover { text-decoration-thickness: 0.12em; }
+    a:hover {
+      text-decoration-thickness: 0.12em;
+    }
 
     a:focus-visible,
     summary:focus-visible,
@@ -89,14 +107,18 @@
       text-decoration: none;
     }
 
-    .skip-link:focus { top: 1rem; }
+    .skip-link:focus {
+      top: 1rem;
+    }
 
     .shell {
       width: min(var(--max), calc(100% - 2rem));
       margin: 0 auto;
     }
 
-    .site-header { padding: 1.5rem 0 0; }
+    .site-header {
+      padding: 1.5rem 0 0;
+    }
 
     .masthead {
       display: flex;
@@ -140,7 +162,9 @@
     }
 
     nav a:hover,
-    nav a[aria-current="page"] { color: var(--text); }
+    nav a[aria-current="page"] {
+      color: var(--text);
+    }
 
     .hero {
       display: grid;
@@ -159,7 +183,9 @@
       text-transform: uppercase;
     }
 
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
       margin: 0;
       font-family: var(--serif);
       font-weight: 500;
@@ -173,8 +199,13 @@
       margin-bottom: 1.65rem;
     }
 
-    .name-line { display: block; }
-    .surname { white-space: nowrap; }
+    .name-line {
+      display: block;
+    }
+
+    .surname {
+      white-space: nowrap;
+    }
 
     .hero-lead {
       margin: 0 0 0.8rem;
@@ -197,8 +228,12 @@
       color: var(--muted);
     }
 
-    .inline-links li { display: inline-flex; align-items: center; }
-    .inline-links li + li::before {
+    .inline-links li {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .inline-links li+li::before {
       content: "·";
       color: var(--line);
       margin-right: 1rem;
@@ -207,13 +242,21 @@
     .hero-card {
       justify-self: end;
       width: min(100%, 365px);
-      background: linear-gradient(180deg, rgba(255,255,255,0.25), rgba(255,255,255,0.08));
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.08));
       border-radius: 1rem;
       overflow: hidden;
       box-shadow: var(--shadow);
     }
 
-    .hero-card picture { display: block; }
+    .hero-card picture {
+      display: block;
+    }
+
+    .hero-card img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
 
     .section {
       border-top: 1px solid var(--line);
@@ -254,12 +297,14 @@
       list-style: none;
     }
 
-    .paper-list > li {
+    .paper-list>li {
       border-top: 1px solid var(--line);
       padding: 1.45rem 0 1.6rem;
     }
 
-    .paper-list > li:first-child { margin-top: 1rem; }
+    .paper-list>li:first-child {
+      margin-top: 1rem;
+    }
 
     .paper {
       display: grid;
@@ -280,7 +325,10 @@
       margin-bottom: 0.2rem;
     }
 
-    .paper-status { display: block; line-height: 1.45; }
+    .paper-status {
+      display: block;
+      line-height: 1.45;
+    }
 
     .paper-title {
       font-size: clamp(1.45rem, 2vw, 2rem);
@@ -316,7 +364,9 @@
     }
 
     .paper-blurb,
-    .contact-copy { color: var(--text); }
+    .contact-copy {
+      color: var(--text);
+    }
 
     .abstract,
     .note,
@@ -326,10 +376,17 @@
     .paper-meta,
     .service-copy,
     .mini-block p,
-    .footer-note { color: var(--muted); }
+    .footer-note {
+      color: var(--muted);
+    }
 
-    .paper-links { margin: 0.6rem 0 0.8rem; }
-    .paper-links li + li::before { margin-right: 0.65rem; }
+    .paper-links {
+      margin: 0.6rem 0 0.8rem;
+    }
+
+    .paper-links li+li::before {
+      margin-right: 0.65rem;
+    }
 
     .paper-links a {
       font-size: 0.98rem;
@@ -354,10 +411,15 @@
       gap: 0.5rem;
     }
 
-    details[open] summary { color: var(--text); }
+    details[open] summary {
+      color: var(--text);
+    }
 
-    .mini-block { padding-bottom: 1.15rem; }
-    .mini-block + .mini-block {
+    .mini-block {
+      padding-bottom: 1.15rem;
+    }
+
+    .mini-block+.mini-block {
       border-top: 1px solid var(--line);
       padding-top: 1.15rem;
     }
@@ -393,7 +455,7 @@
       margin: 0;
     }
 
-    .profiles li + li::before {
+    .profiles li+li::before {
       content: "·";
       color: var(--line);
       margin-right: 0.8rem;
@@ -405,12 +467,19 @@
       padding: 1.15rem 0 2.4rem;
     }
 
-    .footer-note { font-size: 0.95rem; }
+    .footer-note {
+      font-size: 0.95rem;
+    }
 
 
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
@@ -418,14 +487,19 @@
     }
 
     @media print {
-      .skip-link { display: none; }
+      .skip-link {
+        display: none;
+      }
     }
 
     @media (max-width: 960px) {
+
       .hero,
       .research-head,
       .lower-grid,
-      .paper { grid-template-columns: 1fr; }
+      .paper {
+        grid-template-columns: 1fr;
+      }
 
       .hero {
         gap: 2rem;
@@ -437,7 +511,9 @@
         width: min(100%, 420px);
       }
 
-      .paper { gap: 0.8rem; }
+      .paper {
+        gap: 0.8rem;
+      }
 
       .paper-meta {
         display: flex;
@@ -448,23 +524,31 @@
     }
 
     @media (max-width: 720px) {
-      .shell { width: min(var(--max), calc(100% - 1.2rem)); }
+      .shell {
+        width: min(var(--max), calc(100% - 1.2rem));
+      }
+
       .masthead {
         flex-direction: column;
         align-items: flex-start;
         padding-bottom: 1.4rem;
       }
 
-      nav ul { gap: 0.6rem 1.15rem; }
-      .hero { padding-bottom: 3rem; }
+      nav ul {
+        gap: 0.6rem 1.15rem;
+      }
+
+      .hero {
+        padding-bottom: 3rem;
+      }
 
       .hero-card {
         width: min(100%, 330px);
         justify-self: center;
       }
 
-      .inline-links li + li::before,
-      .profiles li + li::before {
+      .inline-links li+li::before,
+      .profiles li+li::before {
         content: none;
         margin-right: 0;
       }
@@ -487,10 +571,17 @@
       .course-copy,
       .contact-copy,
       .service-copy,
-      .mini-block p { font-size: 1rem; }
+      .mini-block p {
+        font-size: 1rem;
+      }
 
-      .section { padding-top: 2rem; }
-      .paper-list > li { padding: 1.2rem 0 1.35rem; }
+      .section {
+        padding-top: 2rem;
+      }
+
+      .paper-list>li {
+        padding: 1.2rem 0 1.35rem;
+      }
     }
   </style>
   <script type="application/ld+json">
@@ -514,6 +605,7 @@
   }
   </script>
 </head>
+
 <body>
   <a class="skip-link" href="#content">Skip to content</a>
   <header class="site-header shell">
@@ -538,19 +630,29 @@
           <span class="name-line">Fahiz</span>
           <span class="name-line surname">Baba&#8209;Yara</span>
         </h1>
-        <p class="hero-lead">I study empirical asset pricing, return predictability, factor models, and machine learning.</p>
-        <p class="hero-copy">My work centers on measurement: separating persistent information from transitory noise, reading risk exposures before they are fully priced, and keeping predictive models economically disciplined.</p>
+        <p class="hero-lead">I study empirical asset pricing, return predictability, factor models, and machine
+          learning.</p>
+        <p class="hero-copy">My work centers on measurement: separating persistent information from transitory noise,
+          reading risk exposures before they are fully priced, and keeping predictive models economically disciplined.
+        </p>
         <ul class="inline-links" role="list" aria-label="Primary profile links">
-          <li><a href="https://scholar.google.com/citations?hl=en&amp;user=cOs0q6MAAAAJ" rel="noopener noreferrer" target="_blank" aria-label="Google Scholar profile for Fahiz Baba-Yara">Google Scholar</a></li>
-          <li><a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2811355" rel="noopener noreferrer" target="_blank" aria-label="SSRN author page for Fahiz Baba-Yara">SSRN</a></li>
+          <li><a href="https://scholar.google.com/citations?hl=en&amp;user=cOs0q6MAAAAJ" rel="noopener noreferrer"
+              target="_blank" aria-label="Google Scholar profile for Fahiz Baba-Yara">Google Scholar</a></li>
+          <li><a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2811355" rel="noopener noreferrer"
+              target="_blank" aria-label="SSRN author page for Fahiz Baba-Yara">SSRN</a></li>
           <li><a href="./cv.pdf" aria-label="Curriculum vitae PDF for Fahiz Baba-Yara">CV</a></li>
           <li><a href="mailto:fababa@iu.edu" aria-label="Email Fahiz Baba-Yara at fababa@iu.edu">fababa@iu.edu</a></li>
         </ul>
       </div>
       <figure class="hero-card">
         <picture>
-          <source srcset="./Portrait05.webp" type="image/webp">
-          <img src="./Portrait05.jpg" width="895" height="875" sizes="(max-width: 720px) calc(100vw - 1.2rem), (max-width: 960px) 420px, 365px" decoding="async" fetchpriority="high" alt="Portrait of Fahiz Baba-Yara">
+          <source
+            srcset="./Portrait05-400w.webp 400w, ./Portrait05-600w.webp 600w, ./Portrait05-800w.webp 800w, ./Portrait05.webp 895w"
+            sizes="(max-width: 720px) 330px, (max-width: 960px) 420px, 365px" type="image/webp">
+          <img src="./Portrait05.jpg"
+            srcset="./Portrait05-400w.jpg 400w, ./Portrait05-600w.jpg 600w, ./Portrait05.jpg 895w"
+            sizes="(max-width: 720px) 330px, (max-width: 960px) 420px, 365px" width="400" height="500" decoding="async"
+            fetchpriority="high" alt="Portrait of Fahiz Baba-Yara">
         </picture>
       </figure>
     </section>
@@ -572,15 +674,21 @@
               <span class="paper-status">Working paper</span>
             </div>
             <div>
-              <h3 class="paper-title"><a href="https://ssrn.com/abstract=5176099" rel="noopener noreferrer" target="_blank">The Multifactor Risk-Return Tradeoff</a></h3>
+              <h3 class="paper-title"><a href="https://ssrn.com/abstract=5176099" rel="noopener noreferrer"
+                  target="_blank">The Multifactor Risk-Return Tradeoff</a></h3>
               <p class="paper-authors">Fahiz Baba-Yara, Martijn Boons, and Rik Frehen</p>
-              <p class="paper-blurb">Expected returns align more closely with factor risk once cross-factor covariances are estimated explicitly.</p>
-              <ul class="inline-links paper-links" role="list" aria-label="Links for The Multifactor Risk-Return Tradeoff">
-                <li><a href="https://ssrn.com/abstract=5176099" rel="noopener noreferrer" target="_blank" aria-label="SSRN page for The Multifactor Risk-Return Tradeoff">SSRN</a></li>
+              <p class="paper-blurb">Expected returns align more closely with factor risk once cross-factor covariances
+                are estimated explicitly.</p>
+              <ul class="inline-links paper-links" role="list"
+                aria-label="Links for The Multifactor Risk-Return Tradeoff">
+                <li><a href="https://ssrn.com/abstract=5176099" rel="noopener noreferrer" target="_blank"
+                    aria-label="SSRN page for The Multifactor Risk-Return Tradeoff">SSRN</a></li>
               </ul>
               <details>
                 <summary>Abstract and notes</summary>
-                <p class="abstract">The multifactor risk-return tradeoff turns strongly positive once factor covariances, not just variances, are accounted for. Covariances explain more variation in factor returns than variances and matter for both in-sample and out-of-sample prediction.</p>
+                <p class="abstract">The multifactor risk-return tradeoff turns strongly positive once factor
+                  covariances, not just variances, are accounted for. Covariances explain more variation in factor
+                  returns than variances and matter for both in-sample and out-of-sample prediction.</p>
               </details>
             </div>
           </article>
@@ -593,17 +701,26 @@
               <span class="paper-status">Working paper</span>
             </div>
             <div>
-              <h3 class="paper-title"><a href="./103_NewsConsump.pdf">Risk from the Inside Out: Understanding Firm Risk through Employee News Consumption</a></h3>
+              <h3 class="paper-title"><a href="./103_NewsConsump.pdf">Risk from the Inside Out: Understanding Firm Risk
+                  through Employee News Consumption</a></h3>
               <p class="paper-authors">Fahiz Baba-Yara, Fotis Grigoris, and Preetesh Kantak</p>
-              <p class="paper-blurb">Employee news consumption reveals macro risk exposures inside the firm before they fully surface in market outcomes.</p>
+              <p class="paper-blurb">Employee news consumption reveals macro risk exposures inside the firm before they
+                fully surface in market outcomes.</p>
               <ul class="inline-links paper-links" role="list" aria-label="Links for Risk from the Inside Out">
-                <li><a href="./103_NewsConsump.pdf" aria-label="PDF for Risk from the Inside Out: Understanding Firm Risk through Employee News Consumption">PDF</a></li>
-                <li><a href="https://ssrn.com/abstract=4354256" rel="noopener noreferrer" target="_blank" aria-label="SSRN page for Risk from the Inside Out: Understanding Firm Risk through Employee News Consumption">SSRN</a></li>
+                <li><a href="./103_NewsConsump.pdf"
+                    aria-label="PDF for Risk from the Inside Out: Understanding Firm Risk through Employee News Consumption">PDF</a>
+                </li>
+                <li><a href="https://ssrn.com/abstract=4354256" rel="noopener noreferrer" target="_blank"
+                    aria-label="SSRN page for Risk from the Inside Out: Understanding Firm Risk through Employee News Consumption">SSRN</a>
+                </li>
               </ul>
               <details>
                 <summary>Abstract and notes</summary>
-                <p class="abstract">Employee news consumption helps characterize firms' exposure to macroeconomic risk. Firms whose employees read more macroeconomic news in advance are more exposed when conditions worsen later. Those firms also hedge more, face higher costs of capital, and invest and hire less.</p>
-                <p class="note">Earlier public records also appear under the title <em>Are Uncertain Firms Riskier?</em> with a different coauthor line. This entry follows the March 2024 draft title and author line.</p>
+                <p class="abstract">Employee news consumption helps characterize firms' exposure to macroeconomic risk.
+                  Firms whose employees read more macroeconomic news in advance are more exposed when conditions worsen
+                  later. Those firms also hedge more, face higher costs of capital, and invest and hire less.</p>
+                <p class="note">Earlier public records also appear under the title <em>Are Uncertain Firms Riskier?</em>
+                  with a different coauthor line. This entry follows the March 2024 draft title and author line.</p>
               </details>
             </div>
           </article>
@@ -616,16 +733,26 @@
               <span class="paper-status">Published · Journal of Financial Economics</span>
             </div>
             <div>
-              <h3 class="paper-title"><a href="./101_Persistence.pdf">Persistent and Transitory Components of Firm Characteristics: Implications for Asset Pricing</a></h3>
+              <h3 class="paper-title"><a href="./101_Persistence.pdf">Persistent and Transitory Components of Firm
+                  Characteristics: Implications for Asset Pricing</a></h3>
               <p class="paper-authors">Fahiz Baba-Yara, Martijn Boons, and Andrea Tamoni</p>
-              <p class="paper-blurb">Separating persistent information from transitory noise sharpens characteristic-sorted strategies and pricing tests.</p>
-              <ul class="inline-links paper-links" role="list" aria-label="Links for Persistent and Transitory Components of Firm Characteristics: Implications for Asset Pricing">
-                <li><a href="./101_Persistence.pdf" aria-label="PDF for Persistent and Transitory Components of Firm Characteristics: Implications for Asset Pricing">PDF</a></li>
-                <li><a href="https://data.mendeley.com/datasets/sj93bbhdcw/2" rel="noopener noreferrer" target="_blank" aria-label="Data for Persistent and Transitory Components of Firm Characteristics: Implications for Asset Pricing">Data</a></li>
+              <p class="paper-blurb">Separating persistent information from transitory noise sharpens
+                characteristic-sorted strategies and pricing tests.</p>
+              <ul class="inline-links paper-links" role="list"
+                aria-label="Links for Persistent and Transitory Components of Firm Characteristics: Implications for Asset Pricing">
+                <li><a href="./101_Persistence.pdf"
+                    aria-label="PDF for Persistent and Transitory Components of Firm Characteristics: Implications for Asset Pricing">PDF</a>
+                </li>
+                <li><a href="https://data.mendeley.com/datasets/sj93bbhdcw/2" rel="noopener noreferrer" target="_blank"
+                    aria-label="Data for Persistent and Transitory Components of Firm Characteristics: Implications for Asset Pricing">Data</a>
+                </li>
               </ul>
               <details>
                 <summary>Abstract and notes</summary>
-                <p class="abstract">Firm characteristics contain both persistent and transitory components, and the pricing of characteristics is driven largely by the persistent component. Strategies built on the persistent component deliver much higher Sharpe ratios than standard characteristic-based strategies.</p>
+                <p class="abstract">Firm characteristics contain both persistent and transitory components, and the
+                  pricing of characteristics is driven largely by the persistent component. Strategies built on the
+                  persistent component deliver much higher Sharpe ratios than standard characteristic-based strategies.
+                </p>
               </details>
             </div>
           </article>
@@ -638,15 +765,21 @@
               <span class="paper-status">Working paper</span>
             </div>
             <div>
-              <h3 class="paper-title"><a href="https://ssrn.com/abstract=4345427" rel="noopener noreferrer" target="_blank">Commodity Returns: Lost in Financialization</a></h3>
+              <h3 class="paper-title"><a href="https://ssrn.com/abstract=4345427" rel="noopener noreferrer"
+                  target="_blank">Commodity Returns: Lost in Financialization</a></h3>
               <p class="paper-authors">Fahiz Baba-Yara and Massimiliano Bondatti</p>
-              <p class="paper-blurb">A large share of historically important commodity strategy premia appears to fade after financialization.</p>
-              <ul class="inline-links paper-links" role="list" aria-label="Links for Commodity Returns: Lost in Financialization">
-                <li><a href="https://ssrn.com/abstract=4345427" rel="noopener noreferrer" target="_blank" aria-label="SSRN page for Commodity Returns: Lost in Financialization">SSRN</a></li>
+              <p class="paper-blurb">A large share of historically important commodity strategy premia appears to fade
+                after financialization.</p>
+              <ul class="inline-links paper-links" role="list"
+                aria-label="Links for Commodity Returns: Lost in Financialization">
+                <li><a href="https://ssrn.com/abstract=4345427" rel="noopener noreferrer" target="_blank"
+                    aria-label="SSRN page for Commodity Returns: Lost in Financialization">SSRN</a></li>
               </ul>
               <details>
                 <summary>Abstract and notes</summary>
-                <p class="abstract">Around four-fifths of commodity futures strategies that were profitable before financialization stop being profitable afterward. The decline appears to come from adverse repricing of a few systematically important factors.</p>
+                <p class="abstract">Around four-fifths of commodity futures strategies that were profitable before
+                  financialization stop being profitable afterward. The decline appears to come from adverse repricing
+                  of a few systematically important factors.</p>
               </details>
             </div>
           </article>
@@ -659,16 +792,27 @@
               <span class="paper-status">Published · Review of Finance</span>
             </div>
             <div>
-              <h3 class="paper-title"><a href="./106_ValueReturn.pdf">Value Return Predictability across Asset Classes and Commonalities in Risk Premia</a></h3>
+              <h3 class="paper-title"><a href="./106_ValueReturn.pdf">Value Return Predictability across Asset Classes
+                  and Commonalities in Risk Premia</a></h3>
               <p class="paper-authors">Fahiz Baba-Yara, Martijn Boons, and Andrea Tamoni</p>
-              <p class="paper-blurb">Value spreads forecast value returns across multiple asset classes, with a strong common component in risk premia.</p>
-              <ul class="inline-links paper-links" role="list" aria-label="Links for Value Return Predictability across Asset Classes and Commonalities in Risk Premia">
-                <li><a href="./106_ValueReturn.pdf" aria-label="PDF for Value Return Predictability across Asset Classes and Commonalities in Risk Premia">PDF</a></li>
-                <li><a href="https://github.com/BabaYara/Value_Return_Predictability_Across_Asset_Classes_and_Commonalities_in_Risk_Premia" rel="noopener noreferrer" target="_blank" aria-label="Code repository for Value Return Predictability across Asset Classes and Commonalities in Risk Premia">Code</a></li>
+              <p class="paper-blurb">Value spreads forecast value returns across multiple asset classes, with a strong
+                common component in risk premia.</p>
+              <ul class="inline-links paper-links" role="list"
+                aria-label="Links for Value Return Predictability across Asset Classes and Commonalities in Risk Premia">
+                <li><a href="./106_ValueReturn.pdf"
+                    aria-label="PDF for Value Return Predictability across Asset Classes and Commonalities in Risk Premia">PDF</a>
+                </li>
+                <li><a
+                    href="https://github.com/BabaYara/Value_Return_Predictability_Across_Asset_Classes_and_Commonalities_in_Risk_Premia"
+                    rel="noopener noreferrer" target="_blank"
+                    aria-label="Code repository for Value Return Predictability across Asset Classes and Commonalities in Risk Premia">Code</a>
+                </li>
               </ul>
               <details>
                 <summary>Abstract and notes</summary>
-                <p class="abstract">Value spreads predict value returns in equities, industries, commodities, currencies, and global bond and stock markets. A single common component explains about two-thirds of that predictability and aligns with broad variation in risk premia.</p>
+                <p class="abstract">Value spreads predict value returns in equities, industries, commodities,
+                  currencies, and global bond and stock markets. A single common component explains about two-thirds of
+                  that predictability and aligns with broad variation in risk premia.</p>
               </details>
             </div>
           </article>
@@ -681,15 +825,21 @@
               <span class="paper-status">R&amp;R · Review of Financial Studies</span>
             </div>
             <div>
-              <h3 class="paper-title"><a href="https://ssrn.com/abstract=3967588" rel="noopener noreferrer" target="_blank">The Limits of Factor Model Spanning</a></h3>
+              <h3 class="paper-title"><a href="https://ssrn.com/abstract=3967588" rel="noopener noreferrer"
+                  target="_blank">The Limits of Factor Model Spanning</a></h3>
               <p class="paper-authors">Fahiz Baba-Yara, Brian H. Boyer, and Carter Davis</p>
-              <p class="paper-blurb">Even high-Sharpe factor models do not span one another cleanly; strong fit alone does not resolve cross-model disagreement.</p>
-              <ul class="inline-links paper-links" role="list" aria-label="Links for The Limits of Factor Model Spanning">
-                <li><a href="https://ssrn.com/abstract=3967588" rel="noopener noreferrer" target="_blank" aria-label="SSRN page for The Limits of Factor Model Spanning">SSRN</a></li>
+              <p class="paper-blurb">Even high-Sharpe factor models do not span one another cleanly; strong fit alone
+                does not resolve cross-model disagreement.</p>
+              <ul class="inline-links paper-links" role="list"
+                aria-label="Links for The Limits of Factor Model Spanning">
+                <li><a href="https://ssrn.com/abstract=3967588" rel="noopener noreferrer" target="_blank"
+                    aria-label="SSRN page for The Limits of Factor Model Spanning">SSRN</a></li>
               </ul>
               <details>
                 <summary>Abstract and notes</summary>
-                <p class="abstract">Modern machine-learning factor models achieve high Sharpe ratios in very different ways and disagree on which factors are actually priced. Much of the return attributed to factor exposure by one model is treated as alpha by another.</p>
+                <p class="abstract">Modern machine-learning factor models achieve high Sharpe ratios in very different
+                  ways and disagree on which factors are actually priced. Much of the return attributed to factor
+                  exposure by one model is treated as alpha by another.</p>
               </details>
             </div>
           </article>
@@ -702,15 +852,22 @@
               <span class="paper-status">Working paper</span>
             </div>
             <div>
-              <h3 class="paper-title"><a href="https://ssrn.com/abstract=3696533" rel="noopener noreferrer" target="_blank">Machine Learning and Return Predictability Across Firms, Time and Portfolios</a></h3>
+              <h3 class="paper-title"><a href="https://ssrn.com/abstract=3696533" rel="noopener noreferrer"
+                  target="_blank">Machine Learning and Return Predictability Across Firms, Time and Portfolios</a></h3>
               <p class="paper-authors">Fahiz Baba-Yara</p>
-              <p class="paper-blurb">Economically structured neural networks generalize better than unconstrained prediction systems in asset-pricing settings.</p>
-              <ul class="inline-links paper-links" role="list" aria-label="Links for Machine Learning and Return Predictability Across Firms, Time and Portfolios">
-                <li><a href="https://ssrn.com/abstract=3696533" rel="noopener noreferrer" target="_blank" aria-label="SSRN page for Machine Learning and Return Predictability Across Firms, Time and Portfolios">SSRN</a></li>
+              <p class="paper-blurb">Economically structured neural networks generalize better than unconstrained
+                prediction systems in asset-pricing settings.</p>
+              <ul class="inline-links paper-links" role="list"
+                aria-label="Links for Machine Learning and Return Predictability Across Firms, Time and Portfolios">
+                <li><a href="https://ssrn.com/abstract=3696533" rel="noopener noreferrer" target="_blank"
+                    aria-label="SSRN page for Machine Learning and Return Predictability Across Firms, Time and Portfolios">SSRN</a>
+                </li>
               </ul>
               <details>
                 <summary>Abstract and notes</summary>
-                <p class="abstract">Unconstrained machine-learning models can predict short-run cross-sectional returns without generalizing to the time-series behavior of the market and long-short portfolios. Imposing economically motivated structure restores that out-of-domain generalization.</p>
+                <p class="abstract">Unconstrained machine-learning models can predict short-run cross-sectional returns
+                  without generalizing to the time-series behavior of the market and long-short portfolios. Imposing
+                  economically motivated structure restores that out-of-domain generalization.</p>
               </details>
             </div>
           </article>
@@ -725,14 +882,16 @@
       </div>
       <div>
         <div class="mini-block">
-          <p class="course-copy">Course details change by term, so current materials, schedules, and policies are posted on Canvas or the official course site for the relevant term.</p>
+          <p class="course-copy">Course details change by term, so current materials, schedules, and policies are posted
+            on Canvas or the official course site for the relevant term.</p>
           <span class="mini-label">Course</span>
           <p>Intermediate Investments (F303)</p>
         </div>
 
         <div class="mini-block">
           <span class="mini-label">Refereeing</span>
-          <p class="service-copy">I referee for the Journal of Financial and Quantitative Analysis, the Journal of Economic Dynamics and Control, the Journal of Empirical Finance, and the Quarterly Journal of Finance.</p>
+          <p class="service-copy">I referee for the Journal of Financial and Quantitative Analysis, the Journal of
+            Economic Dynamics and Control, the Journal of Empirical Finance, and the Quarterly Journal of Finance.</p>
         </div>
       </div>
     </section>
@@ -744,7 +903,8 @@
       </div>
       <div>
         <div class="mini-block">
-          <p class="contact-copy">For questions about a paper, data, or replication, a short message with context is the fastest way to reach me.</p>
+          <p class="contact-copy">For questions about a paper, data, or replication, a short message with context is the
+            fastest way to reach me.</p>
         </div>
 
         <div class="mini-block">
@@ -762,8 +922,10 @@
         <div class="mini-block">
           <span class="mini-label">Profiles</span>
           <ul class="profiles" role="list">
-            <li><a href="https://scholar.google.com/citations?hl=en&amp;user=cOs0q6MAAAAJ" rel="noopener noreferrer" target="_blank" aria-label="Google Scholar profile for Fahiz Baba-Yara">Google Scholar</a></li>
-            <li><a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2811355" rel="noopener noreferrer" target="_blank" aria-label="SSRN author page for Fahiz Baba-Yara">SSRN</a></li>
+            <li><a href="https://scholar.google.com/citations?hl=en&amp;user=cOs0q6MAAAAJ" rel="noopener noreferrer"
+                target="_blank" aria-label="Google Scholar profile for Fahiz Baba-Yara">Google Scholar</a></li>
+            <li><a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2811355" rel="noopener noreferrer"
+                target="_blank" aria-label="SSRN author page for Fahiz Baba-Yara">SSRN</a></li>
           </ul>
         </div>
       </div>
@@ -774,4 +936,5 @@
     </footer>
   </main>
 </body>
+
 </html>
